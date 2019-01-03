@@ -1,5 +1,5 @@
 import React from 'react';
-import { TopMenu } from '../../components';
+import { Footer } from '../../components';
 
 const styles = {
   body: {
@@ -7,23 +7,17 @@ const styles = {
     float: 'left',
     //backgroundColor: 'blue',
   },
-  menuHeader:{
+  footerHeader:{
     width: '100%',
     height: '40px',
     float: 'left',
-    backgroundColor: 'rgba(173,185,187, 0.2)',
+    backgroundColor: '#01252C',
   },
-  menuHeaderContainer: {
-    marginTop:'0.5%',
-  },
-  menuBody: {
+  footerBody: {
     width: '100%',
     height: '120px',
     float: 'left',
-    fontSize: '20px',
-    fontWeight: '300',
-    fontFamily: 'Roboto',
-    backgroundColor: 'white',
+    backgroundColor: '#335056',
   },
   menu: {
     listStyleType: 'none',
@@ -33,15 +27,10 @@ const styles = {
   menuButton: {
     button: {
       float: 'left',
-      marginLeft: '30px',
-    },
-    buttonHover: {
-      float: 'left',
-      backgroundColor: 'rgba(173,185,187, 0.2)',
     },
     link: {
       display: 'block',
-      color: '#001433',
+      color: 'red',
       textAlign: 'center',
       padding: '16px',
       textDecoration: 'none',
@@ -51,16 +40,15 @@ const styles = {
     width: '180px',
     float: 'left',
     margin: '30px',
-    marginLeft: '8%',
     
   },
 };
 
 /* eslint-disable react/prefer-stateless-function */
-export default class TopMenuCont extends React.PureComponent {
+export default class FooterCont extends React.PureComponent {
   render() {
     return (
-      <TopMenu classes={styles} />
+      <Footer classes={styles} />
     );
   }
 }

@@ -1,9 +1,9 @@
 import HomeComponent from './Home/HomeComponent';
 import TopMenu from './TopMenu/TopMenu';
-import BotMenu from './BotMenu/BotMenu';
+import Footer from './Footer/Footer';
 
 export {
   HomeComponent,
   TopMenu,
-  BotMenu,
+  Footer,
 };

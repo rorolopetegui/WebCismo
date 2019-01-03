@@ -12,11 +12,11 @@ const styles = {
   },
 };
 /* eslint-disable react/prefer-stateless-function */
-export default class Test extends PureComponent {
+export default class ServicesPage extends PureComponent {
   render() {
     return (
       <div style={styles.body} onClick={() => (location.href = '/')}>
-        Test Page
+        Services Page
       </div>
     );
   }
