@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MenuButton from '../MenuComps/MenuButton'
+import MenuButton from '../MenuComps/MenuButton';
+import LocationOn from '@material-ui/icons/LocationOn';
 
 /* eslint-disable global-require */
 const TopMenu = props => {
@@ -9,6 +10,7 @@ const TopMenu = props => {
     <div style={classes.body}>
       <div style={classes.menuHeader}>
         <div style={classes.menuHeaderContainer}>
+        <LocationOn />
           Tiburcio Gómez 1331 of. 109, Montevideo, Uruguay |
         </div>
       </div>
