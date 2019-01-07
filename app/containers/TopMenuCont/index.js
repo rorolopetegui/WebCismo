@@ -9,17 +9,26 @@ const styles = {
   },
   menuHeader: {
     width: '100%',
-    height: '40px',
+    height: '35px',
     float: 'left',
     color: 'rgba(29, 33, 43, 0.75)',
     backgroundColor: 'rgba(173, 185, 187, 0.2)',
     fontFamily: 'Source Sans Pro',
-    fontSize: '15px',
+    fontSize: '14px',
     fontWeight: '300',
-    paddingLeft: '25%',
-  },
-  menuHeaderContainer: {
-    marginTop: '0.5%',
+    paddingLeft: '20%',
+    Container: {
+      marginTop: '0.5%',
+    },
+    containerInfo: {
+      marginTop: '0.5%',
+      float: 'left',
+      marginLeft: '20px',
+    },
+    containerIcon:{
+      color: '#918E88',
+      width: '15px',
+    },
   },
   menuBody: {
     width: '100%',
