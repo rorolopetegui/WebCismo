@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 /* eslint-disable global-require */
-class MenuButton extends Component {
+class MediaButton extends Component {
   state = {
     hover: false,
   };
@@ -13,26 +12,26 @@ class MenuButton extends Component {
   };
 
   render() {
-    const { classes, children, link } = this.props;
+    const { classes, children, link, target } = this.props;
     const { hover } = this.state;
     return (
-      <li
+      <a
         style={hover ? classes.buttonHover : classes.button}
+        href={link}
+        target={target}
         onMouseEnter={this.onMouseEnter.bind(this)}
         onMouseLeave={this.onMouseEnter.bind(this)}
       >
-        <Link style={classes.link} to={link}>
-          {children}
-        </Link>
-      </li>
+        {children}
+      </a>
     );
   }
 }
 /* eslint-enable global-require */
-MenuButton.propTypes = {
+MediaButton.propTypes = {
   classes: PropTypes.object.isRequired,
   children: PropTypes.node.isRequired,
   link: PropTypes.string.isRequired,
 };
 
-export default MenuButton;
+export default MediaButton;

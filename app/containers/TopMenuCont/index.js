@@ -5,7 +5,7 @@ const styles = {
   body: {
     width: '100%',
     float: 'left',
-    //backgroundColor: 'blue',
+    // backgroundColor: 'blue',
   },
   menuHeader: {
     width: '100%',
@@ -14,7 +14,7 @@ const styles = {
     color: 'rgba(29, 33, 43, 0.75)',
     backgroundColor: 'rgba(173, 185, 187, 0.2)',
     fontFamily: 'Source Sans Pro',
-    fontSize: '14px',
+    fontSize: '15px',
     fontWeight: '300',
     paddingLeft: '20%',
     Container: {
@@ -25,16 +25,28 @@ const styles = {
       float: 'left',
       marginLeft: '20px',
     },
-    containerIcon:{
-      color: '#918E88',
+    containerIcon: {
       width: '15px',
+      button: {
+        fontFamily: 'Source Sans Pro',
+        color: '#918E88',
+        float: 'left',
+        marginLeft: '15px',
+        textDecoration: 'none',
+        // backgroundColor: 'rgba(173,185,187, 0.2)',
+      },
+      buttonHover: {
+        fontFamily: 'Source Sans Pro',
+        float: 'left',
+        marginLeft: '15px',
+        color: '#575551',
+        textDecoration: 'none',
+      },
+      socialMediaIcon: {
+        marginTop: '-10%',
+      },
+      socialMediaIconSize: '2x',
     },
-    socialMediaIcon:{
-      color: '#918E88',
-      //  width: '50px',
-      marginLeft:'15px',
-    },
-    socialMediaIconSize: '2x',
   },
   menuBody: {
     width: '100%',
@@ -51,11 +63,10 @@ const styles = {
     float: 'left',
   },
   menuButton: {
-
     button: {
       float: 'left',
       marginLeft: '10px',
-      //backgroundColor: 'rgba(173,185,187, 0.2)',
+      // backgroundColor: 'rgba(173,185,187, 0.2)',
     },
     buttonHover: {
       float: 'left',
@@ -75,15 +86,12 @@ const styles = {
     float: 'left',
     margin: '30px',
     marginLeft: '8%',
-
   },
 };
 
 /* eslint-disable react/prefer-stateless-function */
 export default class TopMenuCont extends React.PureComponent {
   render() {
-    return (
-      <TopMenu classes={styles} />
-    );
+    return <TopMenu classes={styles} />;
   }
 }

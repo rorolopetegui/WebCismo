@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import MenuButton from '../MenuComps/MenuButton';
 import { LocationOn, Phone, Email } from '@material-ui/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookSquare, faLinkedin, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
+import {
+  faFacebookSquare,
+  faLinkedin,
+  faTwitterSquare,
+} from '@fortawesome/free-brands-svg-icons';
+import MediaButton from '../MenuComps/MediaButton';
+import MenuButton from '../MenuComps/MenuButton';
 
 /* eslint-disable global-require */
 class TopMenu extends Component {
@@ -12,29 +17,69 @@ class TopMenu extends Component {
     return (
       <div style={classes.body}>
         <div style={classes.menuHeader}>
-          <div >
+          <div>
             <div style={classes.menuHeader.containerInfo}>
-              <LocationOn style={classes.menuHeader.containerIcon} />
-              Tiburcio Gómez 1331 of. 109, Montevideo, Uruguay
+              <MediaButton
+                classes={classes.menuHeader.containerIcon}
+                link="https://goo.gl/maps/xDWTiFKiaCN2"
+                target="_blank"
+              >
+                <LocationOn style={classes.menuHeader.containerIcon} />
+                Tiburcio Gómez 1331 of. 109, Montevideo, Uruguay
+              </MediaButton>
             </div>
             <div style={classes.menuHeader.containerInfo}>
-              <Phone style={classes.menuHeader.containerIcon} />
-              (+598) 9846 9728
+              <MediaButton
+                classes={classes.menuHeader.containerIcon}
+                link="tel:+59898469728"
+              >
+                <Phone style={classes.menuHeader.containerIcon} />
+                (+598) 9846 9728
+              </MediaButton>
             </div>
             <div style={classes.menuHeader.containerInfo}>
-              <Email style={classes.menuHeader.containerIcon} />
-              info@cismosolutions.com
+              <MediaButton
+                classes={classes.menuHeader.containerIcon}
+                link="mailto:info@cismosolutions.com"
+              >
+                <Email style={classes.menuHeader.containerIcon} />
+                info@cismosolutions.com
+              </MediaButton>
             </div>
             <div style={classes.menuHeader.containerInfo}>
-              <a href='#'>
-                <FontAwesomeIcon style={classes.menuHeader.socialMediaIcon} icon={faFacebookSquare} size={classes.menuHeader.socialMediaIconSize}/>
-              </a>
-              <a href='#'>
-                <FontAwesomeIcon style={classes.menuHeader.socialMediaIcon} icon={faLinkedin} size={classes.menuHeader.socialMediaIconSize}/>
-              </a>
-              <a href='#'>
-                <FontAwesomeIcon style={classes.menuHeader.socialMediaIcon} icon={faTwitterSquare} size={classes.menuHeader.socialMediaIconSize}/>
-              </a>
+              <MediaButton
+                classes={classes.menuHeader.containerIcon}
+                link="https://www.facebook.com/CISMO-Soluciones-Tecnol%C3%B3gicas-331460667360427/"
+                target="_blank"
+              >
+                <FontAwesomeIcon
+                  style={classes.menuHeader.containerIcon.socialMediaIcon}
+                  icon={faFacebookSquare}
+                  size={classes.menuHeader.containerIcon.socialMediaIconSize}
+                />
+              </MediaButton>
+              <MediaButton
+                classes={classes.menuHeader.containerIcon}
+                link="https://twitter.com/cismosolutions1"
+                target="_blank"
+              >
+                <FontAwesomeIcon
+                  style={classes.menuHeader.containerIcon.socialMediaIcon}
+                  icon={faTwitterSquare}
+                  size={classes.menuHeader.containerIcon.socialMediaIconSize}
+                />
+              </MediaButton>
+              <MediaButton
+                classes={classes.menuHeader.containerIcon}
+                link="https://www.linkedin.com/company/cismo/"
+                target="_blank"
+              >
+                <FontAwesomeIcon
+                  style={classes.menuHeader.containerIcon.socialMediaIcon}
+                  icon={faLinkedin}
+                  size={classes.menuHeader.containerIcon.socialMediaIconSize}
+                />
+              </MediaButton>
             </div>
           </div>
         </div>
@@ -45,12 +90,24 @@ class TopMenu extends Component {
             style={classes.menuLogo}
           />
           <ul style={classes.menu}>
-            <MenuButton classes={classes.menuButton} text="Home" link="/" />
-            <MenuButton classes={classes.menuButton} text="Company" link="/Company" />
-            <MenuButton classes={classes.menuButton} text="Services" link="/Services" />
-            <MenuButton classes={classes.menuButton} text="Clients" link="/Clients" />
-            <MenuButton classes={classes.menuButton} text="Jobs" link="/Jobs" />
-            <MenuButton classes={classes.menuButton} text="Contact" link="/Contact" />
+            <MenuButton classes={classes.menuButton} link="/">
+              Home
+            </MenuButton>
+            <MenuButton classes={classes.menuButton} link="/Company">
+              Company
+            </MenuButton>
+            <MenuButton classes={classes.menuButton} link="/Services">
+              Services
+            </MenuButton>
+            <MenuButton classes={classes.menuButton} link="/Clients">
+              Clients
+            </MenuButton>
+            <MenuButton classes={classes.menuButton} link="/Jobs">
+              Jobs
+            </MenuButton>
+            <MenuButton classes={classes.menuButton} link="/Contact">
+              Contact
+            </MenuButton>
           </ul>
         </div>
       </div>
