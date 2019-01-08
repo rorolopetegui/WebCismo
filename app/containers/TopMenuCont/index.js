@@ -29,6 +29,12 @@ const styles = {
       color: '#918E88',
       width: '15px',
     },
+    socialMediaIcon:{
+      color: '#918E88',
+      //  width: '50px',
+      marginLeft:'15px',
+    },
+    socialMediaIconSize: '2x',
   },
   menuBody: {
     width: '100%',

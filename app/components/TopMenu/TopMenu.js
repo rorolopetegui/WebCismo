@@ -26,9 +26,15 @@ class TopMenu extends Component {
               info@cismosolutions.com
             </div>
             <div style={classes.menuHeader.containerInfo}>
-            <FontAwesomeIcon icon={faFacebookSquare} />
-            <FontAwesomeIcon icon={faLinkedin} />
-            <FontAwesomeIcon icon={faTwitterSquare} />
+              <a href='#'>
+                <FontAwesomeIcon style={classes.menuHeader.socialMediaIcon} icon={faFacebookSquare} size={classes.menuHeader.socialMediaIconSize}/>
+              </a>
+              <a href='#'>
+                <FontAwesomeIcon style={classes.menuHeader.socialMediaIcon} icon={faLinkedin} size={classes.menuHeader.socialMediaIconSize}/>
+              </a>
+              <a href='#'>
+                <FontAwesomeIcon style={classes.menuHeader.socialMediaIcon} icon={faTwitterSquare} size={classes.menuHeader.socialMediaIconSize}/>
+              </a>
             </div>
           </div>
         </div>
