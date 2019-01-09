@@ -32,6 +32,7 @@ MediaButton.propTypes = {
   classes: PropTypes.object.isRequired,
   children: PropTypes.node.isRequired,
   link: PropTypes.string.isRequired,
+  target: PropTypes.string,
 };
 
 export default MediaButton;

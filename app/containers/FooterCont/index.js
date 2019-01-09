@@ -1,5 +1,6 @@
 import React from 'react';
 import { Footer } from '../../components';
+import BackgroundFooter from '../../images/Footer.png';
 
 const styles = {
   body: {
@@ -9,38 +10,63 @@ const styles = {
   },
   footerHeader:{
     width: '100%',
-    height: '40px',
+    height: '100px',
     float: 'left',
-    backgroundColor: '#01252C',
+    backgroundColor: '#022a31',
+    containerInfo: {
+      marginTop: '2%',
+      float: 'right',
+      marginRight: '5%',
+    },
+    containerIcon: {
+      button: {
+        color: '#4D696E',
+        float: 'left',
+        marginLeft: '35px',
+        textDecoration: 'none',
+        // backgroundColor: 'rgba(173,185,187, 0.2)',
+      },
+      buttonHover: {
+        float: 'left',
+        marginLeft: '35px',
+        color: '#088DA5',
+        textDecoration: 'none',
+      },
+      socialMediaIconSize: '2x',
+    },
   },
   footerBody: {
     width: '100%',
-    height: '120px',
+    height: '500px',
     float: 'left',
-    backgroundColor: '#335056',
-  },
-  menu: {
-    listStyleType: 'none',
-    margin: '40px',
-    float: 'left',
-  },
-  menuButton: {
-    button: {
-      float: 'left',
+    backgroundImage: `url(${BackgroundFooter})`,
+    backgroundRepeat:'no-repeat',
+    backgroundSize: '100%',
+    color: 'white',
+    container:{
+      //backgroundColor: 'red',
+      margin: '5%',
     },
-    link: {
-      display: 'block',
-      color: 'red',
-      textAlign: 'center',
-      padding: '16px',
-      textDecoration: 'none',
+    contact:{
+      float:'left',
+      container:{
+        //try to align everything in the center
+      },
+      input:{
+        color: '#192727',
+        backgroundColor: 'white',
+        borderRadius: '10px',
+        width: '30%',
+        height: '35px',
+      },
+      inputMessage:{
+        color: '#192727',
+        backgroundColor: 'white',
+        borderRadius: '10px',
+        width: '30%',
+        height: '100px',
+      }
     },
-  },
-  menuLogo: {
-    width: '180px',
-    float: 'left',
-    margin: '30px',
-    
   },
 };
 

@@ -43,7 +43,7 @@ const styles = {
         textDecoration: 'none',
       },
       socialMediaIcon: {
-        marginTop: '-10%',
+        marginTop: '-20%',
       },
       socialMediaIconSize: '2x',
     },
@@ -60,6 +60,7 @@ const styles = {
   menu: {
     listStyleType: 'none',
     margin: '40px',
+    paddingLeft:'7%',
     float: 'left',
   },
   menuButton: {
