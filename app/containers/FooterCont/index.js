@@ -6,9 +6,9 @@ const styles = {
   body: {
     width: '100%',
     float: 'left',
-    //backgroundColor: 'blue',
+    // backgroundColor: 'blue',
   },
-  footerHeader:{
+  footerHeader: {
     width: '100%',
     height: '100px',
     float: 'left',
@@ -40,32 +40,32 @@ const styles = {
     height: '500px',
     float: 'left',
     backgroundImage: `url(${BackgroundFooter})`,
-    backgroundRepeat:'no-repeat',
+    backgroundRepeat: 'no-repeat',
     backgroundSize: '100%',
     color: 'white',
-    container:{
-      //backgroundColor: 'red',
+    container: {
+      // backgroundColor: 'red',
       margin: '5%',
     },
-    contact:{
-      float:'left',
-      container:{
-        //try to align everything in the center
+    contact: {
+      float: 'left',
+      container: {
+        // try to align everything in the center
       },
-      input:{
+      input: {
         color: '#192727',
         backgroundColor: 'white',
         borderRadius: '10px',
         width: '30%',
         height: '35px',
       },
-      inputMessage:{
+      inputMessage: {
         color: '#192727',
         backgroundColor: 'white',
         borderRadius: '10px',
         width: '30%',
         height: '100px',
-      }
+      },
     },
   },
 };
@@ -73,8 +73,6 @@ const styles = {
 /* eslint-disable react/prefer-stateless-function */
 export default class FooterCont extends React.PureComponent {
   render() {
-    return (
-      <Footer classes={styles} />
-    );
+    return <Footer classes={styles} />;
   }
 }

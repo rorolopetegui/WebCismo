@@ -60,7 +60,7 @@ const styles = {
   menu: {
     listStyleType: 'none',
     margin: '40px',
-    paddingLeft:'7%',
+    paddingLeft: '7%',
     float: 'left',
   },
   menuButton: {
