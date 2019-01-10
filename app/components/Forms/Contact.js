@@ -67,7 +67,7 @@ class Contact extends Component {
                         <input
                             style={classes.button}
                             type="button"
-                            value="Submit"
+                            value="Send"
                             onClick={this.submit.bind(this)} />
                     </div>
                 </div>
