@@ -24,6 +24,30 @@ const styles = {
       maxWidth: '640px',
     },
   },
+  servicesGallery: {
+    container: {
+      fontFamily: 'Rubik',
+      textAlign: 'center',
+      color: 'white',
+      paddingLeft:'5%',
+    },
+    media: {
+      container: {
+        float:'left',
+        width: '50%',
+        height: '250px',
+        
+      },
+      title: {
+        paddingTop:'15%',
+        paddingLeft:'5%',
+      },
+      description: {
+        paddingLeft:'5%',
+        display: 'none',
+      },
+    },
+  },
 };
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
