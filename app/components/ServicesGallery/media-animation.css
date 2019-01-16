@@ -1,5 +1,81 @@
-.span {
-	-webkit-transform: translateY(-10px);
-					transform: translateY(-10px);
+.mediaButton1{
+	position: relative;
+	width: 50%;
+	background-color: blue;
+}
+.mediaButton{
+	position: relative;
+	width: 50%;
+	float: left;
+	max-height: 240px;
+	overflow: hidden;
+}
+.mediaImage{
+	width: 100%;
+	overflow: hidden;
+	-webkit-filter: brightness(100%);
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	transition: all 1s ease;
+	z-index:-1;
+}
+.mediaImageHover{
+	-webkit-filter: brightness(40%);
+	-webkit-transition: all 1.5s ease;
+	-moz-transition: all 1.5s ease;
+	-o-transition: all 1.5s ease;
+	-ms-transition: all 1.5s ease;
+	transition: all 1.5s ease;
+	z-index:-1;
+}	
+.mediaTitle{
+	position: absolute;
+	width: 100%;
+	top: 40%;
+	left: 0;
+	z-index:1;
+	-webkit-transition: all 0.6s ease;
+	-moz-transition: all 0.6s ease;
+	-o-transition: all 0.6s ease;
+	-ms-transition: all 0.6s ease;
+	transition: all 0.6s ease;
+	-ms-transform: translate(0px, 0px); /* IE 9 */
+  	-webkit-transform: translate(0px, 0px); /* Safari */
+  	transform: translate(0px, 0px); /* Standard syntax */
+}
+.mediaTitleHover{
+	-webkit-transition: all 0.6s ease;
+	-moz-transition: all 0.6s ease;
+	-o-transition: all 0.6s ease;
+	-ms-transition: all 0.6s ease;
+	transition: all 0.6s ease;
+	-ms-transform: translate(0px, -50px); /* IE 9 */
+  	-webkit-transform: translate(0px, -50px); /* Safari */
+  	transform: translate(0px, -50px); /* Standard syntax */
+  
+}
+.mediaDesc{
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 0;
+	z-index:1;
 	opacity: 0;
+	-webkit-transition: all 0.6s ease;
+	-moz-transition: all 0.6s ease;
+	-o-transition: all 0.6s ease;
+	-ms-transition: all 0.6s ease;
+	transition: all 0.6s ease;
+	-ms-transform: translate(0px, -50px); /* IE 9 */
+}
+.mediaDescHover{
+	-webkit-transition: all 0.6s ease;
+	-moz-transition: all 0.6s ease;
+	-o-transition: all 0.6s ease;
+	-ms-transition: all 0.6s ease;
+	transition: all 0.6s ease;
+	-ms-transform: translate(0px, -50px); /* IE 9 */
+	opacity: 1;
 }

@@ -26,6 +26,7 @@ const styles = {
   },
   servicesGallery: {
     container: {
+      width: '100%',
       fontFamily: 'Rubik',
       textAlign: 'center',
       color: 'white',
@@ -36,15 +37,15 @@ const styles = {
         float:'left',
         width: '50%',
         height: '250px',
+        //overflow: 'hidden',
         
       },
       title: {
-        paddingTop:'15%',
+        paddingTop:'10%',
         paddingLeft:'5%',
       },
       description: {
         paddingLeft:'5%',
-        display: 'none',
       },
     },
   },

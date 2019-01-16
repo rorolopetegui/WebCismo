@@ -4,24 +4,45 @@ import './media-animation.css';
 
 /* eslint-disable global-require */
 class ServiceMedia extends Component {
+    state = {
+        hover: false,
+    };
+    onMouseEnter = () => {
+        this.setState(state => ({ hover: !state.hover }));
+        console.log("Hover");
+    };
     render() {
-        const { classes, children, backgroundImage, title, description, link, } = this.props;
+        const { children, backgroundImage, title, description, link, } = this.props;
+        const { hover } = this.state;
         return (
-            <div style={classes.container}>
-                <div
-                    style={{ width:'100%', height: '100%', backgroundImage: `url('${backgroundImage}')`, backgroundSize: 'cover', backgroundPosition: 'center bottom' }}
+            <div
+                className="mediaButton"
+                onMouseEnter={this.onMouseEnter.bind(this)}
+                onMouseLeave={this.onMouseEnter.bind(this)}
+            >
+                <img
+                    src={backgroundImage}
+                    className={"mediaImage" + (!hover ? "" : " mediaImageHover")}
+                />
+                <h2
+                    className={"mediaTitle" + (!hover ? "" : " mediaTitleHover")}
                 >
-                    <h2 style={classes.title} >{title}</h2>
-                    <span style={classes.description} >{description}</span>
-                    {children}
-                </div>
+                    {title}
+                </h2>
+                <span
+                    className={"mediaDesc" + (!hover ? "" : " mediaDescHover")}
+                >
+                    {description}
+                </span>
+                {children}
+
             </div>
         );
     }
 }
 /* eslint-enable global-require */
 ServiceMedia.propTypes = {
-    classes: PropTypes.object.isRequired,
+    classes: PropTypes.object,
     backgroundImage: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
