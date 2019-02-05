@@ -60,7 +60,7 @@ const styles = {
   clientsGallery: {
     container: {
       width: '100%',
-      color: 'white',
+      color: 'black',
       paddingLeft: '5%',
       position: 'relative',
       float: 'left',
@@ -97,20 +97,20 @@ const styles = {
       },
       carousel: {
         container: {
-          color: 'black',
-          position: 'absolute',
+          position: 'relative',
           width: '100%',
+          textAlign: 'center',
           fontFamily: 'Lato, sans-serif',
         },
         iconRight: {
           position: 'absolute',
-          right: 0,
+          right: 10,
           top: 150,
           zIndex: '1000',
         },
         iconLeft: {
           position: 'absolute',
-          left: 0,
+          left: 10,
           top: 150,
           zIndex: '1000',
         },
@@ -170,6 +170,7 @@ const styles = {
       color: 'white',
       backgroundColor: '#022a31',
       overflow: 'hidden',
+      zIndex: '1000',
     },
     background: {
       position: 'absolute',

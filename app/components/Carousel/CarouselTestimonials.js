@@ -9,8 +9,6 @@ class CarouselTestimonials extends Component {
     state = {
         hoverRight: false,
         hoverLeft: false,
-        clickRight: false,
-        clickLeft: false,
         page: 0,
     };
     onHoverLeft = () => {
@@ -21,21 +19,15 @@ class CarouselTestimonials extends Component {
     };
     nextPage = (maxPage) => {
         this.setState(state => ({ page: (state.page === (maxPage - 1) ? 0 : state.page + 1) }));
-        this.setState(state => ({ clickRight: true }));
-        this.setState(state => ({ clickLeft: false }));
-        console.log("Next page");
     };
     backPage = (maxPage) => {
         this.setState(state => ({ page: (state.page === 0 ? (maxPage - 1) : state.page - 1) }));
-        this.setState(state => ({ clickRight: false }));
-        this.setState(state => ({ clickLeft: true }));
-        console.log("Back page");
     };
 
     render() {
         const { classes, content } = this.props;
         const maxPage = content.length;
-        const { hoverLeft, hoverRight, page, clickRight, clickLeft } = this.state;
+        const { hoverLeft, hoverRight, page, } = this.state;
         return (
             <div style={classes.container}>
                 <FontAwesomeIcon
@@ -48,15 +40,14 @@ class CarouselTestimonials extends Component {
                     className={(!hoverLeft ? "arrow" : " arrowHover")}
                 />
                 {content.map((item, index) =>
-                    <div key={index} style={{ display: (index === page ? "block" : "none") }}>
+                    <div key={index} className={"item" + (index === page ? " item-active" : "")}>
                         <img
                             src={item.avatar}
                             style={classes.avatar}
-                            className={"content" + (clickLeft ? " contentAppearRight" : "") + (clickRight ? " contentAppearRight" : "")}
                         />
                         <p style={classes.quote}>"{item.quote}"</p>
                         <span style={classes.name}>{item.name}</span><br />
-                        <span style={classes.profession}>{item.profession}</span><br/>
+                        <span style={classes.profession}>{item.profession}</span><br />
                         <FontAwesomeIcon
                             style={classes.iconQuote}
                             icon={faQuoteRight}
