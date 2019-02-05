@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './media-animation.css';
 
 /* eslint-disable global-require */
-class ServiceMedia extends Component {
+class ClientMedia extends Component {
     state = {
         hover: false,
     };
@@ -40,7 +40,7 @@ class ServiceMedia extends Component {
     }
 }
 /* eslint-enable global-require */
-ServiceMedia.propTypes = {
+ClientMedia.propTypes = {
     classes: PropTypes.object,
     backgroundImage: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -49,4 +49,4 @@ ServiceMedia.propTypes = {
     children: PropTypes.node,
 };
 
-export default ServiceMedia;
+export default ClientMedia;

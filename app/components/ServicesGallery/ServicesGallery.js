@@ -8,6 +8,7 @@ class ServicesGallery extends Component {
         const { classes, content } = this.props;
         return (
             <div style={classes.container}>
+            <span style={classes.titleSection}>Services</span>
                 {content.map((item, index) =>
                     <div key={index}>
                         <ServiceMedia
