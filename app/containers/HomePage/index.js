@@ -1,6 +1,7 @@
 import React from 'react';
 import { HomeComponent } from '../../components';
 
+const imgBackgroundFollowUs = 'https://i.imgur.com/criGPWa.png';
 const styles = {
   carousel: {
     container: {
@@ -159,6 +160,38 @@ const styles = {
       description: {
         paddingLeft: '5%',
       },
+    },
+  },
+  followUs: {
+    container: {
+      width: '100%',
+      height: '450px',
+      overflow: 'hidden',
+      background: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('${imgBackgroundFollowUs}')`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center center',
+      filter: 'grayscale(100%)',
+      fontFamily: 'Lato',
+      textAlign: 'center',
+      color: 'white',
+    },
+    title: {
+      width: '100%',
+      fontSize: '40px',
+      fontWeight: '900',
+      float: 'left',
+      marginTop: '2%',
+    },
+    subtitle:{
+      width: '100%',
+      fontSize: '20px',
+      fontWeight: '200',
+      float: 'left',
+    },
+    socialMediaButton:{
+      width: '50%',
+      float: 'left',
     },
   },
   separator: {
