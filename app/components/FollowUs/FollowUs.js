@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SocialMedia from './SocialMedia';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 /* eslint-disable global-require */
@@ -11,19 +10,15 @@ class FollowUs extends Component {
         return (
             <div style={classes.container}>
                 <span style={classes.title}>Follow us</span>
-                <span style={classes.subtitle}>In all of our social networks</span>
-                <SocialMedia classes={classes.socialMediaButton} >
-                    <FontAwesomeIcon
-                        icon={faFacebookF}
-                        size="3x"
-                    />
-                </SocialMedia>
-                <SocialMedia classes={classes.socialMediaButton} >
-                    <FontAwesomeIcon
-                        icon={faTwitter}
-                        size="3x"
-                    />
-                </SocialMedia>
+                <span style={classes.subtitle}>In all of our <span style={classes.subtitleAlt}>social networks</span></span>
+                <div style={classes.sectionButtons}>
+                    <div style={classes.containerButtons}>
+                        <SocialMedia classes={classes.socialMediaButton} link={"https://www.facebook.com/CISMO-Soluciones-Tecnol%C3%B3gicas-331460667360427/"} icon={faFacebookF}>
+                        </SocialMedia>
+                        <SocialMedia classes={classes.socialMediaButton} link={"https://twitter.com/cismosolutions1"} icon={faTwitter}>
+                        </SocialMedia>
+                    </div>
+                </div>
             </div>
         );
     }

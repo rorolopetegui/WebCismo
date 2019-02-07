@@ -171,10 +171,14 @@ const styles = {
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center center',
-      filter: 'grayscale(100%)',
       fontFamily: 'Lato',
       textAlign: 'center',
       color: 'white',
+    },
+    containerButtons: {
+      float:'left',
+      width: '50%',
+      marginLeft: '25%',
     },
     title: {
       width: '100%',
@@ -183,15 +187,24 @@ const styles = {
       float: 'left',
       marginTop: '2%',
     },
-    subtitle:{
+    subtitle: {
       width: '100%',
       fontSize: '20px',
       fontWeight: '200',
       float: 'left',
     },
-    socialMediaButton:{
-      width: '50%',
-      float: 'left',
+    subtitleAlt: {
+      color: '#66A3A3',
+    },
+    socialMediaButton: {
+      container: {
+        textDecoration: 'none',
+        marginTop: '10%',
+        marginLeft: '17.5%',
+        width: '150px',
+        height: '150px',
+        float: 'left',
+      },
     },
   },
   separator: {
