@@ -37,7 +37,7 @@ const styles = {
   },
   footerBody: {
     width: '100%',
-    height: '500px',
+    height: '400px',
     float: 'left',
     backgroundImage: `url(${BackgroundFooter})`,
     backgroundRepeat: 'no-repeat',

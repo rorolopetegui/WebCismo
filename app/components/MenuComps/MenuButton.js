@@ -21,7 +21,7 @@ class MenuButton extends Component {
         onMouseEnter={this.onMouseEnter.bind(this)}
         onMouseLeave={this.onMouseEnter.bind(this)}
       >
-        <Link style={classes.link} to={link}>
+        <Link style={hover ? classes.linkHover : classes.link} to={link}>
           {children}
         </Link>
       </li>

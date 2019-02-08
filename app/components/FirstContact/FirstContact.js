@@ -10,7 +10,7 @@ class FirstContact extends Component {
             <div style={classes.container}>
                 <span style={classes.title}>Questions?</span>
                 <span style={classes.subtitle}>Make your first contact</span>
-                <ContactButton classes={classes.contactButton} link="mailto:info@cismosolutions.com">Contact us!</ContactButton>
+                <ContactButton classes={classes.contactButton} link="mailto:info@cismosolutions.com">Get in touch!</ContactButton>
             </div>
         );
     }
