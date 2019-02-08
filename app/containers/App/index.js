@@ -15,6 +15,7 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import GlobalStyle from '../../global-styles';
+
 const styles = {
   container: {
     width: '100%',
@@ -22,7 +23,6 @@ const styles = {
   },
   header: {
     width: '100%',
-    //backgroundColor: 'green',
   },
   body: {
     width: '100%',

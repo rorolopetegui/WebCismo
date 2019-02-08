@@ -5,6 +5,8 @@ import Separator from '../Separator/Separator';
 import ServicesGallery from '../ServicesGallery/ServicesGallery';
 import ClientsGallery from '../ClientsGallery/ClientsGallery';
 import FollowUs from '../FollowUs/FollowUs';
+import FirstContact from '../FirstContact/FirstContact';
+import ContactCard from '../ContactCard/ContactCard';
 const content = [
     {
         title: 'Vulputate Mollis Ultricies Fermentum Parturient',
@@ -199,12 +201,13 @@ const HomeComponent = props => {
     const { classes } = props;
     return (
         <div>
-            <Carousel classes={classes.carousel} content={content} />
+            <ContactCard classes={classes.contactCard} />
             <ServicesGallery classes={classes.servicesGallery} content={serviceContent} />
             <Separator classes={classes.separator} text="More Services" link="#" />
             <ClientsGallery classes={classes.clientsGallery} contentClients={clientsContent} contentTestimonials={clientsTestimonials} />
             <Separator classes={classes.separator} text="View more work" link="#" />
             <FollowUs classes={classes.followUs} />
+            <FirstContact classes={classes.firstContact} />
         </div>
     );
 };

@@ -1,115 +1,69 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { LocationOn, Phone, Email } from '@material-ui/icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faFacebookSquare,
-  faLinkedin,
-  faTwitterSquare,
-} from '@fortawesome/free-brands-svg-icons';
-import MediaButton from '../MenuComps/MediaButton';
 import MenuButton from '../MenuComps/MenuButton';
+import './styles.css';
 
 /* eslint-disable global-require */
 class TopMenu extends Component {
+  state = {
+    isFixed: false,
+  };
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+    this.handleScroll();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+  handleScroll = () => {
+    const isScrolled = window.scrollY > 0 ? true : false;
+    this.setState(state => ({ isFixed: isScrolled }));
+  };
   render() {
     const { classes } = this.props;
+    const { isFixed } = this.state;
+    function LogoImg(props) {
+      const isAlternative = props.isAlternative;
+      if (isAlternative) {
+        return <img
+          src={require(`../../images/Cismo.png`)}
+          alt="Cismo Solutions"
+          style={classes.menuLogoAlt}
+        />;
+      }
+      return <img
+        src={require(`../../images/CismoLogoText.png`)}
+        alt="Cismo Solutions"
+        style={classes.menuLogo}
+      />;
+    }
     return (
-      <div style={classes.body}>
-        <div style={classes.menuHeader}>
-          <div>
-            <div style={classes.menuHeader.containerInfo}>
-              <MediaButton
-                classes={classes.menuHeader.containerIcon}
-                link="https://goo.gl/maps/xDWTiFKiaCN2"
-                target="_blank"
-              >
-                <LocationOn style={classes.menuHeader.containerIcon} />
-                Tiburcio Gómez 1331 of. 109, Montevideo, Uruguay
-              </MediaButton>
-            </div>
-            <div style={classes.menuHeader.containerInfo}>
-              <MediaButton
-                classes={classes.menuHeader.containerIcon}
-                link="tel:+59898469728"
-              >
-                <Phone style={classes.menuHeader.containerIcon} />
-                (+598) 9846 9728
-              </MediaButton>
-            </div>
-            <div style={classes.menuHeader.containerInfo}>
-              <MediaButton
-                classes={classes.menuHeader.containerIcon}
-                link="mailto:info@cismosolutions.com"
-              >
-                <Email style={classes.menuHeader.containerIcon} />
-                info@cismosolutions.com
-              </MediaButton>
-            </div>
-            <div style={classes.menuHeader.containerInfo}>
-              <MediaButton
-                classes={classes.menuHeader.containerIcon}
-                link="https://www.facebook.com/CISMO-Soluciones-Tecnol%C3%B3gicas-331460667360427/"
-                target="_blank"
-              >
-                <FontAwesomeIcon
-                  style={classes.menuHeader.containerIcon.socialMediaIcon}
-                  icon={faFacebookSquare}
-                  size={classes.menuHeader.containerIcon.socialMediaIconSize}
-                />
-              </MediaButton>
-              <MediaButton
-                classes={classes.menuHeader.containerIcon}
-                link="https://twitter.com/cismosolutions1"
-                target="_blank"
-              >
-                <FontAwesomeIcon
-                  style={classes.menuHeader.containerIcon.socialMediaIcon}
-                  icon={faTwitterSquare}
-                  size={classes.menuHeader.containerIcon.socialMediaIconSize}
-                />
-              </MediaButton>
-              <MediaButton
-                classes={classes.menuHeader.containerIcon}
-                link="https://www.linkedin.com/company/cismo/"
-                target="_blank"
-              >
-                <FontAwesomeIcon
-                  style={classes.menuHeader.containerIcon.socialMediaIcon}
-                  icon={faLinkedin}
-                  size={classes.menuHeader.containerIcon.socialMediaIconSize}
-                />
-              </MediaButton>
-            </div>
-          </div>
-        </div>
-        <div style={classes.menuBody}>
-          <img
-            src={require(`../../images/CismoLogoText.png`)}
-            alt="Cismo Solutions"
-            style={classes.menuLogo}
-          />
-          <ul style={classes.menu}>
-            <MenuButton classes={classes.menuButton} link="/">
-              Home
-            </MenuButton>
-            <MenuButton classes={classes.menuButton} link="/Company">
-              Company
-            </MenuButton>
-            <MenuButton classes={classes.menuButton} link="/Services">
-              Services
-            </MenuButton>
-            <MenuButton classes={classes.menuButton} link="/Clients">
-              Clients
-            </MenuButton>
-            <MenuButton classes={classes.menuButton} link="/Jobs">
-              Jobs
-            </MenuButton>
-            <MenuButton classes={classes.menuButton} link="/Contact">
-              Contact
-            </MenuButton>
-          </ul>
-        </div>
+      <div
+        style={!isFixed ? classes.menuBody : classes.menuBodyFixed}
+        className={"header" + (!isFixed ? "" : " headerFixed")}
+      >
+        <LogoImg isAlternative={isFixed} />
+        <ul style={classes.menu}>
+          <MenuButton classes={!isFixed ? classes.menuButton : classes.menuButtonFixed} link="/">
+            <span className={(!isFixed ? "textButton" : " textButtonFixed")}>Home</span>
+          </MenuButton>
+          <MenuButton classes={!isFixed ? classes.menuButton : classes.menuButtonFixed} link="/Company">
+            <span className={(!isFixed ? "textButton" : " textButtonFixed")}>Company</span>
+          </MenuButton>
+          <MenuButton classes={!isFixed ? classes.menuButton : classes.menuButtonFixed} link="/Services">
+            <span className={(!isFixed ? "textButton" : " textButtonFixed")}>Services</span>
+          </MenuButton>
+          <MenuButton classes={!isFixed ? classes.menuButton : classes.menuButtonFixed} link="/Clients">
+            <span className={(!isFixed ? "textButton" : " textButtonFixed")}>Clients</span>
+          </MenuButton>
+          <MenuButton classes={!isFixed ? classes.menuButton : classes.menuButtonFixed} link="/Jobs">
+            <span className={(!isFixed ? "textButton" : " textButtonFixed")}>Jobs</span>
+          </MenuButton>
+          <MenuButton classes={!isFixed ? classes.menuButton : classes.menuButtonFixed} link="/Contact">
+            <span className={(!isFixed ? "textButton" : " textButtonFixed")}>Contact</span>
+          </MenuButton>
+        </ul>
       </div>
     );
   }

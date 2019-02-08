@@ -21,12 +21,6 @@
   	-webkit-transform: translate(20px, 0px); /* Safari */
   	transform: translate(20px, 0px); /* Standard syntax */
 }
-/* Fixes the zIndex*/
-.text{
-	-ms-transform: translate(0px, 0px); /* IE 9 */
-  	-webkit-transform: translate(0px, 0px); /* Safari */
-  	transform: translate(0px, 0px); /* Standard syntax */
-}
 .background{
 	-webkit-transition: all 0.85s ease;
 	-moz-transition: all 0.85s ease;
