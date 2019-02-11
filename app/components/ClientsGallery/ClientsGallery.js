@@ -10,7 +10,9 @@ class ClientsGallery extends Component {
         const { classes, contentClients, contentTestimonials } = this.props;
         return (
             <div style={classes.container}>
-                <span style={classes.titleSection}>Our Clients</span>
+                <div style={classes.titleContainer}>
+                    <span style={classes.titleSection}>Our Clients</span>
+                </div>
                 <div style={classes.clientsLogo}>
                     {contentClients.map((item, index) =>
                         <div key={index}>

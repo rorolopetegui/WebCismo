@@ -6,6 +6,7 @@ const styles = {
     listStyleType: 'none',
     paddingRight: '2%',
     float: 'right',
+    position: 'relative',
   },
   menuButton: {
     button: {
@@ -70,7 +71,7 @@ const styles = {
     width: '65px',
     float: 'left',
     marginLeft: '10%',
-    marginTop: '0.5%',
+    //marginTop: '0.5%',
   },
 };
 
