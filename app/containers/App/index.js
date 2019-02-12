@@ -19,7 +19,7 @@ import GlobalStyle from '../../global-styles';
 const styles = {
   container: {
     width: '100%',
-    backgroundColor: '#f1f5f8',
+    backgroundColor: '#F0F8FF',
   },
   header: {
     width: '100%',

@@ -1,0 +1,16 @@
+.backgroundPattern{
+    background:
+    repeating-linear-gradient(
+        45deg,
+        #086B8A,
+        #086B8A 10px,
+        #2E93B1 10px,
+        #2E93B1 20px
+      );
+}
+.alignLeft{
+    float: left;
+}
+.alignRight{
+    float: right;
+}
