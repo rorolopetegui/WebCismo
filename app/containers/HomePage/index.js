@@ -234,12 +234,20 @@ const styles = {
     },
     containerButtons: {
       //backgroundColor: 'red',
-      width: '100%',
+      width: '50%',
       position: 'absolute',
       top: '50%',
       left: '50%',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
+    },
+    containerButton: {
+      position: 'relative',
+      float: 'left',
+      marginLeft: '2.5%',
+      width: '30%',
+      height: '200px',
+      //backgroundColor: 'blue',
     },
     title: {
       width: '100%',
@@ -257,37 +265,15 @@ const styles = {
     subtitleAlt: {
       color: '#66A3A3',
     },
-    socialMediaButtonLeft: {
+    socialMediaButton: {
       container: {
-        position: 'absolute',
         textDecoration: 'none',
-        left: '30%',
-        //marginTop: '10%',
-        //margin: '0 auto',
         width: '150px',
         height: '150px',
-      },
-    },
-    socialMediaButtonCenter: {
-      container: {
         position: 'absolute',
-        textDecoration: 'none',
-        left: '47.5%',
-        //marginTop: '10%',
-        //margin: '0 auto',
-        width: '150px',
-        height: '150px',
-      },
-    },
-    socialMediaButtonRight: {
-      container: {
-        position: 'absolute',
-        textDecoration: 'none',
-        right: '30%',
-        //marginTop: '10%',
-        //margin: '0 auto',
-        width: '150px',
-        height: '150px',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
       },
     },
   },

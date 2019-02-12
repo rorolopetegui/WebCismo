@@ -13,9 +13,15 @@ class FollowUs extends Component {
                 <span style={classes.subtitle}>In all of our <span style={classes.subtitleAlt}>social networks</span></span>
                 <div style={classes.sectionButtons}>
                     <div style={classes.containerButtons}>
-                        <SocialMedia classes={classes.socialMediaButtonLeft} link={"https://www.facebook.com/CISMO-Soluciones-Tecnol%C3%B3gicas-331460667360427/"} icon={faFacebookF} />
-                        <SocialMedia classes={classes.socialMediaButtonCenter} link={"https://twitter.com/cismosolutions1"} icon={faTwitter} />
-                        <SocialMedia classes={classes.socialMediaButtonRight} link={"https://www.linkedin.com/company/35549752"} icon={faLinkedinIn} />
+                        <div style={classes.containerButton}>
+                            <SocialMedia classes={classes.socialMediaButton} link={"https://www.facebook.com/CISMO-Soluciones-Tecnol%C3%B3gicas-331460667360427/"} icon={faFacebookF} />
+                        </div>
+                        <div style={classes.containerButton}>
+                            <SocialMedia classes={classes.socialMediaButton} link={"https://twitter.com/cismosolutions1"} icon={faTwitter} />
+                        </div>
+                        <div style={classes.containerButton}>
+                            <SocialMedia classes={classes.socialMediaButton} link={"https://www.linkedin.com/company/35549752"} icon={faLinkedinIn} />
+                        </div>
                     </div>
                 </div>
             </div>
