@@ -233,7 +233,8 @@ const styles = {
       position: 'relative',
     },
     containerButtons: {
-      width: '70%',
+      //backgroundColor: 'red',
+      width: '100%',
       position: 'absolute',
       top: '50%',
       left: '50%',
@@ -256,14 +257,37 @@ const styles = {
     subtitleAlt: {
       color: '#66A3A3',
     },
-    socialMediaButton: {
+    socialMediaButtonLeft: {
       container: {
+        position: 'absolute',
         textDecoration: 'none',
-        marginTop: '10%',
-        marginLeft: '12.5%',
+        left: '30%',
+        //marginTop: '10%',
+        //margin: '0 auto',
         width: '150px',
         height: '150px',
-        float: 'left',
+      },
+    },
+    socialMediaButtonCenter: {
+      container: {
+        position: 'absolute',
+        textDecoration: 'none',
+        left: '47.5%',
+        //marginTop: '10%',
+        //margin: '0 auto',
+        width: '150px',
+        height: '150px',
+      },
+    },
+    socialMediaButtonRight: {
+      container: {
+        position: 'absolute',
+        textDecoration: 'none',
+        right: '30%',
+        //marginTop: '10%',
+        //margin: '0 auto',
+        width: '150px',
+        height: '150px',
       },
     },
   },
