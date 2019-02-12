@@ -1,32 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Carousel from '../Carousel/Carousel';
 import Separator from '../Separator/Separator';
 import ServicesGallery from '../ServicesGallery/ServicesGallery';
 import ClientsGallery from '../ClientsGallery/ClientsGallery';
 import FollowUs from '../FollowUs/FollowUs';
 import FirstContact from '../FirstContact/FirstContact';
 import ContactCard from '../ContactCard/ContactCard';
-const content = [
-    {
-        title: 'Vulputate Mollis Ultricies Fermentum Parturient',
-        description:
-            'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis.',
-        image: 'https://i.imgur.com/m3No8rR.jpg',
-    },
-    {
-        title: 'Tortor Dapibus Commodo Aenean Quam',
-        description:
-            'Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.',
-        image: 'https://i.imgur.com/61k7YN6.jpg',
-    },
-    {
-        title: 'Phasellus volutpat metus',
-        description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.',
-        image: 'https://i.imgur.com/TxEJcKj.jpg',
-    }
-];
+
 const serviceContent = [
     {
         title: 'SERVICE 1',
@@ -159,43 +139,7 @@ const clientsTestimonials = [
         avatar: 'https://i.imgur.com/qmuqGfT.jpg',
     },
 ];
-const teamRoster = [
-    {
-        name: 'Danilo Carella',
-        profession: 'CEO',
-        quote:
-            'Va una señora por la calle y dice: ¡¡TAXIIII!! Y dice el taxita: ¡¡SEÑORAAA!!',
-        avatar: 'https://i.imgur.com/UqAfVas.jpg',
-    },
-    {
-        name: 'Danilo de León',
-        profession: 'CEO',
-        quote:
-            '- ¿Me da un desodorante? - ¿De bolita? - No, de axila.',
-        avatar: 'https://i.imgur.com/2PhbhsT.jpg',
-    },
-    {
-        name: 'Sharon Iciarte',
-        profession: 'Communications',
-        quote:
-            '¿Cómo se despiden los químicos? Ácido un placer...',
-        avatar: 'https://i.imgur.com/GMu7e8u.jpg',
-    },
-    {
-        name: 'Kevin Pacin',
-        profession: 'Sales man',
-        quote:
-            '¿Para qué es el retrete de un spa? Spa Mear. ',
-        avatar: 'https://i.imgur.com/ib2vxCC.jpg',
-    },
-    {
-        name: 'Rodrigo Lopetegui',
-        profession: 'Software Developer',
-        quote:
-            '- ¡Tío, he soñado que ganaba 300 millones como mi padre! - ¿¿¿Tu padre ha ganado 300 millones??? - ¡Qué va! ¡Él también lo sueña!',
-        avatar: 'https://i.imgur.com/ehChDKn.jpg',
-    },
-];
+
 /* eslint-disable global-require */
 const HomeComponent = props => {
     const { classes } = props;

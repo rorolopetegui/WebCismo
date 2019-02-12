@@ -233,7 +233,7 @@ const styles = {
       position: 'relative',
     },
     containerButtons: {
-      width: '50%',
+      width: '70%',
       position: 'absolute',
       top: '50%',
       left: '50%',
