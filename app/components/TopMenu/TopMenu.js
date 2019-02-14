@@ -57,9 +57,6 @@ class TopMenu extends Component {
           <MenuButton classes={!isFixed ? classes.menuButton : classes.menuButtonFixed} link="/Clients">
             <span className={(!isFixed ? "textButton" : " textButtonFixed")}>Clients</span>
           </MenuButton>
-          <MenuButton classes={!isFixed ? classes.menuButton : classes.menuButtonFixed} link="/Jobs">
-            <span className={(!isFixed ? "textButton" : " textButtonFixed")}>Jobs</span>
-          </MenuButton>
           <MenuButton classes={!isFixed ? classes.menuButton : classes.menuButtonFixed} link="/Contact">
             <span className={(!isFixed ? "textButton" : " textButtonFixed")}>Contact</span>
           </MenuButton>

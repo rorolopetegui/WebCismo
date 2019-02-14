@@ -1,6 +1,11 @@
 import React, { PureComponent } from 'react';
 import { FirstTemplate } from '../../components';
-
+import { HeaderBanner } from '../../components/Commons';
+import ImgButton from '../../components/Commons/ImgButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faUserTie } from '@fortawesome/free-solid-svg-icons';
+import MediaButton from '../../components/MenuComps/MediaButton';
 const styles = {
   body: {
     backgroundColor: '#F0F8FF',
@@ -14,7 +19,9 @@ const styles = {
     container: {
       position: 'relative',
       width: '100%',
-      height: '300px',
+      height: '230px',
+      background: 'repeating-linear-gradient(45deg, #333333, #333333 10px, #2D2D2D 10px, #2D2D2D 20px)',
+      textAlign: 'center',
     },
     sectionTitle: {
       position: 'absolute',
@@ -33,19 +40,49 @@ const styles = {
   },
   bodyContent: {
     position: 'relative',
-    width: '70%',
-    marginLeft: '15%',
+    width: '95%',
+  },
+  titleContainer: {
+    //zIndex: '50000',
+    //backgroundColor: 'red',
+    position: 'absolute',
+    width: '5%',
+    height: '100%',
+    left: '0',
+  },
+  titleSection: {
+    zIndex: '1000',
+    color: '#373831',
+    fontFamily: 'Lato',
+    fontWeight: '900',
+    fontSize: '40px',
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    transform: 'rotate(-90deg)',
+    transformOrigin: '100% 100%',
   },
   contentContainer: {
-    backgroundColor: 'white',
+    backgroundColor: '#333333',
     width: '100%',
     height: '650px',
     overflow: 'hidden',
+    marginLeft: '5%',
   },
   imgContainer: {
-    background: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) )`,
+    //backgroundColor: 'red',
     width: '50%',
-
+    height: '100%',
+    position: 'relative',
+    overflow: 'hidden',
+  },
+  imgContainerCentered: {
+    width: '105%',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
   },
   textContainer: {
     width: '50%',
@@ -70,19 +107,81 @@ const styles = {
   textDesc: {
     width: '100%',
     float: 'left',
-    color: '#707070',
+    color: 'white',
   },
   img: {
     width: '100%',
-
+    objectFit: 'cover',
   },
   overlayImg: {
     position: 'absolute',
-    width: '50%',
-    height: '650px',
+    width: '100%',
+    height: '100%',
     backgroundColor: 'rgba(0, 0, 0, 0.4)',
     zIndex: '100',
-  }
+  },
+  teamContainer: {
+    width: '80%',
+    height: '300px',
+    marginLeft: '10%',
+    marginRight: '10%',
+    backgroundColor: 'white',
+    textAlign: 'center',
+  },
+  titleTeam: {
+    fontFamily: 'Roboto',
+    letterSpacing: '0.1px',
+    fontWeight: '900',
+    fontSize: '25px',
+    color: 'black',
+  },
+  teamPlayer: {
+    mediaButton: {
+      position: 'relative',
+      float: 'left',
+      width: '15%',
+      height: '180px',
+      marginLeft: '8%',
+      marginTop: '5%',
+      marginBottom: '2%',
+      overflow: 'hidden',
+    },
+    imgMedia: {
+      width: '100%',
+    },
+    mediaTitle: {
+      fontSize: '20px',
+      color: 'white',
+      position: 'absolute',
+      width: '80%',
+      top: '20%',
+      left: '0',
+    },
+    mediaDesc: {
+      position: 'absolute',
+      width: '10%',
+      top: '50%',
+      left: '30%',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+    containerIcon: {
+      button: {
+        color: '#4D696E',
+        float: 'left',
+        marginLeft: '35px',
+        textDecoration: 'none',
+        // backgroundColor: 'rgba(173,185,187, 0.2)',
+      },
+      buttonHover: {
+        float: 'left',
+        marginLeft: '35px',
+        color: '#088DA5',
+        textDecoration: 'none',
+      },
+      socialMediaIconSize: '2x',
+    },
+  },
 };
 const content = [
   {
@@ -111,6 +210,8 @@ const teamRoster = [
     quote:
       'Va una señora por la calle y dice: ¡¡TAXIIII!! Y dice el taxita: ¡¡SEÑORAAA!!',
     avatar: 'https://i.imgur.com/UqAfVas.jpg',
+    avatarAlt: 'https://i.imgur.com/ib2vxCC.jpg',
+    linkedin: '/in/rodrigo-lopetegui-bb7808107/',
   },
   {
     name: 'Danilo de León',
@@ -118,13 +219,17 @@ const teamRoster = [
     quote:
       '- ¿Me da un desodorante? - ¿De bolita? - No, de axila.',
     avatar: 'https://i.imgur.com/2PhbhsT.jpg',
+    avatarAlt: 'https://i.imgur.com/UqAfVas.jpg',
+    linkedin: '/in/rodrigo-lopetegui-bb7808107/',
   },
   {
     name: 'Sharon Iciarte',
-    profession: 'Communications',
+    profession: 'Operations',
     quote:
       '¿Cómo se despiden los químicos? Ácido un placer...',
     avatar: 'https://i.imgur.com/GMu7e8u.jpg',
+    avatarAlt: 'https://i.imgur.com/2PhbhsT.jpg',
+    linkedin: '/in/rodrigo-lopetegui-bb7808107/',
   },
   {
     name: 'Kevin Pacin',
@@ -132,20 +237,62 @@ const teamRoster = [
     quote:
       '¿Para qué es el retrete de un spa? Spa Mear. ',
     avatar: 'https://i.imgur.com/ib2vxCC.jpg',
+    avatarAlt: 'https://i.imgur.com/GMu7e8u.jpg',
+    linkedin: '/in/rodrigo-lopetegui-bb7808107/',
   },
   {
     name: 'Rodrigo Lopetegui',
     profession: 'Software Developer',
     quote:
       '- ¡Tío, he soñado que ganaba 300 millones como mi padre! - ¿¿¿Tu padre ha ganado 300 millones??? - ¡Qué va! ¡Él también lo sueña!',
-    avatar: 'https://i.imgur.com/ehChDKn.jpg',
+    avatar: 'https://i.imgur.com/ib2vxCC.jpg',
+    avatarAlt: 'https://i.imgur.com/ehChDKn.jpg',
+    linkedin: '/in/rodrigo-lopetegui-bb7808107/',
   },
 ];
 /* eslint-disable react/prefer-stateless-function */
 export default class CompanyPage extends PureComponent {
   render() {
     return (
-      <FirstTemplate classes={styles} headerTitle="Company" content={content} />
+      <div>
+        <div style={styles.headerSeparator} />
+        <HeaderBanner classes={styles.headerBanner}>
+          <FontAwesomeIcon
+            icon={faUserTie}
+            size="1x"
+          /><br/>
+          Company
+        </HeaderBanner>
+        <FirstTemplate classes={styles} content={content} headerTitle={"Company"}>
+          <div style={styles.teamContainer}>
+            <span style={styles.titleTeam}>Meet the leadership team</span>
+            {teamRoster.map((item, index) =>
+              <div key={index}>
+                <ImgButton
+                  classes={styles.teamPlayer}
+                  withImgAlt={true}
+                  backgroundImage={item.avatar}
+                  backgroundImageAlt={item.avatarAlt}
+                  title={item.profession}
+                  link={item.linkedin}
+                  description={
+                    <MediaButton
+                      classes={styles.teamPlayer.containerIcon}
+                      link={"https://www.linkedin.com" + item.linkedin}
+                      target="_blank"
+                    >
+                      <FontAwesomeIcon
+                        icon={faLinkedin}
+                        size={styles.teamPlayer.containerIcon.socialMediaIconSize}
+                      />
+                    </MediaButton>
+                  }
+                />
+              </div>
+            )}
+          </div>
+        </FirstTemplate>
+      </div>
     );
   }
 }

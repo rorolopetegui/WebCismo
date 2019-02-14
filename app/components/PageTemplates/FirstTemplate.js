@@ -1,21 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { HeaderBanner } from '../Commons';
-
 
 /* eslint-disable global-require */
 const FirstTemplate = props => {
     const { classes, headerTitle, content, children } = props;
     return (
         <div style={classes.body}>
-            <div style={classes.headerSeparator} />
-            <HeaderBanner classes={classes.headerBanner} text={headerTitle} />
             <div style={classes.bodyContent}>
+                <div style={classes.titleContainer}>
+                    <span style={classes.titleSection}>{headerTitle}</span>
+                </div>
                 {content.map((item, index) =>
                     <div key={index} style={classes.contentContainer}>
                         <div style={classes.imgContainer} className={item.isImgLeft ? "alignLeft" : "alignRight"}>
-                            <div style={classes.overlayImg}></div>
-                            <img src={item.img} style={classes.img} />
+                            <div style={classes.imgContainerCentered}>
+                                <div style={classes.overlayImg}></div>
+                                <img src={item.img} style={classes.img} className="imgCover" />
+                            </div>
                         </div>
                         <div style={classes.textContainer} className={!item.isImgLeft ? "alignLeft" : "alignRight"}>
                             <div style={classes.textContainerCentered}>

@@ -20,6 +20,7 @@ class ServicesGallery extends Component {
                             backgroundImage={item.backgroundImage}
                             link={item.link}
                             content={item}
+                            withImgAlt={false}
                         />
                     </div>
                 )}

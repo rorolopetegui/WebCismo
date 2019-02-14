@@ -4,18 +4,17 @@ import './styles.css';
 
 /* eslint-disable global-require */
 const HeaderBanner = props => {
-    const { classes, text } = props;
+    const { classes, children } = props;
     return (
         <div style={classes.container} className="backgroundPattern">
-           <span style={classes.sectionTitle}>{text}</span>
+           <span style={classes.sectionTitle}>{children}</span>
         </div>
     );
 };
 /* eslint-enable global-require */
 HeaderBanner.propTypes = {
-    children: PropTypes.node,
+    children: PropTypes.node.isRequired,
     classes: PropTypes.object.isRequired,
-    text: PropTypes.string.isRequired
 };
 
 export default HeaderBanner;

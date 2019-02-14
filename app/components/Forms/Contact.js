@@ -6,6 +6,7 @@ class Contact extends Component {
     state = {
         fullname: "",
         mail: '',
+        phone: '',
         message: "",
     };
 
@@ -15,6 +16,10 @@ class Contact extends Component {
 
     handleChangeEmail(event) {
         this.setState({ mail: event.target.value });
+    }
+
+    handleChangePhone(event) {
+        this.setState({ phone: event.target.value });
     }
 
     handleChangeMessage(event) {
@@ -29,47 +34,41 @@ class Contact extends Component {
         const { classes } = this.props;
         return (
             <div style={classes.container}>
-                <div>
-                    <div>
-                        Full Name
-                    </div>
-                    <div>
-                        <input
-                            style={classes.input}
-                            type="text"
-                            value={this.state.fullname}
-                            onChange={this.handleChangeName.bind(this)} />
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        Email
-                    </div>
-                    <div>
-                        <input
-                            style={classes.input}
-                            type="text"
-                            value={this.state.mail}
-                            onChange={this.handleChangeEmail.bind(this)} />
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <div>Message</div>
-                        <div>
-                            <textarea
-                                style={classes.inputMessage}
-                                value={this.state.message}
-                                onChange={this.handleChangeMessage.bind(this)} />
-                        </div>
-                    </div>
-                    <div>
-                        <input
-                            style={classes.button}
-                            type="button"
-                            value="Send"
-                            onClick={this.submit.bind(this)} />
-                    </div>
+                <div style={classes.containerCentered}>
+                    <input
+                        style={classes.input}
+                        type="text"
+                        value={this.state.fullname}
+                        placeholder={"My name is"}
+                        onChange={this.handleChangeName.bind(this)} />
+                    <input
+                        style={classes.input}
+                        type="text"
+                        value={this.state.mail}
+                        placeholder={"You can email me at"}
+                        onChange={this.handleChangeEmail.bind(this)} />
+                    <input
+                        style={classes.input}
+                        type="text"
+                        value={this.state.mail}
+                        placeholder={"You can email me at"}
+                        onChange={this.handleChangeEmail.bind(this)} />
+                    <input
+                        style={classes.input}
+                        type="text"
+                        value={this.state.phone}
+                        placeholder={"Ring me at (optional)"}
+                        onChange={this.handleChangePhone.bind(this)} />
+                    <textarea
+                        style={classes.inputMessage}
+                        value={this.state.message}
+                        placeholder={"I got something to add"}
+                        onChange={this.handleChangeMessage.bind(this)} />
+                    <input
+                        style={classes.button}
+                        type="button"
+                        value="Send"
+                        onClick={this.submit.bind(this)} />
                 </div>
             </div>
         );
