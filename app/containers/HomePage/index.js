@@ -137,6 +137,13 @@ const styles = {
       width: '60%',
       float: 'left',
     },
+    clientImg: {
+      display: 'block',
+      float: 'left',
+      width: '32%',
+      height: '280px',
+      margin: '5px',
+    },
     clientTestimonials: {
       width: '40%',
       float: 'left',

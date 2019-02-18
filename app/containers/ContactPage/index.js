@@ -18,6 +18,7 @@ const styles = {
       height: '230px',
       background: 'repeating-linear-gradient(45deg, #09202F, #09202F 10px, #071722 10px, #071722 20px)',
       textAlign: 'center',
+      marginBottom: '2%',
     },
     sectionTitle: {
       position: 'absolute',
@@ -51,7 +52,7 @@ const styles = {
     input: {
       color: '#192727',
       border: '1px solid #C0C0C0',
-      marginLeft: '5%',
+      marginRight: '5%',
       marginBottom: '2%',
       width: '42.5%',
       height: '50px',
@@ -62,7 +63,6 @@ const styles = {
     inputMessage: {
       color: '#192727',
       border: '1px solid #C0C0C0',
-      marginLeft: '5%',
       marginBottom: '2%',
       width: '90%',
       height: '100px',
@@ -71,9 +71,12 @@ const styles = {
       fontFamily: 'Roboto',
       fontSize: '15px',
     },
+    captcha: {
+      marginLeft: '25px',
+    },
     button: {
       container: {
-        marginLeft: '5%',
+        marginTop: '15px',
         backgroundColor: '#FA5B60',
         width: '180px',
         height: '50px',

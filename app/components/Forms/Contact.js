@@ -1,23 +1,30 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SendButton from './SendButton';
+import axios from 'axios';
+var Recaptcha = require('react-recaptcha');
+
+const API_PATH = 'http://localhost:81/CismoWeb/index.php';
 
 /* eslint-disable global-require */
 class Contact extends Component {
     state = {
-        fullname: "",
-        mail: '',
+        fname: '',
+        email: '',
         reason: 'Hire',
         phone: '',
         message: "",
+        mailSent: false,
+        error: null,
+        isVerified: false,
     };
 
     handleChangeName(event) {
-        this.setState({ fullname: event.target.value });
+        this.setState({ fname: event.target.value });
     }
 
     handleChangeEmail(event) {
-        this.setState({ mail: event.target.value });
+        this.setState({ email: event.target.value });
     }
 
     handleChangeReason(event) {
@@ -33,9 +40,29 @@ class Contact extends Component {
     }
 
     submit(event) {
-        console.log("Submit");
+        if (this.state.isVerified) {
+            axios({
+                method: 'post',
+                url: `${API_PATH}`,
+                headers: { 'content-type': 'application/json' },
+                data: this.state
+            })
+                .then(result => {
+                    this.setState({
+                        mailSent: result.data.sent
+                    });
+                })
+                .catch(error => this.setState({ error: error.message }));
+        } else {
+            alert("Primero verifique que no es un robot");
+        }
     }
 
+    verifiedCaptcha(response) {
+        if (response) {
+            this.setState({ isVerified: true });
+        }
+    }
     render() {
         const { classes } = this.props;
         return (
@@ -44,13 +71,13 @@ class Contact extends Component {
                     <input
                         style={classes.input}
                         type="text"
-                        value={this.state.fullname}
+                        value={this.state.fname}
                         placeholder={"My name is"}
                         onChange={this.handleChangeName.bind(this)} />
                     <input
                         style={classes.input}
                         type="text"
-                        value={this.state.mail}
+                        value={this.state.email}
                         placeholder={"You can email me at"}
                         onChange={this.handleChangeEmail.bind(this)} />
                     <select
@@ -73,9 +100,15 @@ class Contact extends Component {
                         value={this.state.message}
                         placeholder={"I got something to add"}
                         onChange={this.handleChangeMessage.bind(this)} />
+                    <Recaptcha
+                        sitekey="6LcVOJIUAAAAAMhET3rdbFoTm4oUwTFro9peeTWB"
+                        render="explicit"
+                        verifyCallback={this.verifiedCaptcha.bind(this)}
+                        style={classes.captcha}
+                    />
                     <SendButton classes={classes.button} action={this.submit.bind(this)} >
                         Send now
-                   </SendButton>
+                    </SendButton>
                 </div>
             </div>
         );

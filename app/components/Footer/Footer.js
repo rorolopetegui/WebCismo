@@ -7,7 +7,6 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import MediaButton from '../MenuComps/MediaButton';
-import Contact from '../Forms/Contact';
 import ContactData from '../Forms/ContactData';
 
 /* eslint-disable global-require */
@@ -52,7 +51,6 @@ const Footer = props => {
       <div style={classes.footerBody}>
         <div style={classes.footerBody.container}>
           <ContactData classes={classes.footerBody.contactData} />
-          <Contact classes={classes.footerBody.contact} />
         </div>
       </div>
     </div>
