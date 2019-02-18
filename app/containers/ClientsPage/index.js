@@ -65,13 +65,21 @@ const styles = {
       lineHeight: '35px',
     },
     clientsLogo: {
-      width: '80%',
+      width: '60%',
       float: 'left',
     },
+    clientImg: {
+      display: 'block',
+      float: 'left',
+      width: '32%',
+      height: '280px',
+      margin: '5px',
+    },
     clientTestimonials: {
-      width: '20%',
+      width: '30%',
       float: 'right',
       textAlign: 'center',
+      marginRight: '5%',
       title: {
         color: '#373831',
         fontFamily: 'Lato',

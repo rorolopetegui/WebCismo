@@ -17,6 +17,7 @@ class ClientsGallery extends Component {
                     {contentClients.map((item, index) =>
                         <div key={index}>
                             <img
+                                style={classes.clientImg}
                                 src={item.backgroundImage}
                                 className={"clientImage"}
                             />

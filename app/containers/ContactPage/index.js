@@ -4,6 +4,7 @@ import { HeaderBanner } from '../../components/Commons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
 
+
 const styles = {
   headerSeparator: {
     width: '100%',
@@ -15,7 +16,7 @@ const styles = {
       position: 'relative',
       width: '100%',
       height: '230px',
-      background: 'repeating-linear-gradient(45deg, #333333, #333333 10px, #2D2D2D 10px, #2D2D2D 20px)',
+      background: 'repeating-linear-gradient(45deg, #09202F, #09202F 10px, #071722 10px, #071722 20px)',
       textAlign: 'center',
     },
     sectionTitle: {
@@ -48,10 +49,8 @@ const styles = {
       width: '60%',
     },
     input: {
-      //color: '#192727',
-      //backgroundColor: 'white',
+      color: '#192727',
       border: '1px solid #C0C0C0',
-      //borderRadius: '10px',
       marginLeft: '5%',
       marginBottom: '2%',
       width: '42.5%',
@@ -61,27 +60,40 @@ const styles = {
       fontSize: '15px',
     },
     inputMessage: {
-      //color: '#192727',
-      //backgroundColor: 'white',
+      color: '#192727',
       border: '1px solid #C0C0C0',
-      //borderRadius: '10px',
       marginLeft: '5%',
       marginBottom: '2%',
       width: '90%',
       height: '100px',
       paddingLeft: '8px',
       paddingTop: '8px',
-      fontFamily: 'Robotod',
+      fontFamily: 'Roboto',
       fontSize: '15px',
     },
     button: {
-      color: 'white',
+      container: {
+        marginLeft: '5%',
+        backgroundColor: '#FA5B60',
+        width: '180px',
+        height: '50px',
+        position: 'relative',
+      },
+      innerContent: {
+        color: 'white',
+        position: 'absolute',
+        top: '50%',
+        left: '30%',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+      },
+      /*color: 'white',
       backgroundColor: '#00B0F0',
       border: 'solid 2px #006990',
       borderRadius: '5px',
       textAlign: 'left',
       width: '55px',
-      height: '40px',
+      height: '40px',*/
     },
   },
 };

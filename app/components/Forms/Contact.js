@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import SendButton from './SendButton';
 
 /* eslint-disable global-require */
 class Contact extends Component {
     state = {
         fullname: "",
         mail: '',
+        reason: 'Hire',
         phone: '',
         message: "",
     };
@@ -16,6 +18,10 @@ class Contact extends Component {
 
     handleChangeEmail(event) {
         this.setState({ mail: event.target.value });
+    }
+
+    handleChangeReason(event) {
+        this.setState({ reason: event.target.value });
     }
 
     handleChangePhone(event) {
@@ -47,12 +53,15 @@ class Contact extends Component {
                         value={this.state.mail}
                         placeholder={"You can email me at"}
                         onChange={this.handleChangeEmail.bind(this)} />
-                    <input
+                    <select
                         style={classes.input}
-                        type="text"
-                        value={this.state.mail}
-                        placeholder={"You can email me at"}
-                        onChange={this.handleChangeEmail.bind(this)} />
+                        onChange={this.handleChangeReason.bind(this)}
+                    >
+                        <option value="Hire">Hire Cismo</option>
+                        <option value="Work">Work With Us</option>
+                        <option value="Quote">Get A Quote</option>
+                        <option value="Question">Just a Question</option>
+                    </select>
                     <input
                         style={classes.input}
                         type="text"
@@ -64,11 +73,9 @@ class Contact extends Component {
                         value={this.state.message}
                         placeholder={"I got something to add"}
                         onChange={this.handleChangeMessage.bind(this)} />
-                    <input
-                        style={classes.button}
-                        type="button"
-                        value="Send"
-                        onClick={this.submit.bind(this)} />
+                    <SendButton classes={classes.button} action={this.submit.bind(this)} >
+                        Send now
+                   </SendButton>
                 </div>
             </div>
         );
