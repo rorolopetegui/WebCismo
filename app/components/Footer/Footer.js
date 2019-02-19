@@ -18,7 +18,7 @@ const Footer = props => {
         <div style={classes.footerHeader.containerInfo}>
           <MediaButton
             classes={classes.footerHeader.containerIcon}
-            link="https://www.facebook.com/CISMO-Soluciones-Tecnol%C3%B3gicas-331460667360427/"
+            link="https://www.facebook.com/CismoSolutions/"
             target="_blank"
           >
             <FontAwesomeIcon
@@ -38,7 +38,7 @@ const Footer = props => {
           </MediaButton>
           <MediaButton
             classes={classes.footerHeader.containerIcon}
-            link="https://www.linkedin.com/company/cismo/"
+            link="https://www.linkedin.com/company/35549752"
             target="_blank"
           >
             <FontAwesomeIcon

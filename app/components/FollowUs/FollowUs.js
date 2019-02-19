@@ -14,7 +14,7 @@ class FollowUs extends Component {
                 <div style={classes.sectionButtons}>
                     <div style={classes.containerButtons}>
                         <div style={classes.containerButton}>
-                            <SocialMedia classes={classes.socialMediaButton} link={"https://www.facebook.com/CISMO-Soluciones-Tecnol%C3%B3gicas-331460667360427/"} icon={faFacebookF} />
+                            <SocialMedia classes={classes.socialMediaButton} link={"https://www.facebook.com/CismoSolutions/"} icon={faFacebookF} />
                         </div>
                         <div style={classes.containerButton}>
                             <SocialMedia classes={classes.socialMediaButton} link={"https://twitter.com/cismosolutions1"} icon={faTwitter} />

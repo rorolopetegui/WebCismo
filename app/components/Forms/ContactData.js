@@ -13,7 +13,7 @@ class ContactData extends Component {
                     <div style={classes.containerInfo}>
                         <MediaButton
                             classes={classes.containerIcon}
-                            link="https://goo.gl/maps/xDWTiFKiaCN2"
+                            link="https://goo.gl/maps/v6XVi81tYAq"
                             target="_blank"
                         >
                             <LocationOn style={classes.containerIcon} />
