@@ -102,6 +102,9 @@ const styles = {
 };
 /* eslint-disable react/prefer-stateless-function */
 export default class ContactPage extends PureComponent {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <div>
@@ -111,7 +114,7 @@ export default class ContactPage extends PureComponent {
             icon={faMailBulk}
             size="1x"
           /><br />
-          Make your first contact!
+          Haz tu primer contacto!
         </HeaderBanner>
         <Contact classes={styles.contact} />
       </div>

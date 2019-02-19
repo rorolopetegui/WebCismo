@@ -9,8 +9,8 @@ class FollowUs extends Component {
         const { classes } = this.props;
         return (
             <div style={classes.container}>
-                <span style={classes.title}>Follow us</span>
-                <span style={classes.subtitle}>In all of our <span style={classes.subtitleAlt}>social networks</span></span>
+                <span style={classes.title}>Síguenos!</span>
+                <span style={classes.subtitle}>En todas nuestras <span style={classes.subtitleAlt}>redes sociales</span></span>
                 <div style={classes.sectionButtons}>
                     <div style={classes.containerButtons}>
                         <div style={classes.containerButton}>

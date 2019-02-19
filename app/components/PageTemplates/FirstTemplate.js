@@ -11,7 +11,7 @@ const FirstTemplate = props => {
                     <span style={classes.titleSection}>{headerTitle}</span>
                 </div>
                 {content.map((item, index) =>
-                    <div key={index} style={classes.contentContainer}>
+                    <div key={index} style={classes.contentContainer} className={item.sizeItem}>
                         <div style={classes.imgContainer} className={item.isImgLeft ? "alignLeft" : "alignRight"}>
                             <div style={classes.imgContainerCentered}>
                                 <div style={classes.overlayImg}></div>

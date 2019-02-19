@@ -68,12 +68,24 @@ const styles = {
       width: '60%',
       float: 'left',
     },
-    clientImg: {
+    clientImgContainer: {
+      position: 'relative',
       display: 'block',
       float: 'left',
       width: '32%',
-      height: '280px',
+      height: '200px',
       margin: '5px',
+      overflow: 'hidden',
+      //backgroundColor: 'red',
+    },
+    clientImg: {
+      position: 'absolute',
+      width: '80%',
+      top: '50%',
+      left: '50%',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      zIndex: '1000',
     },
     clientTestimonials: {
       width: '30%',
@@ -142,113 +154,59 @@ const styles = {
         },
       },
     },
-    media: {
-      container: {
-        float: 'left',
-        width: '50%',
-        height: '250px',
-      },
-      title: {
-        paddingTop: '10%',
-        paddingLeft: '5%',
-      },
-      description: {
-        paddingLeft: '5%',
-      },
-    },
   },
 };
 const clientsContent = [
   {
-    title: 'CLIENT 1',
-    description:
-      'Realizamos tus sueños',
-    backgroundImage: 'https://i.imgur.com/faTkAiQ.png',
+    title: 'Salesforce',
+    backgroundImage: 'https://i.imgur.com/jfNWTeV.png',
     link: '#',
   },
   {
-    title: 'CLIENT 2',
-    description:
-      'Realizamos tus sueños',
-    backgroundImage: 'https://i.imgur.com/AcYJFtr.png',
+    title: 'Avesur',
+    backgroundImage: 'https://i.imgur.com/w1yXtur.png',
     link: '#',
   },
   {
-    title: 'CLIENT 3',
-    description:
-      'Realizamos tus sueños',
-    backgroundImage: 'https://i.imgur.com/rv8KeEU.png',
+    title: 'Cutcsa',
+    backgroundImage: 'https://i.imgur.com/MNcpPNV.png',
     link: '#',
   },
   {
-    title: 'SERCLIENTVICE 4',
-    description:
-      'Realizamos tus sueños',
-    backgroundImage: 'https://i.imgur.com/jIGimk7.png',
-    link: '#',
-  },
-  {
-    title: 'CLIENT 5',
-    description:
-      'Realizamos tus sueños',
-    backgroundImage: 'https://i.imgur.com/ka4B4Op.png',
-    link: '#',
-  },
-  {
-    title: 'CLIENT 6',
-    description:
-      'Realizamos tus sueños',
-    backgroundImage: 'https://i.imgur.com/IP4vXoM.png',
+    title: 'RadioTaxi 141',
+    backgroundImage: 'https://i.imgur.com/cul899k.png',
     link: '#',
   },
 ];
 const clientsTestimonials = [
   {
-    name: 'Bill Gates',
-    profession: 'CEO Microsoft',
+    name: 'Jorge M.',
+    profession: 'Sub Gerente General Avesur SRL',
     quote:
-      'I choose a lazy person to do a hard job. Because a lazy person will find an easy way to do it.',
-    avatar: 'https://i.imgur.com/UqAfVas.jpg',
+      'Cuando nos vimos necesitando una página web, Cismo Solutions se encargó rápidamente en encontrar la mejor página web que refleje lo que nuestra empresa desea comunicar. Me encuentro muy satisfecho con ellos.',
+    avatar: 'https://i.imgur.com/n5TMfxY.jpg',
   },
   {
-    name: 'A Blonde',
-    profession: 'Just a Blonde',
+    name: 'CR, Álvaro Santiago',
+    profession: 'Sub-Gerente General de Cutcsa',
     quote:
-      'The very first thing I saw was his eyes, bluer and brighter than the sea itself. They gazed at me, so dazzling, and for an instant I couldnt even feel the pain. I was too overcome by the handsomeness of this sandy haired boy',
-    avatar: 'https://i.imgur.com/2PhbhsT.jpg',
+      'Por algunos años han brindado a nuestra Organización sus servicios de realización y programación de aplicaciones internas para mejorar el servicio de nuestra empresa y lo han cumplido en su totalidad demostrando ser una empresa con transparencia, firme y comprometida a ayudar a realizar los objetivos de sus clientes, estas características la han hecho merecedora de nuestra confianza.',
+    avatar: 'https://i.imgur.com/lwMi1Vr.jpg',
   },
   {
-    name: 'Elon Musk',
-    profession: 'CEO at TESLA, SpaceX',
+    name: 'Néstor Muha',
+    profession: 'Vocal Radio Taxi 141',
     quote:
-      'If you get up in the morning and think the future is going to be better, it is a bright day. Otherwise, its not.',
-    avatar: 'https://i.imgur.com/GMu7e8u.jpg',
-  },
-  {
-    name: 'Jeff Bezos',
-    profession: 'CEO of Amazon',
-    quote:
-      'If you double the number of experiments you do per year you’re going to double your inventiveness.',
-    avatar: 'https://i.imgur.com/ib2vxCC.jpg',
-  },
-  {
-    name: 'Mark Zuckerberg',
-    profession: 'CEO of Facebook',
-    quote:
-      'So many businesses get worried about looking like they might make a mistake, they become afraid to take any risk. Companies are set up so that people judge each other on failure.',
-    avatar: 'https://i.imgur.com/ehChDKn.jpg',
-  },
-  {
-    name: 'Pepe Mujica',
-    profession: 'Ex-President of Uruguay',
-    quote:
-      'When you buy something, the instrument is money, but in reality you are buying it with the hours of your life that you spent earning that money. The greatest thing that you have is that you are alive.',
-    avatar: 'https://i.imgur.com/qmuqGfT.jpg',
+      'Radio Taxi 141 se encuentra totalmente complacida con el trabajo realizado y anhela continuar así por mucho tiempo más, tanto por su seriedad como la eficacia con la que la empresa ha prestado sus servicios.',
+    avatar: 'https://i.imgur.com/n5TMfxY.jpg',
   },
 ];
 
 /* eslint-disable react/prefer-stateless-function */
 export default class ClientsPage extends PureComponent {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <div>
@@ -258,7 +216,7 @@ export default class ClientsPage extends PureComponent {
             icon={faUsers}
             size="1x"
           /><br />
-          Our Clients
+          Nuestros clientes
         </HeaderBanner>
         <ClientsGallery classes={styles.clientsGallery} contentClients={clientsContent} contentTestimonials={clientsTestimonials} />
       </div>

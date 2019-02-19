@@ -8,13 +8,16 @@ class ContactCard extends Component {
             <div style={classes.containerVideo}>
                 <div style={classes.overlayVideo}></div>
                 <video style={classes.backgroundVideo} loop autoPlay muted>
-                    <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4" />
-                    <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/ogg" />
+                    <source src="https://www.videvo.net/videvo_files/converted/2015_10/preview/Typing_dark_03_Videvo.mov33486.webm" type="video/webm" />
                     Your browser does not support the video tag.
                 </video>
-                <span style={classes.title}>We believe in bringing the best solution to our clients</span>
-                <span style={classes.subtitle}>We're a top tech company, that loves to bring the best practices and solutions to our clients, so we both can growth together. We build the best for our customers.<br/>Many of our long-term partnerships start with a website & grow through ongoing SEO & Google Ads or with particular projects that we propose.</span>
-                <span style={classes.contact}>contact us - (+598) 9846 9728 or email us: info@cismosolutions.com</span>
+                <span style={classes.title}>Creando soluciones simples a problemas complejos</span>
+                <span style={classes.subtitle}>Cismo es una empresa de desarrollo de software ubicada en Montevideo, Uruguay.
+                    <br />Nos especializamos en software y soluciones informáticas a pedido de nuestros clientes.
+                    <br/>Además, ayudamos a clientes con páginas web y ecommerce a desarrollar sus marcas a través del marketing digital.
+                    Muchos de nuestros clientes a largo plazo deciden solicitar la creación de una página web y crecen a través de un proceso continuo de posicionamiento utilizando SEO & Google Ads/PCP
+</span>
+                <span style={classes.contact}>Contactenos - (+598) 9846 9728 o vía mail: info@cismosolutions.com</span>
             </div>
         );
     }

@@ -35,6 +35,9 @@ const styles = {
 };
 /* eslint-disable react/prefer-stateless-function */
 export default class JobsPage extends PureComponent {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <div>

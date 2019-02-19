@@ -40,7 +40,7 @@ class Contact extends Component {
     }
 
     submit(event) {
-        if (this.state.isVerified) {
+        if (this.state.isVerified && !this.state.mailSent) {
             axios({
                 method: 'post',
                 url: `${API_PATH}`,
@@ -54,7 +54,10 @@ class Contact extends Component {
                 })
                 .catch(error => this.setState({ error: error.message }));
         } else {
-            alert("Primero verifique que no es un robot");
+            if (this.state.mailSent)
+                alert("Usted ya envío un mail, refresque en caso de querer enviar otro");
+            else
+                alert("Primero verifique que no es un robot");
         }
     }
 
@@ -72,22 +75,22 @@ class Contact extends Component {
                         style={classes.input}
                         type="text"
                         value={this.state.fname}
-                        placeholder={"My name is"}
+                        placeholder={"Mi nombre es"}
                         onChange={this.handleChangeName.bind(this)} />
                     <input
                         style={classes.input}
                         type="text"
                         value={this.state.email}
-                        placeholder={"You can email me at"}
+                        placeholder={"Me pueden enviar un mail a"}
                         onChange={this.handleChangeEmail.bind(this)} />
                     <select
                         style={classes.input}
                         onChange={this.handleChangeReason.bind(this)}
                     >
-                        <option value="Hire">Hire Cismo</option>
-                        <option value="Work">Work With Us</option>
-                        <option value="Quote">Get A Quote</option>
-                        <option value="Question">Just a Question</option>
+                        <option value="Hire">Contratar a Cismo</option>
+                        <option value="Work">Trabajar con nostros</option>
+                        <option value="Quote">Presupuesto</option>
+                        <option value="Question">Solo una pregunta</option>
                     </select>
                     <input
                         style={classes.input}
@@ -107,7 +110,7 @@ class Contact extends Component {
                         style={classes.captcha}
                     />
                     <SendButton classes={classes.button} action={this.submit.bind(this)} >
-                        Send now
+                        Enviar
                     </SendButton>
                 </div>
             </div>

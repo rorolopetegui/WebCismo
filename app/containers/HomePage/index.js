@@ -34,7 +34,7 @@ const styles = {
       fontSize: '80px',
       zIndex: '1000',
       position: 'absolute',
-      top: '30%',
+      top: '25%',
       left: '5%',
     },
     subtitle: {
@@ -46,7 +46,7 @@ const styles = {
       fontSize: '20px',
       zIndex: '1000',
       position: 'absolute',
-      top: '55%',
+      top: '50%',
       left: '5%',
     },
     contact: {
@@ -137,12 +137,24 @@ const styles = {
       width: '60%',
       float: 'left',
     },
-    clientImg: {
+    clientImgContainer: {
+      position: 'relative',
       display: 'block',
       float: 'left',
       width: '32%',
-      height: '280px',
+      height: '200px',
       margin: '5px',
+      overflow: 'hidden',
+      //backgroundColor: 'red',
+    },
+    clientImg: {
+      position: 'absolute',
+      width: '80%',
+      top: '50%',
+      left: '50%',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      zIndex: '1000',
     },
     clientTestimonials: {
       width: '40%',
@@ -365,6 +377,9 @@ const styles = {
 };
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <HomeComponent classes={styles} />

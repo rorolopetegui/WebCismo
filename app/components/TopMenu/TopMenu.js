@@ -46,19 +46,19 @@ class TopMenu extends Component {
         <LogoImg isAlternative={isFixed} />
         <ul style={classes.menu}>
           <MenuButton classes={!isFixed ? classes.menuButton : classes.menuButtonFixed} link="/">
-            <span className={(!isFixed ? "textButton" : " textButtonFixed")}>Home</span>
+            <span className={(!isFixed ? "textButton" : " textButtonFixed")}>Inicio</span>
           </MenuButton>
           <MenuButton classes={!isFixed ? classes.menuButton : classes.menuButtonFixed} link="/Company">
-            <span className={(!isFixed ? "textButton" : " textButtonFixed")}>Company</span>
+            <span className={(!isFixed ? "textButton" : " textButtonFixed")}>Empresa</span>
           </MenuButton>
           <MenuButton classes={!isFixed ? classes.menuButton : classes.menuButtonFixed} link="/Services">
-            <span className={(!isFixed ? "textButton" : " textButtonFixed")}>Services</span>
+            <span className={(!isFixed ? "textButton" : " textButtonFixed")}>Servicios</span>
           </MenuButton>
           <MenuButton classes={!isFixed ? classes.menuButton : classes.menuButtonFixed} link="/Clients">
-            <span className={(!isFixed ? "textButton" : " textButtonFixed")}>Clients</span>
+            <span className={(!isFixed ? "textButton" : " textButtonFixed")}>Clientes</span>
           </MenuButton>
           <MenuButton classes={!isFixed ? classes.menuButton : classes.menuButtonFixed} link="/Contact">
-            <span className={(!isFixed ? "textButton" : " textButtonFixed")}>Contact</span>
+            <span className={(!isFixed ? "textButton" : " textButtonFixed")}>Contacto</span>
           </MenuButton>
         </ul>
       </div>

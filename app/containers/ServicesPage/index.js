@@ -86,7 +86,6 @@ const styles = {
   contentContainer: {
     backgroundColor: 'white',
     width: '100%',
-    height: '650px',
     overflow: 'hidden',
     marginLeft: '5%',
   },
@@ -174,7 +173,6 @@ const styles = {
     contentContainer: {
       backgroundColor: 'white',
       width: '100%',
-      height: '350px',
       overflow: 'hidden',
       marginLeft: '5%',
     },
@@ -235,39 +233,73 @@ const styles = {
 const content = [
   {
     isImgLeft: true,
-    img: 'https://i.imgur.com/UqAfVas.jpg',
-    title: 'Some Title',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur volutpat aliquet. Curabitur ultricies ornare massa sed iaculis. Vestibulum et interdum orci, id pellentesque est. Morbi id urna non metus commodo blandit. Nulla sit amet quam at ipsum maximus consectetur. Nam pellentesque enim sodales sem faucibus, rutrum volutpat purus ornare. Maecenas porta leo in nunc laoreet bibendum. Suspendisse felis magna, aliquet vitae pretium ornare, dictum nec quam. Aliquam enim ipsum, gravida vitae nunc sed, luctus efficitur metus. Donec in semper magna. Morbi nec porta diam, a molestie dui. Phasellus eget lacus eleifend, iaculis nisl tristique, tempor urna. Aliquam quis felis orci. Sed lorem diam, gravida vitae leo sed, posuere laoreet nibh.',
+    img: 'https://i.imgur.com/l1S5oxw.jpg',
+    title: 'Estrategia Digital',
+    text: 'Antes de que el proyecto surja, se centran las bases sólidas con un rango de servicios digitales especializados que incluyen:'
+      + 'Consultorías y talleres estratégicos;'
+      + 'Análisis de las fortalezas, debilidades, oportunidades y amenazas del negocio y de sus competidores directos (FODA);'
+      + 'Estrategia de Contenido;'
+      + 'Análisis y seguimiento;',
+    sizeItem: 'containerSize1x',
   },
   {
     isImgLeft: false,
-    img: 'https://i.imgur.com/UqAfVas.jpg',
-    title: 'Some Title',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur volutpat aliquet. Curabitur ultricies ornare massa sed iaculis. Vestibulum et interdum orci, id pellentesque est. Morbi id urna non metus commodo blandit. Nulla sit amet quam at ipsum maximus consectetur. Nam pellentesque enim sodales sem faucibus, rutrum volutpat purus ornare. Maecenas porta leo in nunc laoreet bibendum. Suspendisse felis magna, aliquet vitae pretium ornare, dictum nec quam. Aliquam enim ipsum, gravida vitae nunc sed, luctus efficitur metus. Donec in semper magna. Morbi nec porta diam, a molestie dui. Phasellus eget lacus eleifend, iaculis nisl tristique, tempor urna. Aliquam quis felis orci. Sed lorem diam, gravida vitae leo sed, posuere laoreet nibh.',
+    img: 'https://i.imgur.com/0Tl2RtS.jpg',
+    title: 'Desarrollo de una website responsive',
+    text: 'Cualquiera que sea el dispositivo o el navegador, nuestros expertos se aseguran que tu sitio web (o campaña) siempre trabaje a la perfección.'
+      + ';Optimización para móvil y tablet'
+      + ';Mejora progresiva y reportes constantes'
+      + ';Testing de rendimiento',
+    sizeItem: 'containerSize1x',
+  },
+  {
+    isImgLeft: true,
+    img: 'https://i.imgur.com/9BhTIjd.jpg',
+    title: 'Sistema de Gestión de Contenidos (CMS) y eCommerce',
+    text: 'Soluciones simples y complejas de eCommerce'
+      + ';Optimización de páginas web aptas para eCommerce'
+      + ';Integración de sistema de pago por terceros',
+    sizeItem: 'containerSize1x',
+  },
+  {
+    isImgLeft: false,
+    img: 'https://i.imgur.com/Pyxivrx.jpg',
+    title: 'Aplicaciones Móviles',
+    text: 'Cada vez más personas utilizan dispositivos móviles a la hora de navegar por la web, incluso más que las computadoras. Es por eso que nosotros les damos a las aplicaciones la atención que se merecen.'
+      + ';Aplicaciones nativas e híbridas'
+      + ';Testing de uso por parte del usuario'
+      + ';IOS y Android',
+    sizeItem: 'containerSize2x',
+  },
+  {
+    isImgLeft: true,
+    img: 'https://i.imgur.com/aMD5WzT.jpg',
+    title: 'Salesforce®️',
+    text: 'Nos consideramos amantes del sistema que implementa Salesforce®️, es por eso que orientamos a las organizaciones a planear, diseñar y utilizar soluciones completas realizadas por nuestros desarrolladores en Salesforce®️. Nos encargamos de transformar la manera en la cual los negocios interactúan con sus productos, clientes e incluso empleados.. Nos comprometemos a liberar todo el potencial de tu empresa.',
+    sizeItem: 'containerSize2x',
   },
 ];
 const content2 = [
   {
     isImgLeft: false,
-    img: 'https://i.imgur.com/UqAfVas.jpg',
-    title: 'Some Title',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur volutpat aliquet. Curabitur ultricies ornare massa sed iaculis. Vestibulum et interdum orci, id pellentesque est. Morbi id urna non metus commodo blandit. Nulla sit amet quam at ipsum maximus consectetur. Nam pellentesque enim sodales sem faucibus, rutrum volutpat purus ornare. Maecenas porta leo in nunc laoreet bibendum. Suspendisse felis magna, aliquet vitae pretium ornare, dictum nec quam. Aliquam enim ipsum, gravida vitae nunc sed, luctus efficitur metus. Donec in semper magna. Morbi nec porta diam, a molestie dui. Phasellus eget lacus eleifend, iaculis nisl tristique, tempor urna. Aliquam quis felis orci. Sed lorem diam, gravida vitae leo sed, posuere laoreet nibh.',
+    img: 'https://i.imgur.com/GCBDKuT.jpg',
+    title: 'Nuevas tecnologias',
+    text: 'Nos gustan los desafios, es por esto que optamos día a día utilziar lo último que ofrece el mercado en cuanto a tecnología. Tratamos de desarrollar proyectos inovadores que le guste a las nuevas generaciones.',
+    sizeItem: 'containerSize1x',
   },
   {
     isImgLeft: true,
-    img: 'https://i.imgur.com/UqAfVas.jpg',
-    title: 'Some Title',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur volutpat aliquet. Curabitur ultricies ornare massa sed iaculis. Vestibulum et interdum orci, id pellentesque est. Morbi id urna non metus commodo blandit. Nulla sit amet quam at ipsum maximus consectetur. Nam pellentesque enim sodales sem faucibus, rutrum volutpat purus ornare. Maecenas porta leo in nunc laoreet bibendum. Suspendisse felis magna, aliquet vitae pretium ornare, dictum nec quam. Aliquam enim ipsum, gravida vitae nunc sed, luctus efficitur metus. Donec in semper magna. Morbi nec porta diam, a molestie dui. Phasellus eget lacus eleifend, iaculis nisl tristique, tempor urna. Aliquam quis felis orci. Sed lorem diam, gravida vitae leo sed, posuere laoreet nibh.',
-  },
-  {
-    isImgLeft: false,
-    img: 'https://i.imgur.com/UqAfVas.jpg',
-    title: 'Some Title',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur volutpat aliquet. Curabitur ultricies ornare massa sed iaculis. Vestibulum et interdum orci, id pellentesque est. Morbi id urna non metus commodo blandit. Nulla sit amet quam at ipsum maximus consectetur. Nam pellentesque enim sodales sem faucibus, rutrum volutpat purus ornare. Maecenas porta leo in nunc laoreet bibendum. Suspendisse felis magna, aliquet vitae pretium ornare, dictum nec quam. Aliquam enim ipsum, gravida vitae nunc sed, luctus efficitur metus. Donec in semper magna. Morbi nec porta diam, a molestie dui. Phasellus eget lacus eleifend, iaculis nisl tristique, tempor urna. Aliquam quis felis orci. Sed lorem diam, gravida vitae leo sed, posuere laoreet nibh.',
+    img: 'https://i.imgur.com/jTkheAj.jpg',
+    title: 'Clasicas',
+    text: 'Además de trabajar con últimas tecnologias, nos gusta utilizar otras mas convencionales, nuestro modelo de negocios nos permite adaptarnos al proyecto que el cliente desee realizar. Como dice nuestro lema, \"Creando soluciones simples a problemas complejos\".',
+    sizeItem: 'containerSize1x',
   },
 ];
 /* eslint-disable react/prefer-stateless-function */
 export default class ServicesPage extends PureComponent {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <div>
@@ -277,9 +309,9 @@ export default class ServicesPage extends PureComponent {
             icon={faCog}
             size="1x"
           /><br />
-          Services
+          Servicios
         </HeaderBanner>
-        <FirstTemplate classes={styles} headerTitle="Services" content={content} />
+        <FirstTemplate classes={styles} headerTitle="Servicios" content={content} />
         <HeaderBanner classes={styles.headerDevelopmentPlataforms}>
           Our Key deveolpment Plataforms
         </HeaderBanner>

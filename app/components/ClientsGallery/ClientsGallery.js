@@ -11,11 +11,11 @@ class ClientsGallery extends Component {
         return (
             <div style={classes.container}>
                 <div style={classes.titleContainer}>
-                    <span style={classes.titleSection}>Our Clients</span>
+                    <span style={classes.titleSection}>Nuestros Clientes</span>
                 </div>
                 <div style={classes.clientsLogo}>
                     {contentClients.map((item, index) =>
-                        <div key={index}>
+                        <div key={index} style={classes.clientImgContainer}>
                             <img
                                 style={classes.clientImg}
                                 src={item.backgroundImage}
@@ -25,7 +25,7 @@ class ClientsGallery extends Component {
                     )}
                 </div>
                 <div style={classes.clientTestimonials}>
-                    <span style={classes.clientTestimonials.title}>Testimonials</span>
+                    <span style={classes.clientTestimonials.title}>Testimonios</span>
                     <div style={classes.clientTestimonials.carouselContainer}>
                         <CarouselTestimonials classes={classes.clientTestimonials.carousel} content={contentTestimonials} />
                     </div>

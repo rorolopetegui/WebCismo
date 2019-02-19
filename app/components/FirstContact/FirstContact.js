@@ -8,9 +8,9 @@ class FirstContact extends Component {
 
         return (
             <div style={classes.container}>
-                <span style={classes.title}>Questions?</span>
-                <span style={classes.subtitle}>Make your first contact</span>
-                <ContactButton classes={classes.contactButton} link="mailto:info@cismosolutions.com">Get in touch!</ContactButton>
+                <span style={classes.title}>Preguntas?</span>
+                <span style={classes.subtitle}>Haz el primer contacto</span>
+                <ContactButton classes={classes.contactButton} link="mailto:info@cismosolutions.com">Llamanos!</ContactButton>
             </div>
         );
     }

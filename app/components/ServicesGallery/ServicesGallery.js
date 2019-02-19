@@ -9,7 +9,7 @@ class ServicesGallery extends Component {
         return (
             <div style={classes.container}>
                 <div style={classes.titleContainer}>
-                    <span style={classes.titleSection}>Services</span>
+                    <span style={classes.titleSection}>Servicios</span>
                 </div>
                 {content.map((item, index) =>
                     <div key={index}>

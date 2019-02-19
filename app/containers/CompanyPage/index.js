@@ -65,7 +65,6 @@ const styles = {
   contentContainer: {
     backgroundColor: '#333333',
     width: '100%',
-    height: '650px',
     overflow: 'hidden',
     marginLeft: '5%',
   },
@@ -186,72 +185,82 @@ const styles = {
 const content = [
   {
     isImgLeft: true,
-    img: 'https://i.imgur.com/UqAfVas.jpg',
-    title: 'Some Title',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur volutpat aliquet. Curabitur ultricies ornare massa sed iaculis. Vestibulum et interdum orci, id pellentesque est. Morbi id urna non metus commodo blandit. Nulla sit amet quam at ipsum maximus consectetur. Nam pellentesque enim sodales sem faucibus, rutrum volutpat purus ornare. Maecenas porta leo in nunc laoreet bibendum. Suspendisse felis magna, aliquet vitae pretium ornare, dictum nec quam. Aliquam enim ipsum, gravida vitae nunc sed, luctus efficitur metus. Donec in semper magna. Morbi nec porta diam, a molestie dui. Phasellus eget lacus eleifend, iaculis nisl tristique, tempor urna. Aliquam quis felis orci. Sed lorem diam, gravida vitae leo sed, posuere laoreet nibh.',
+    img: 'https://i.imgur.com/rv8KeEU.png',
+    title: 'Trabajo en Equipo',
+    text: 'Quieres saber el secreto? El trabajo en equipo. Si bien contamos con un gran equipo que trabaja tanto a distancia como en la oficina diariamente, el trabajo en equipo que valoramos más es el que realizamos en conjunto contigo para alcanzar los objetivos propuestos.',
+    sizeItem: 'containerSize1x',
   },
   {
     isImgLeft: false,
-    img: 'https://i.imgur.com/UqAfVas.jpg',
-    title: 'Some Title',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur volutpat aliquet. Curabitur ultricies ornare massa sed iaculis. Vestibulum et interdum orci, id pellentesque est. Morbi id urna non metus commodo blandit. Nulla sit amet quam at ipsum maximus consectetur. Nam pellentesque enim sodales sem faucibus, rutrum volutpat purus ornare. Maecenas porta leo in nunc laoreet bibendum. Suspendisse felis magna, aliquet vitae pretium ornare, dictum nec quam. Aliquam enim ipsum, gravida vitae nunc sed, luctus efficitur metus. Donec in semper magna. Morbi nec porta diam, a molestie dui. Phasellus eget lacus eleifend, iaculis nisl tristique, tempor urna. Aliquam quis felis orci. Sed lorem diam, gravida vitae leo sed, posuere laoreet nibh.',
+    img: 'https://i.imgur.com/WeX8IKP.jpg',
+    title: 'Estrategia',
+    text: 'Conectamos las ideas de nuestros clientes con la información significativa logrando así ofrecer las mejores recomendaciones y tácticas para cumplir los objetivos del negocio.',
+    sizeItem: 'containerSize1x',
   },
   {
     isImgLeft: true,
-    img: 'https://i.imgur.com/UqAfVas.jpg',
-    title: 'Some Title',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur volutpat aliquet. Curabitur ultricies ornare massa sed iaculis. Vestibulum et interdum orci, id pellentesque est. Morbi id urna non metus commodo blandit. Nulla sit amet quam at ipsum maximus consectetur. Nam pellentesque enim sodales sem faucibus, rutrum volutpat purus ornare. Maecenas porta leo in nunc laoreet bibendum. Suspendisse felis magna, aliquet vitae pretium ornare, dictum nec quam. Aliquam enim ipsum, gravida vitae nunc sed, luctus efficitur metus. Donec in semper magna. Morbi nec porta diam, a molestie dui. Phasellus eget lacus eleifend, iaculis nisl tristique, tempor urna. Aliquam quis felis orci. Sed lorem diam, gravida vitae leo sed, posuere laoreet nibh.',
+    img: 'https://i.imgur.com/DEe9B4j.jpg',
+    title: 'Contacto Constante',
+    text: 'Ya sea a través de la creación de una página web con ecommerce habilitada y luego reportar resultados de posicionamiento o como un programa informático que necesites para facilitar tareas, en Cismo Solutions siempre mantenemos un contacto constante con nuestros clientes y nos preocupamos por satisfacer sus necesidades.',
+    sizeItem: 'containerSize2x',
+  },
+  {
+    isImgLeft: false,
+    img: 'https://i.imgur.com/Jyvc8EN.jpg',
+    title: 'Soporte Continuo',
+    text: 'Una vez creada la hermosa página web o el software completamente funcional no nos quedamos admirandola. Más bien, nos encargamos de realizar diferentes pruebas de manera que todo tu personal se sienta capaz de utilizarlo y modificarlo exitosamente. Siempre estaremos aquí si tienes alguna consulta. Y regresaremos con cualquier otra idea que nos parezca útil para ti.',
+    sizeItem: 'containerSize2x',
+  },
+  {
+    isImgLeft: true,
+    img: 'https://i.imgur.com/uvS9XgP.jpg',
+    title: 'Portafolio',
+    text: 'Desde una pequeña aplicación móvil hasta una solución empresarial completa con manejo de redes sociales incluida. Nuestro trabajo se destaca en el compromiso y la eficacia.',
+    sizeItem: 'containerSize1x',
   },
 ];
 const teamRoster = [
   {
     name: 'Danilo Carella',
     profession: 'CEO',
-    quote:
-      'Va una señora por la calle y dice: ¡¡TAXIIII!! Y dice el taxita: ¡¡SEÑORAAA!!',
-    avatar: 'https://i.imgur.com/UqAfVas.jpg',
-    avatarAlt: 'https://i.imgur.com/ib2vxCC.jpg',
-    linkedin: '/in/rodrigo-lopetegui-bb7808107/',
+    avatar: 'https://i.imgur.com/Mz7lNin.png',
+    avatarAlt: 'https://i.imgur.com/Mz7lNin.png',
+    linkedin: '/in/danilo-carella-0806a0153/',
   },
   {
     name: 'Danilo de León',
     profession: 'CEO',
-    quote:
-      '- ¿Me da un desodorante? - ¿De bolita? - No, de axila.',
-    avatar: 'https://i.imgur.com/2PhbhsT.jpg',
-    avatarAlt: 'https://i.imgur.com/UqAfVas.jpg',
-    linkedin: '/in/rodrigo-lopetegui-bb7808107/',
+    avatar: 'https://i.imgur.com/Mz7lNin.png',
+    avatarAlt: 'https://i.imgur.com/Mz7lNin.png',
+    linkedin: '/in/cismo-uruguay-6abb9117a/',
   },
   {
     name: 'Sharon Iciarte',
     profession: 'Operations',
-    quote:
-      '¿Cómo se despiden los químicos? Ácido un placer...',
-    avatar: 'https://i.imgur.com/GMu7e8u.jpg',
-    avatarAlt: 'https://i.imgur.com/2PhbhsT.jpg',
-    linkedin: '/in/rodrigo-lopetegui-bb7808107/',
+    avatar: 'https://i.imgur.com/pgLnzBZ.png',
+    avatarAlt: 'https://i.imgur.com/pgLnzBZ.png',
+    linkedin: '/in/sharon-iciarte/',
   },
   {
     name: 'Kevin Pacin',
     profession: 'Sales man',
-    quote:
-      '¿Para qué es el retrete de un spa? Spa Mear. ',
-    avatar: 'https://i.imgur.com/ib2vxCC.jpg',
-    avatarAlt: 'https://i.imgur.com/GMu7e8u.jpg',
-    linkedin: '/in/rodrigo-lopetegui-bb7808107/',
+    avatar: 'https://i.imgur.com/Mz7lNin.png',
+    avatarAlt: 'https://i.imgur.com/Mz7lNin.png',
+    linkedin: '/in/kevin-pacin-449249163/',
   },
   {
     name: 'Rodrigo Lopetegui',
     profession: 'Software Developer',
-    quote:
-      '- ¡Tío, he soñado que ganaba 300 millones como mi padre! - ¿¿¿Tu padre ha ganado 300 millones??? - ¡Qué va! ¡Él también lo sueña!',
-    avatar: 'https://i.imgur.com/ib2vxCC.jpg',
-    avatarAlt: 'https://i.imgur.com/ehChDKn.jpg',
+    avatar: 'https://i.imgur.com/Mz7lNin.png',
+    avatarAlt: 'https://i.imgur.com/Mz7lNin.png',
     linkedin: '/in/rodrigo-lopetegui-bb7808107/',
   },
 ];
 /* eslint-disable react/prefer-stateless-function */
 export default class CompanyPage extends PureComponent {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <div>
@@ -261,11 +270,11 @@ export default class CompanyPage extends PureComponent {
             icon={faUserTie}
             size="1x"
           /><br/>
-          Company
+          Empresa
         </HeaderBanner>
-        <FirstTemplate classes={styles} content={content} headerTitle={"Company"}>
+        <FirstTemplate classes={styles} content={content} headerTitle={"Empresa"}>
           <div style={styles.teamContainer}>
-            <span style={styles.titleTeam}>Meet the leadership team</span>
+            <span style={styles.titleTeam}>Conoce a nuestros equipo de lideres</span>
             {teamRoster.map((item, index) =>
               <div key={index}>
                 <ImgButton
