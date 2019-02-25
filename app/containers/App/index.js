@@ -12,9 +12,7 @@ import TopMenuCont from 'containers/TopMenuCont/Loadable';
 import FooterCont from 'containers/FooterCont/Loadable';
 import Test from 'containers/TestPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
-import { DragDropContext } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
-import GlobalStyle from '../../global-styles';
+
 
 const styles = {
   container: {
@@ -50,7 +48,6 @@ function App() {
           <Route exact path="/Test" component={Test} />
           <Route component={NotFoundPage} />
         </Switch>
-        <GlobalStyle />
       </div>
       <div style={styles.footer}>
         <FooterCont />
@@ -58,4 +55,4 @@ function App() {
     </div>
   );
 }
-export default DragDropContext(HTML5Backend)(App);
+export default App;

@@ -363,7 +363,18 @@ const styles = {
       width: '6%',
     },
     icon: {
-      margin: '1.5%',
+      position: 'absolute',
+      top: '50%',
+      left: '2%',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+    iconHover:{
+      position: 'absolute',
+      top: '50%',
+      left: '5%',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
     },
     text: {
       float: 'right',

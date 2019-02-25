@@ -29,10 +29,10 @@ class Separator extends Component {
                         className={(!hover ? "background" : " backgroundHover")}
                     ></div>
                     <FontAwesomeIcon
-                        style={classes.icon}
+                        style={(!hover ? classes.icon : classes.iconHover)}
                         icon={faArrowRight}
                         size="2x"
-                        className={(!hover ? "icon" : " iconHover")}
+                        className={"icon"}
                     />
                     <span
                         style={classes.text}

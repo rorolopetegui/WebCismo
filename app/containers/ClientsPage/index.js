@@ -3,6 +3,8 @@ import { HeaderBanner } from '../../components/Commons';
 import ClientsGallery from '../../components/ClientsGallery/ClientsGallery';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
+import ClientsContent from '../../content/ClientsContent';
+import ClientsTestimonials from '../../content/ClientsTestimonials';
 
 const styles = {
   body: {
@@ -156,51 +158,7 @@ const styles = {
     },
   },
 };
-const clientsContent = [
-  {
-    title: 'Salesforce',
-    backgroundImage: 'https://i.imgur.com/jfNWTeV.png',
-    link: '#',
-  },
-  {
-    title: 'Avesur',
-    backgroundImage: 'https://i.imgur.com/w1yXtur.png',
-    link: '#',
-  },
-  {
-    title: 'Cutcsa',
-    backgroundImage: 'https://i.imgur.com/MNcpPNV.png',
-    link: '#',
-  },
-  {
-    title: 'RadioTaxi 141',
-    backgroundImage: 'https://i.imgur.com/cul899k.png',
-    link: '#',
-  },
-];
-const clientsTestimonials = [
-  {
-    name: 'Jorge M.',
-    profession: 'Sub Gerente General Avesur SRL',
-    quote:
-      'Cuando nos vimos necesitando una página web, Cismo Solutions se encargó rápidamente en encontrar la mejor página web que refleje lo que nuestra empresa desea comunicar. Me encuentro muy satisfecho con ellos.',
-    avatar: 'https://i.imgur.com/n5TMfxY.jpg',
-  },
-  {
-    name: 'CR, Álvaro Santiago',
-    profession: 'Sub-Gerente General de Cutcsa',
-    quote:
-      'Por algunos años han brindado a nuestra Organización sus servicios de realización y programación de aplicaciones internas para mejorar el servicio de nuestra empresa y lo han cumplido en su totalidad demostrando ser una empresa con transparencia, firme y comprometida a ayudar a realizar los objetivos de sus clientes, estas características la han hecho merecedora de nuestra confianza.',
-    avatar: 'https://i.imgur.com/lwMi1Vr.jpg',
-  },
-  {
-    name: 'Néstor Muha',
-    profession: 'Vocal Radio Taxi 141',
-    quote:
-      'Radio Taxi 141 se encuentra totalmente complacida con el trabajo realizado y anhela continuar así por mucho tiempo más, tanto por su seriedad como la eficacia con la que la empresa ha prestado sus servicios.',
-    avatar: 'https://i.imgur.com/n5TMfxY.jpg',
-  },
-];
+
 
 /* eslint-disable react/prefer-stateless-function */
 export default class ClientsPage extends PureComponent {
@@ -218,7 +176,7 @@ export default class ClientsPage extends PureComponent {
           /><br />
           Nuestros clientes
         </HeaderBanner>
-        <ClientsGallery classes={styles.clientsGallery} contentClients={clientsContent} contentTestimonials={clientsTestimonials} />
+        <ClientsGallery classes={styles.clientsGallery} contentClients={ClientsContent} contentTestimonials={ClientsTestimonials} />
       </div>
     );
   }
