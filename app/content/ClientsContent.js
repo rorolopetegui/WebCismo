@@ -19,4 +19,14 @@ export default [
         backgroundImage: 'https://i.imgur.com/cul899k.png',
         link: '#',
     },
+    {
+        title: 'Expreso Tupiza',
+        backgroundImage: 'https://i.imgur.com/ZNg4eyL.png',
+        link: '#',
+    },
+    {
+        title: 'UrbanTaxi',
+        backgroundImage: 'https://i.imgur.com/I935Eyq.png',
+        link: '#',
+    },
 ];

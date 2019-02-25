@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { isAndroid, isMobile } from 'react-device-detect';
 
 const styles = {
   body: {
@@ -15,8 +16,9 @@ const styles = {
 export default class Test extends PureComponent {
   render() {
     return (
-      <div style={styles.body} onClick={() => (location.href = '/')}>
-        Test Page
+      <div>
+        Es Android: {isAndroid.toString()}<br/>
+        Es Mobile: {isMobile.toString()}<br/>
       </div>
     );
   }

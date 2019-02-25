@@ -4,19 +4,19 @@ import SendButton from './SendButton';
 import axios from 'axios';
 var Recaptcha = require('react-recaptcha');
 
-const API_PATH = 'http://localhost:81/CismoWeb/index.php';
+const API_PATH = 'http://localhost/Php_scripts/mailing.php';
 
 /* eslint-disable global-require */
 class Contact extends Component {
     state = {
-        fname: '',
-        email: '',
+        fname: 'Rodrigo',
+        email: 'rorolopetegui@gmail.com',
         reason: 'Hire',
         phone: '',
-        message: "",
+        message: "Hi there!",
         mailSent: false,
         error: null,
-        isVerified: false,
+        isVerified: true,
     };
 
     handleChangeName(event) {
