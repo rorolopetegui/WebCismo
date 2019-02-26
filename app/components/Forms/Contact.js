@@ -4,19 +4,19 @@ import SendButton from './SendButton';
 import axios from 'axios';
 var Recaptcha = require('react-recaptcha');
 
-const API_PATH = 'https://localhost:8081/index.php';
+const API_PATH = 'http://159.65.177.147:8081/index.php';
 
 /* eslint-disable global-require */
 class Contact extends Component {
     state = {
-        fname: 'Rodrigo',
-        email: 'rlopetegui',
+        fname: '',
+        email: '',
         reason: 'Hire',
         phone: '',
-        message: "Hi there",
+        message: "",
         mailSent: false,
         error: null,
-        isVerified: true,
+        isVerified: false,
     };
 
     handleChangeName(event) {
@@ -52,9 +52,10 @@ class Contact extends Component {
                     this.setState({
                         mailSent: result.data.sent
                     });
-                    console.log("Sended");
+                    console.log("Sended: " + result.data.sent);
+                    console.log(result);
                 })
-                .catch(error => {this.setState({ error: error.message }); console.log("Error");});
+                .catch(error => {this.setState({ error: error.message }); console.log("Error: " + error);});
         } else {
             if (this.state.mailSent)
                 alert("Usted ya envío un mail, refresque en caso de querer enviar otro");
