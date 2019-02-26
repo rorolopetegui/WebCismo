@@ -9,14 +9,14 @@ const API_PATH = 'https://localhost:8081/index.php';
 /* eslint-disable global-require */
 class Contact extends Component {
     state = {
-        fname: '',
-        email: '',
+        fname: 'Rodrigo',
+        email: 'rlopetegui',
         reason: 'Hire',
         phone: '',
-        message: "",
+        message: "Hi there",
         mailSent: false,
         error: null,
-        isVerified: false,
+        isVerified: true,
     };
 
     handleChangeName(event) {
