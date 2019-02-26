@@ -17,6 +17,9 @@ class Contact extends Component {
         mailSent: false,
         error: null,
         isVerified: false,
+        remarkName: false,
+        remarkEmail: false,
+        remarkMessage: false,
     };
 
     handleChangeName(event) {
@@ -38,29 +41,46 @@ class Contact extends Component {
     handleChangeMessage(event) {
         this.setState({ message: event.target.value });
     }
-
+    validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+    requiredEntry() {
+        this.setState({ remarkName: false, remarkEmail: false, remarkMessage: false, error: "" });
+        if (this.state.fname === "" || (this.state.email === "") || this.state.message === "") {
+            this.setState({ remarkName: true, remarkEmail: true, remarkMessage: true, error: "*Rellene todos los campos obligatorios" });
+            return false;
+        }
+        if (!this.validateEmail(this.state.email)) {
+            this.setState({ remarkEmail: true, error: "Ingrese un mail correcto" });
+            return false;
+        }
+        return true;
+    }
     submit(event) {
-        console.log("Sending");
-        if (this.state.isVerified && !this.state.mailSent) {
-            axios({
-                method: 'post',
-                url: `${API_PATH}`,
-                headers: { 'content-type': 'application/json' },
-                data: this.state
-            })
-                .then(result => {
-                    this.setState({
-                        mailSent: result.data.sent
-                    });
-                    console.log("Sended: " + result.data.sent);
-                    console.log(result);
+        if (this.requiredEntry()) {
+            console.log("Sending");
+            if (this.state.isVerified && !this.state.mailSent) {
+                axios({
+                    method: 'post',
+                    url: `${API_PATH}`,
+                    headers: { 'content-type': 'application/json' },
+                    data: this.state
                 })
-                .catch(error => {this.setState({ error: error.message }); console.log("Error: " + error);});
-        } else {
-            if (this.state.mailSent)
-                alert("Usted ya envío un mail, refresque en caso de querer enviar otro");
-            else
-                alert("Primero verifique que no es un robot");
+                    .then(result => {
+                        this.setState({
+                            mailSent: true
+                        });
+                        console.log("Sended: " + result.data.sent);
+                        console.log(result);
+                    })
+                    .catch(error => { this.setState({ error: error.message }); console.log("Error: " + error); });
+            } else {
+                if (this.state.mailSent)
+                    this.setState({ error: "Usted ya envío un mail, refresque en caso de querer enviar otro" });
+                else
+                    this.setState({ error: "Primero verifique que no es un robot" });
+            }
         }
     }
 
@@ -71,17 +91,18 @@ class Contact extends Component {
     }
     render() {
         const { classes } = this.props;
+        const { mailSent, remarkName, remarkEmail, remarkMessage, error } = this.state;
         return (
             <div style={classes.container}>
                 <div style={classes.containerCentered}>
                     <input
-                        style={classes.input}
+                        style={!remarkName ? classes.input : classes.inputRemarked}
                         type="text"
                         value={this.state.fname}
                         placeholder={"Mi nombre es"}
                         onChange={this.handleChangeName.bind(this)} />
                     <input
-                        style={classes.input}
+                        style={!remarkEmail ? classes.input : classes.inputRemarked}
                         type="text"
                         value={this.state.email}
                         placeholder={"Me pueden enviar un mail a"}
@@ -102,7 +123,7 @@ class Contact extends Component {
                         placeholder={"Ring me at (optional)"}
                         onChange={this.handleChangePhone.bind(this)} />
                     <textarea
-                        style={classes.inputMessage}
+                        style={!remarkMessage ? classes.inputMessage : classes.inputMessageRemarked}
                         value={this.state.message}
                         placeholder={"I got something to add"}
                         onChange={this.handleChangeMessage.bind(this)} />
@@ -112,9 +133,10 @@ class Contact extends Component {
                         verifyCallback={this.verifiedCaptcha.bind(this)}
                         style={classes.captcha}
                     />
-                    <SendButton classes={classes.button} action={this.submit.bind(this)} >
-                        Enviar
+                    <SendButton classes={classes.button} action={this.submit.bind(this)} enabled={!mailSent}>
+                        {mailSent ? "Enviado" : "Enviar"}
                     </SendButton>
+                    <span style={(remarkName || remarkEmail || remarkMessage || error !== null) ? classes.spanMessage : classes.spanMessageHidden}>{error}</span>
                 </div>
             </div>
         );

@@ -60,6 +60,17 @@ const styles = {
       fontFamily: 'Roboto',
       fontSize: '15px',
     },
+    inputRemarked: {
+      color: '#192727',
+      border: '1px solid #F6546A',
+      marginRight: '5%',
+      marginBottom: '2%',
+      width: '42.5%',
+      height: '50px',
+      paddingLeft: '8px',
+      fontFamily: 'Roboto',
+      fontSize: '15px',
+    },
     inputMessage: {
       color: '#192727',
       border: '1px solid #C0C0C0',
@@ -71,13 +82,40 @@ const styles = {
       fontFamily: 'Roboto',
       fontSize: '15px',
     },
+    inputMessageRemarked: {
+      color: '#192727',
+      border: '1px solid #F6546A',
+      marginBottom: '2%',
+      width: '90%',
+      height: '100px',
+      paddingLeft: '8px',
+      paddingTop: '8px',
+      fontFamily: 'Roboto',
+      fontSize: '15px',
+    },
     captcha: {
       marginLeft: '25px',
+    },
+    spanMessage: {
+      color: '#F6546A',
+      margin: '3%',
+      float: 'left',
+    }, 
+    spanMessageHidden: {
+      display: 'none',
     },
     button: {
       container: {
         marginTop: '15px',
         backgroundColor: '#FA5B60',
+        width: '180px',
+        height: '50px',
+        position: 'relative',
+        float: 'left',
+      },
+      containerDisable: {
+        marginTop: '15px',
+        backgroundColor: '#A39E98',
         width: '180px',
         height: '50px',
         position: 'relative',
