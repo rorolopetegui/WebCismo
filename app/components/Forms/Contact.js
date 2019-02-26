@@ -4,19 +4,19 @@ import SendButton from './SendButton';
 import axios from 'axios';
 var Recaptcha = require('react-recaptcha');
 
-const API_PATH = 'http://localhost/Php_scripts/mailing.php';
+const API_PATH = 'https://www.cismosolutions.com/Php_scripts/index.php';
 
 /* eslint-disable global-require */
 class Contact extends Component {
     state = {
-        fname: 'Rodrigo',
-        email: 'rorolopetegui@gmail.com',
+        fname: '',
+        email: '',
         reason: 'Hire',
         phone: '',
-        message: "Hi there!",
+        message: "",
         mailSent: false,
         error: null,
-        isVerified: true,
+        isVerified: false,
     };
 
     handleChangeName(event) {
@@ -40,6 +40,7 @@ class Contact extends Component {
     }
 
     submit(event) {
+        console.log("Sending");
         if (this.state.isVerified && !this.state.mailSent) {
             axios({
                 method: 'post',
@@ -51,8 +52,9 @@ class Contact extends Component {
                     this.setState({
                         mailSent: result.data.sent
                     });
+                    console.log("Sended");
                 })
-                .catch(error => this.setState({ error: error.message }));
+                .catch(error => {this.setState({ error: error.message }); console.log("Error");});
         } else {
             if (this.state.mailSent)
                 alert("Usted ya envío un mail, refresque en caso de querer enviar otro");
