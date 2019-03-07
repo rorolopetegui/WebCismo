@@ -2,6 +2,50 @@ import React from 'react';
 import { TopMenu } from '../../components';
 
 const styles = {
+  iconMobile: {
+    //float: 'right',
+    //backgroundColor: 'red',
+    //padding: '3.5%',
+    position: 'absolute',
+    right: '5%',
+    top: '15%',
+  },
+  iconMobileFixed: {
+    position: 'absolute',
+    right: '5%',
+    top: '15%',
+    color: 'white',
+  },
+  menuButtonMobile: {
+    button: {
+      width: '100%',
+      float: 'left',
+      textTransform: 'uppercase',
+      listStyleType: 'none',
+      backgroundColor: 'rgba(186,191,187,0.85)',
+    },
+    buttonHover: {
+      width: '100%',
+      float: 'left',
+      textTransform: 'uppercase',
+      listStyleType: 'none',
+      backgroundColor: 'rgba(148,152,149,0.85)',
+    },
+    link: {
+      display: 'block',
+      color: '#001433',
+      textAlign: 'center',
+      padding: '16px',
+      textDecoration: 'none',
+    },
+    linkHover: {
+      display: 'block',
+      color: '#001433',
+      textAlign: 'center',
+      padding: '16px',
+      textDecoration: 'none',
+    },
+  },
   menu: {
     listStyleType: 'none',
     paddingRight: '2%',
@@ -71,6 +115,12 @@ const styles = {
     width: '65px',
     float: 'left',
     marginLeft: '10%',
+    //marginTop: '0.5%',
+  },
+  menuLogoAltMobile: {
+    width: '65px',
+    float: 'left',
+    marginLeft: '1%',
     //marginTop: '0.5%',
   },
 };

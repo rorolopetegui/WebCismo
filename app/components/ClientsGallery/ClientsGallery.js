@@ -11,7 +11,7 @@ class ClientsGallery extends Component {
         return (
             <div style={classes.container}>
                 <div style={classes.titleContainer}>
-                    <span style={classes.titleSection}>Nuestros Clientes</span>
+                    <span style={classes.titleSection}>Clientes</span>
                 </div>
                 <div style={classes.clientsLogo}>
                     {contentClients.map((item, index) =>

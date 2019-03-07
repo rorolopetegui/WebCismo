@@ -47,11 +47,11 @@ const Footer = props => {
             />
           </MediaButton>
         </div>
+        
+        <ContactData classes={classes.footerHeader.contactData} />
       </div>
-      <div style={classes.footerBody}>
-        <div style={classes.footerBody.container}>
-          <ContactData classes={classes.footerBody.contactData} />
-        </div>
+      <div style={classes.footerBody.container}>
+        <div style={classes.footerBody.backgroundImg}></div>
       </div>
     </div>
   );

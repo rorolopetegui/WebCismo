@@ -1,21 +1,38 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './media-animation.css';
-
+import { isAndroid, isIOS } from 'react-device-detect';
 /* eslint-disable global-require */
 class ServiceMedia extends Component {
     state = {
         hover: false,
+        displayDesc: false,
+        displayDescHidden: false,
     };
     onMouseEnter = () => {
         this.setState(state => ({ hover: !state.hover }));
+        this.displayDesc();
+    };
+    displayDesc = () => {
+        if (!this.state.displayDesc) {
+            this.setState(state => ({ displayDescHidden: !state.displayDescHidden }));
+            setTimeout(() => {
+                this.setState(state => ({ displayDesc: !state.displayDesc }));
+            }, 100);
+        } else {
+            this.setState(state => ({ displayDesc: !state.displayDesc }));
+            setTimeout(() => {
+                this.setState(state => ({ displayDescHidden: !state.displayDescHidden }));
+            }, 600);
+        }
     };
     render() {
-        const { children, backgroundImage, title, description, link, withImgAlt, backgroundImageAlt } = this.props;
-        const { hover } = this.state;
+        const { children, classes, backgroundImage, title, description, link, withImgAlt, backgroundImageAlt } = this.props;
+        const { hover, displayDesc, displayDescHidden } = this.state;
+        const isMobile = (isAndroid || isIOS ? true : false);
         return (
             <div
-                className="mediaButton"
+                style={classes.mediaButton}
                 onMouseEnter={this.onMouseEnter.bind(this)}
                 onMouseLeave={this.onMouseEnter.bind(this)}
             >
@@ -24,12 +41,16 @@ class ServiceMedia extends Component {
                     className={"mediaImage" + (!hover ? "" : " mediaImageHover")}
                 />
                 <h2
-                    className={"mediaTitle" + (!hover ? "" : " mediaTitleHover")}
+                    className={isMobile ? ("mediaTitleMobile" + (!hover ? "" : " mediaTitleHover"))
+                        : ("mediaTitle" + (!hover ? "" : " mediaTitleHover"))}
                 >
                     {title}
                 </h2>
                 <span
-                    className={"mediaDesc" + (!hover ? "" : " mediaDescHover")}
+                    className={isMobile ? (!hover ? "mediaDescNone" : "mediaDescMobile" + (!displayDesc ? "" : " mediaDescHover"))
+                        : ("mediaDesc" + (!hover ? "" : " mediaDescHover"))}
+                //className={isMobile ? ("mediaDescMobile" + (!hover ? "" : " mediaDescHover"))
+                //: ("mediaDesc" + (!hover ? "" : " mediaDescHover"))}
                 >
                     {description}
                 </span>

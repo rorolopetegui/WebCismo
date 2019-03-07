@@ -9,34 +9,40 @@ class ContactData extends Component {
         const { classes } = this.props;
         return (
             <div style={classes.container}>
-                <div>
+                <div >
                     <div style={classes.containerInfo}>
-                        <MediaButton
-                            classes={classes.containerIcon}
-                            link="https://goo.gl/maps/v6XVi81tYAq"
-                            target="_blank"
-                        >
-                            <LocationOn style={classes.containerIcon} />
-                            Tiburcio Gómez 1331 of. 109, Montevideo, Uruguay
+                        <div style={classes.centerContent}>
+                            <MediaButton
+                                classes={classes.containerIcon}
+                                link="https://goo.gl/maps/v6XVi81tYAq"
+                                target="_blank"
+                            >
+                                <LocationOn style={classes.containerIcon} />
+                                Tiburcio Gómez 1331 of. 109, Montevideo, Uruguay
                         </MediaButton>
+                        </div>
                     </div>
                     <div style={classes.containerInfo}>
-                        <MediaButton
-                            classes={classes.containerIcon}
-                            link="tel:+59898469728"
-                        >
-                            <Phone style={classes.containerIcon} />
-                            Teléfono: (+598) 9846 9728
+                        <div style={classes.centerContent}>
+                            <MediaButton
+                                classes={classes.containerIcon}
+                                link="tel:+59898469728"
+                            >
+                                <Phone style={classes.containerIcon} />
+                                Teléfono: (+598) 9846 9728
                         </MediaButton>
+                        </div>
                     </div>
                     <div style={classes.containerInfo}>
-                        <MediaButton
-                            classes={classes.containerIcon}
-                            link="mailto:info@cismosolutions.com"
-                        >
-                            <Email style={classes.containerIcon} />
-                            Email: info@cismosolutions.com
+                        <div style={classes.centerContent}>
+                            <MediaButton
+                                classes={classes.containerIcon}
+                                link="mailto:info@cismosolutions.com"
+                            >
+                                <Email style={classes.containerIcon} />
+                                Email: info@cismosolutions.com
                         </MediaButton>
+                        </div>
                     </div>
                 </div>
             </div>

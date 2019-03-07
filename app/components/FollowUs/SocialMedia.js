@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './media-animation.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { isAndroid, isIOS } from 'react-device-detect';
 
 /* eslint-disable global-require */
 class SocialMedia extends Component {
@@ -15,6 +16,7 @@ class SocialMedia extends Component {
     render() {
         const { classes, link, icon } = this.props;
         const { hover } = this.state;
+        const isMobile = (isAndroid || isIOS ? true : false);
         return (
             <a
                 style={classes.container}
@@ -28,7 +30,7 @@ class SocialMedia extends Component {
                     <FontAwesomeIcon
                         style={classes.socialMediaIcon}
                         icon={icon}
-                        size="3x"
+                        size={isMobile ? "2x" : "3x"}
                     />
                 </div>
             </a>
