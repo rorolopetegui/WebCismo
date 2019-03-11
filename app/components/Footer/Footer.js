@@ -47,11 +47,15 @@ const Footer = props => {
             />
           </MediaButton>
         </div>
-        
+
         <ContactData classes={classes.footerHeader.contactData} />
       </div>
       <div style={classes.footerBody.container}>
         <div style={classes.footerBody.backgroundImg}></div>
+        <span style={classes.footerBody.copyright}>
+          Copyright © 2019 Cismo. All rights reserved.
+          <br />Designed by Cismo.
+        </span>
       </div>
     </div>
   );

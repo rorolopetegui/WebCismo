@@ -3,6 +3,7 @@ import Contact from '../../components/Forms/Contact';
 import { HeaderBanner } from '../../components/Commons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
+import { isAndroid, isIOS } from 'react-device-detect';
 
 
 const styles = {
@@ -39,7 +40,7 @@ const styles = {
     container: {
       position: 'relative',
       width: '100%',
-      height: '400px',
+      height: '500px',
     },
     containerCentered: {
       position: 'absolute',
@@ -138,23 +139,158 @@ const styles = {
     },
   },
 };
+const stylesMobile = {
+  headerSeparator: {
+    width: '100%',
+    height: '70px',
+    backgroundColor: '#F0F8FF',
+  },
+  headerBanner: {
+    container: {
+      position: 'relative',
+      width: '100%',
+      height: '200px',
+      background: 'repeating-linear-gradient(45deg, #09202F, #09202F 10px, #071722 10px, #071722 20px)',
+      textAlign: 'center',
+      marginBottom: '2%',
+    },
+    sectionTitle: {
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      color: '#CCCCCC',
+      fontFamily: 'Roboto',
+      letterSpacing: '0.2px',
+      lineHeight: '65px',
+      fontWeight: '900',
+      fontSize: '60px',
+      textTransform: 'uppercase',
+    },
+  },
+  contact: {
+    container: {
+      position: 'relative',
+      width: '100%',
+      height: '600px',
+    },
+    containerCentered: {
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      width: '90%',
+    },
+    input: {
+      color: '#192727',
+      border: '1px solid #C0C0C0',
+      marginRight: '5%',
+      marginBottom: '2%',
+      width: '100%',
+      height: '50px',
+      paddingLeft: '8px',
+      fontFamily: 'Roboto',
+      fontSize: '15px',
+    },
+    inputRemarked: {
+      color: '#192727',
+      border: '1px solid #F6546A',
+      marginRight: '5%',
+      marginBottom: '2%',
+      width: '100%',
+      height: '50px',
+      paddingLeft: '8px',
+      fontFamily: 'Roboto',
+      fontSize: '15px',
+    },
+    inputMessage: {
+      color: '#192727',
+      border: '1px solid #C0C0C0',
+      marginBottom: '2%',
+      width: '100%',
+      height: '100px',
+      paddingLeft: '8px',
+      paddingTop: '8px',
+      fontFamily: 'Roboto',
+      fontSize: '15px',
+    },
+    inputMessageRemarked: {
+      color: '#192727',
+      border: '1px solid #F6546A',
+      marginBottom: '2%',
+      width: '100%',
+      height: '100px',
+      paddingLeft: '8px',
+      paddingTop: '8px',
+      fontFamily: 'Roboto',
+      fontSize: '15px',
+    },
+    captcha: {
+      marginLeft: '25px',
+    },
+    spanMessage: {
+      color: '#F6546A',
+      margin: '3%',
+      float: 'left',
+    }, 
+    spanMessageHidden: {
+      display: 'none',
+    },
+    button: {
+      container: {
+        marginTop: '15px',
+        backgroundColor: '#FA5B60',
+        width: '180px',
+        height: '50px',
+        position: 'relative',
+        float: 'left',
+      },
+      containerDisable: {
+        marginTop: '15px',
+        backgroundColor: '#A39E98',
+        width: '180px',
+        height: '50px',
+        position: 'relative',
+      },
+      innerContent: {
+        color: 'white',
+        position: 'absolute',
+        top: '50%',
+        left: '30%',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+      },
+      /*color: 'white',
+      backgroundColor: '#00B0F0',
+      border: 'solid 2px #006990',
+      borderRadius: '5px',
+      textAlign: 'left',
+      width: '55px',
+      height: '40px',*/
+    },
+  },
+};
 /* eslint-disable react/prefer-stateless-function */
 export default class ContactPage extends PureComponent {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
   render() {
+    const isMobile = (isAndroid || isIOS ? true : false);
     return (
       <div>
-        <div style={styles.headerSeparator} />
-        <HeaderBanner classes={styles.headerBanner}>
+        <div style={isMobile ? stylesMobile.headerSeparator : styles.headerSeparator} />
+        <HeaderBanner classes={isMobile ? stylesMobile.headerBanner : styles.headerBanner}>
           <FontAwesomeIcon
             icon={faMailBulk}
             size="1x"
           /><br />
-          Haz tu primer contacto!
+          {isMobile && <span>Contacto</span>}
+          {!isMobile && <span>Haz tu primer contacto!</span>}
         </HeaderBanner>
-        <Contact classes={styles.contact} />
+        <Contact classes={isMobile ? stylesMobile.contact : styles.contact} />
       </div>
     );
   }

@@ -17,6 +17,9 @@
 	transition: all 1s ease;
 	z-index:-1;
 }	
+.mediaDisplayNone{
+	display: none;
+}
 .mediaTitle{
 	z-index:1;
 	opacity: 0;
@@ -41,6 +44,17 @@
   	transform: translate(0px, -50px); /* Standard syntax */
 }
 .mediaDesc{
+	opacity: 0;
+	-webkit-transition: all 0.6s ease;
+	-moz-transition: all 0.6s ease;
+	-o-transition: all 0.6s ease;
+	-ms-transition: all 0.6s ease;
+	transition: all 0.6s ease;
+	-ms-transform: translate(0px, 0px); /* IE 9 */
+  	-webkit-transform: translate(0px, 0px); /* Safari */
+  	transform: translate(0px, 0px); /* Standard syntax */
+}
+.mediaDescMobile{
 	opacity: 0;
 	-webkit-transition: all 0.6s ease;
 	-moz-transition: all 0.6s ease;

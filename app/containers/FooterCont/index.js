@@ -83,7 +83,7 @@ const styles = {
     backgroundColor: 'blue',
     container: {
       width: '100%',
-      height: '50px',
+      height: '30px',
       float: 'left',
       position: 'relative',
       //backgroundColor:'black',
@@ -91,9 +91,14 @@ const styles = {
     backgroundImg: {
       position: 'absolute',
       width: '100%',
-      height: '50px',
+      height: '30px',
       backgroundColor: 'rgba(0,0,0, 0.7)',
       zIndex: '-1000',
+    },
+    copyright:{
+      float:'right',
+      fontSize: '10px',
+      textAlign:'right',
     },
   },
 };

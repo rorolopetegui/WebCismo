@@ -127,7 +127,6 @@ const styles = {
       right: 0,
       transform: 'rotate(-90deg)',
       transformOrigin: '100% 100%',
-      lineHeight: '35px',
     },
     clientsLogo: {
       width: '60%',

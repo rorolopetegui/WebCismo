@@ -33,12 +33,12 @@ const styles = {
   },
 };
 function App() {
-  if(isAndroid || isIOS){
+  /*if(isAndroid || isIOS){
     return <div>
       <h1>Estamos en mantenimiento</h1>
       <h3>Estamos trabajo para traer la mejor experiencia para vos. Por favor visitá www.cismosolutions.com desde una PC.</h3>
     </div>
-  }
+  }*/
   return (
     <div style={styles.container} >
       <div style={styles.header}>
