@@ -15,6 +15,7 @@ const styles = {
     backgroundColor: '#022a31',
     position: 'relative',
     containerInfo: {
+      // backgroundColor: 'red',
       width: '60%',
       position: 'absolute',
       top: '20%',
@@ -24,14 +25,16 @@ const styles = {
     },
     containerIcon: {
       button: {
+        width:'10%',
         color: '#4D696E',
         float: 'left',
-        marginLeft: '21%',
+        marginLeft: '17.5%',
         textDecoration: 'none',
       },
       buttonHover: {
+        width:'10%',
         float: 'left',
-        marginLeft: '21%',
+        marginLeft: '17.5%',
         color: '#088DA5',
         textDecoration: 'none',
       },
@@ -86,7 +89,6 @@ const styles = {
       height: '30px',
       float: 'left',
       position: 'relative',
-      //backgroundColor:'black',
     },
     backgroundImg: {
       position: 'absolute',
