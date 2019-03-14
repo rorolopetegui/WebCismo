@@ -14,7 +14,7 @@ const styles = {
   },
   headerSeparator: {
     width: '100%',
-    height: '70px',
+    height: '100px',
     backgroundColor: '#F0F8FF',
   },
   headerBanner: {
