@@ -4,7 +4,7 @@ import SendButton from './SendButton';
 import axios from 'axios';
 var Recaptcha = require('react-recaptcha');
 
-const API_PATH = 'http://159.65.177.147:8081/index.php';
+const API_PATH = 'https://cismosolutions.com/api/index.php';
 
 /* eslint-disable global-require */
 class Contact extends Component {

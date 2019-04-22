@@ -11,13 +11,13 @@ class ContactCard extends Component {
                 <div style={classes.overlayVideo}></div>
                 {!isMobile &&
                     <video style={classes.backgroundVideo} loop autoPlay muted>
-                        <source src="http://159.65.177.147:8081/videos/Typing+Dark.mp4" type="video/webm" />
+                        <source src="https://cismosolutions.com/api/videos/Typing+Dark.mp4" type="video/webm" />
                         Your browser does not support the video tag.
                     </video>
                 }
                 {isMobile &&
                     <video style={classes.backgroundVideo} loop autoPlay muted>
-                        <source src="http://159.65.177.147:8081/videos/Typing+Dark+Portrait.mp4" type="video/webm" />
+                        <source src="https://cismosolutions.com/api/videos/Typing+Dark+Portrait.mp4" type="video/webm" />
                         Your browser does not support the video tag.
                     </video>
                 }
