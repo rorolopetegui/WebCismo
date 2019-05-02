@@ -13,7 +13,7 @@ import FooterCont from 'containers/FooterCont/Loadable';
 import Test from 'containers/TestPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import { isAndroid, isIOS } from 'react-device-detect';
-
+import ReactGA from 'react-ga';
 
 const styles = {
   container: {
@@ -32,6 +32,7 @@ const styles = {
     //backgroundColor: 'red',
   },
 };
+var init = false;
 function App() {
   /*if(isAndroid || isIOS){
     return <div>
@@ -39,6 +40,11 @@ function App() {
       <h3>Estamos trabajo para traer la mejor experiencia para vos. Por favor visitá www.cismosolutions.com desde una PC.</h3>
     </div>
   }*/
+  if (!init) {
+    ReactGA.initialize('UA-112302648-1');
+    console.log("Initialized GA");
+    init = true;
+  }
   return (
     <div style={styles.container} >
       <div style={styles.header}>

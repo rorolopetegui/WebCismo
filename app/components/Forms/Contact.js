@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SendButton from './SendButton';
 import axios from 'axios';
+import ReactGA from 'react-ga';
+
 var Recaptcha = require('react-recaptcha');
 
 const API_PATH = 'https://cismosolutions.com/api/index.php';
@@ -73,14 +75,24 @@ class Contact extends Component {
                         });
                         console.log("Sended: " + result.data.sent);
                         console.log(result);
+                        ReactGA.pageview("/Contact-Sended")
                     })
-                    .catch(error => { this.setState({ error: error.message }); console.log("Error: " + error); });
+                    .catch(error => { 
+                        this.setState({ error: error.message }); 
+                        console.log("Error: " + error); 
+                        ReactGA.pageview("/Contact-Error-Server")
+                    });
             } else {
-                if (this.state.mailSent)
+                if (this.state.mailSent) {
                     this.setState({ error: "Usted ya envío un mail, refresque en caso de querer enviar otro" });
-                else
+                    ReactGA.pageview("/Contact-Error-TryingSendAgain")
+                } else {
                     this.setState({ error: "Primero verifique que no es un robot" });
+                    ReactGA.pageview("/Contact-Error-Captcha")
+                }
             }
+        }else{
+            ReactGA.pageview("/Contact-Error-Fields")
         }
     }
 
@@ -89,6 +101,7 @@ class Contact extends Component {
             this.setState({ isVerified: true });
         }
     }
+    
     render() {
         const { classes } = this.props;
         const { mailSent, remarkName, remarkEmail, remarkMessage, error } = this.state;
