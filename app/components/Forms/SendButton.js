@@ -19,7 +19,7 @@ class SendButton extends Component {
                 style={enabled ? classes.container : classes.containerDisable}
                 onMouseEnter={this.onMouseEnter.bind(this)}
                 onMouseLeave={this.onMouseEnter.bind(this)}
-                onClick={action}
+                onClick={enabled ? action : () => {}}
                 className={enabled ? (hover ? "buttonHover" : "button") : ""}
             >
                 <span style={classes.innerContent}>{children}</span>

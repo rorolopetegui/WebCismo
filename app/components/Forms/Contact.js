@@ -146,7 +146,7 @@ class Contact extends Component {
                         verifyCallback={this.verifiedCaptcha.bind(this)}
                         style={classes.captcha}
                     />
-                    <SendButton classes={classes.button} action={this.submit.bind(this)} enabled={true}>
+                    <SendButton classes={classes.button} action={this.submit.bind(this)} enabled={mailSent ? false : true}>
                         Log In
                     </SendButton>
                     <span style={(remarkName || remarkEmail || remarkMessage || error !== null) ? classes.spanMessage : classes.spanMessageHidden}>{error}</span>
