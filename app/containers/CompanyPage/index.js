@@ -462,7 +462,7 @@ export default class CompanyPage extends PureComponent {
         </HeaderBanner>
         <FirstTemplate classes={!isMobile ? styles : stylesMobile} content={content} headerTitle={"Vision"}>
           <div style={!isMobile ? styles.teamContainer : stylesMobile.teamContainer}>
-            <span style={!isMobile ? styles.titleTeam : stylesMobile.titleTeam}>Conoce a nuestros equipo de lideres</span>
+            <span style={!isMobile ? styles.titleTeam : stylesMobile.titleTeam}>Conoce a nuestro equipo</span>
             {teamRoster.map((item, index) =>
               <div key={index}>
                 <ImgButton

@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './styles.css';
 
 /* eslint-disable global-require */
 const HeaderBanner = props => {
     const { classes, children } = props;
     return (
-        <div style={classes.container} className="backgroundPattern">
+        <div style={classes.container}>
            <span style={classes.sectionTitle}>{children}</span>
         </div>
     );

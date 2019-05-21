@@ -133,12 +133,12 @@ class Contact extends Component {
                         style={classes.input}
                         type="text"
                         value={this.state.phone}
-                        placeholder={"Ring me at (optional)"}
+                        placeholder={"Llámenme a (optional)"}
                         onChange={this.handleChangePhone.bind(this)} />
                     <textarea
                         style={!remarkMessage ? classes.inputMessage : classes.inputMessageRemarked}
                         value={this.state.message}
-                        placeholder={"I got something to add"}
+                        placeholder={"Tengo que agregar algo"}
                         onChange={this.handleChangeMessage.bind(this)} />
                     <Recaptcha
                         sitekey="6LcVOJIUAAAAAMhET3rdbFoTm4oUwTFro9peeTWB"
@@ -147,7 +147,7 @@ class Contact extends Component {
                         style={classes.captcha}
                     />
                     <SendButton classes={classes.button} action={this.submit.bind(this)} enabled={mailSent ? false : true}>
-                        Log In
+                        Enviar
                     </SendButton>
                     <span style={(remarkName || remarkEmail || remarkMessage || error !== null) ? classes.spanMessage : classes.spanMessageHidden}>{error}</span>
                 </div>

@@ -312,7 +312,7 @@ const styles = {
     contactButton: {
       container: {
         margin: '0',
-        backgroundColor: '#66A3A3',
+        backgroundColor: '#05697B',
         position: 'absolute',
         top: '50%',
         left: '50%',
@@ -320,7 +320,7 @@ const styles = {
         transform: 'translate(-50%, -50%)',
         width: '150px',
         height: '50px',
-        borderRadius: '4%',
+        borderRadius: '16px',
         borderBottom: '3px solid #335151',
       },
       innerContent: {

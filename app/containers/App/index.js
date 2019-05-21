@@ -7,6 +7,7 @@ import CompanyPage from 'containers/CompanyPage/Loadable';
 import ContactPage from 'containers/ContactPage/Loadable';
 import JobsPage from 'containers/JobsPage/Loadable';
 import ServicesPage from 'containers/ServicesPage/Loadable';
+import OffersPage from 'containers/OffersPage/Loadable';
 //Import other containers
 import TopMenuCont from 'containers/TopMenuCont/Loadable';
 import FooterCont from 'containers/FooterCont/Loadable';
@@ -58,6 +59,7 @@ function App() {
           <Route exact path="/Contact" component={ContactPage} />
           <Route exact path="/Jobs" component={JobsPage} />
           <Route exact path="/Services" component={ServicesPage} />
+          <Route exact path="/Offers" component={OffersPage} />
           <Route exact path="/Test" component={Test} />
           <Route component={NotFoundPage} />
         </Switch>

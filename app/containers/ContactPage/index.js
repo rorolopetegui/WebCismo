@@ -108,7 +108,7 @@ const styles = {
     button: {
       container: {
         marginTop: '15px',
-        backgroundColor: '#FA5B60',
+        backgroundColor: '#05697B',
         width: '180px',
         height: '50px',
         position: 'relative',
@@ -129,13 +129,6 @@ const styles = {
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
       },
-      /*color: 'white',
-      backgroundColor: '#00B0F0',
-      border: 'solid 2px #006990',
-      borderRadius: '5px',
-      textAlign: 'left',
-      width: '55px',
-      height: '40px',*/
     },
   },
 };
@@ -241,7 +234,7 @@ const stylesMobile = {
     button: {
       container: {
         marginTop: '15px',
-        backgroundColor: '#FA5B60',
+        backgroundColor: '#05697B',
         width: '180px',
         height: '50px',
         position: 'relative',
@@ -262,13 +255,6 @@ const stylesMobile = {
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
       },
-      /*color: 'white',
-      backgroundColor: '#00B0F0',
-      border: 'solid 2px #006990',
-      borderRadius: '5px',
-      textAlign: 'left',
-      width: '55px',
-      height: '40px',*/
     },
   },
 };
