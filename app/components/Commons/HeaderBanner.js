@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+//This import is used in others components, need to move it
+import './styles.css';
 
 /* eslint-disable global-require */
 const HeaderBanner = props => {

@@ -26,10 +26,10 @@ class ContactData extends Component {
                         <div style={classes.centerContent}>
                             <MediaButton
                                 classes={classes.containerIcon}
-                                link="tel:+59898469728"
+                                link="tel:+59892308380"
                             >
                                 <Phone style={classes.containerIcon} />
-                                Teléfono: (+598) 9846 9728
+                                Teléfono: (+598) 9230 8380
                         </MediaButton>
                         </div>
                     </div>

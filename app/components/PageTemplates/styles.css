@@ -1,0 +1,15 @@
+.alignLeft{
+    float: left;
+}
+.alignRight{
+    float: right;
+}
+.containerSize1x{
+    height: 250px;
+}
+.containerSize2x{
+    height: 350px;
+}
+.containerSize3x{
+    height: 450px;
+}

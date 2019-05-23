@@ -41,7 +41,7 @@ FirstTemplate.propTypes = {
     children: PropTypes.node,
     classes: PropTypes.object.isRequired,
     headerTitle: PropTypes.string.isRequired,
-    content: PropTypes.object.isRequired
+    content: PropTypes.array.isRequired
 };
 
 export default FirstTemplate;
