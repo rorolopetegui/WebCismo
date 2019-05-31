@@ -348,7 +348,7 @@ const offers = [
       id: 0,
       title: 'One Page - Básica',
       name: 'Landing Page',
-      price: '$6000',
+      price: 'U$S 195',
       services: [
           {
               name: 'Panel de administrador de contenido',
@@ -380,7 +380,7 @@ const offers = [
       id: 1,
       title: 'Redes - Básica',
       name: 'Redes',
-      price: '$6000',
+      price: 'U$S 195',
       services: [
           {
               name: 'Manejo e Implementación de Redes Sociales',
