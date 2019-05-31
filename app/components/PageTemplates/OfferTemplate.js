@@ -19,7 +19,7 @@ class FirstTemplate extends Component {
                     {offers.map((item, index) =>
                         <div key={index} style={classes.offer} >
                             <h2 style={classes.offer.title}>{item.title}</h2>
-                            <span style={classes.offer.price}>{item.price}<span style={classes.offer.priceIva}> +iva*</span></span>
+                            <span style={classes.offer.price}>{item.price}<span style={classes.offer.priceIva}> iva inc.*</span></span>
                             {item.services.map((service, iService) =>
                                 <div key={iService} style={classes.offer.descService}>
                                     <span style={classes.offer.nameService}>{service.name}</span>
