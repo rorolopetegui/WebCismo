@@ -4,6 +4,7 @@ import { HeaderBanner } from '../../components/Commons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
 import { isAndroid, isIOS } from 'react-device-detect';
+import { Helmet } from "react-helmet";
 
 
 const styles = {
@@ -101,7 +102,7 @@ const styles = {
       color: '#F6546A',
       margin: '3%',
       float: 'left',
-    }, 
+    },
     spanMessageHidden: {
       display: 'none',
     },
@@ -227,7 +228,7 @@ const stylesMobile = {
       color: '#F6546A',
       margin: '3%',
       float: 'left',
-    }, 
+    },
     spanMessageHidden: {
       display: 'none',
     },
@@ -267,6 +268,10 @@ export default class ContactPage extends PureComponent {
     const isMobile = (isAndroid || isIOS ? true : false);
     return (
       <div>
+        <Helmet>
+          <title>Contacto - Cismo Solutions</title>
+          <meta name="description" content="Solicita tu presupuesto sin costo!" />
+        </Helmet>
         <div style={isMobile ? stylesMobile.headerSeparator : styles.headerSeparator} />
         <HeaderBanner classes={isMobile ? stylesMobile.headerBanner : styles.headerBanner}>
           <FontAwesomeIcon

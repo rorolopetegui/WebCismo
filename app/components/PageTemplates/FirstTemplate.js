@@ -23,7 +23,7 @@ class FirstTemplate extends Component {
                             </div>
                             <div style={classes.textContainer} className={!item.isImgLeft ? "alignLeft" : "alignRight"}>
                                 <div style={classes.textContainerCentered}>
-                                    <span style={classes.textTitle}>{item.title}</span>
+                                    <h1 style={classes.textTitle}>{item.title}</h1>
                                     <span style={classes.textDesc}>{item.text}</span>
                                 </div>
                             </div>

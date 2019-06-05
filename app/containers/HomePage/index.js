@@ -1,6 +1,7 @@
 import React from 'react';
 import { HomeComponent } from '../../components';
 import { isAndroid, isIOS } from 'react-device-detect';
+import { Helmet } from "react-helmet";
 
 const imgBackgroundFollowUs = 'https://i.imgur.com/criGPWa.png';
 const styles = {
@@ -35,7 +36,7 @@ const styles = {
       fontSize: '80px',
       zIndex: '1000',
       position: 'absolute',
-      top: '25%',
+      top: '16%',
       left: '5%',
     },
     subtitle: {
@@ -47,7 +48,7 @@ const styles = {
       fontSize: '20px',
       zIndex: '1000',
       position: 'absolute',
-      top: '50%',
+      top: '48%',
       left: '5%',
     },
     contact: {
@@ -362,7 +363,7 @@ const styles = {
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
     },
-    iconHover:{
+    iconHover: {
       position: 'absolute',
       top: '50%',
       left: '5%',
@@ -746,7 +747,7 @@ const stylesMobile = {
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
     },
-    iconHover:{
+    iconHover: {
       position: 'absolute',
       top: '50%',
       left: '7%',
@@ -774,7 +775,13 @@ export default class HomePage extends React.PureComponent {
   render() {
     const isMobile = (isAndroid || isIOS ? true : false);
     return (
-      <HomeComponent classes={!isMobile ? styles : stylesMobile} />
+      <div>
+        <Helmet>
+          <title>Cismo Solutions</title>
+          <meta name="description" content="Cismo Solutions ¡Creamos soluciones simples a problemas complejos! Sofware, Apps, Marketing digital. Lo que buscas, lo tenemos. Páginas web y eCommerce." />
+        </Helmet>
+        <HomeComponent classes={!isMobile ? styles : stylesMobile} />
+      </div>
     );
   }
 }

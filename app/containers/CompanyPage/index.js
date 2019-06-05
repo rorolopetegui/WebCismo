@@ -7,6 +7,7 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faUserTie } from '@fortawesome/free-solid-svg-icons';
 import MediaButton from '../../components/MenuComps/MediaButton';
 import { isAndroid, isIOS } from 'react-device-detect';
+import { Helmet } from "react-helmet";
 
 const styles = {
   body: {
@@ -452,12 +453,16 @@ export default class CompanyPage extends PureComponent {
     const isMobile = (isAndroid || isIOS ? true : false);
     return (
       <div>
+        <Helmet>
+          <title>Nosotros - Cismo Solutions</title>
+          <meta name="description" content="¡Tenemos las Soluciones Informáticas que necesitas! Desarrollo de software, Apps y Páginas Web. Adaptados a las Necesidades de tu Empresa." />
+        </Helmet>
         <div style={!isMobile ? styles.headerSeparator : stylesMobile.headerSeparator} />
         <HeaderBanner classes={!isMobile ? styles.headerBanner : stylesMobile.headerBanner}>
           <FontAwesomeIcon
             icon={faUserTie}
             size="1x"
-          /><br/>
+          /><br />
           Empresa
         </HeaderBanner>
         <FirstTemplate classes={!isMobile ? styles : stylesMobile} content={content} headerTitle={"Vision"}>

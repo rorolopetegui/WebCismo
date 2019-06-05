@@ -6,6 +6,7 @@ import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import ClientsContent from '../../content/ClientsContent';
 import ClientsTestimonials from '../../content/ClientsTestimonials';
 import { isAndroid, isIOS } from 'react-device-detect';
+import { Helmet } from "react-helmet";
 
 const styles = {
   body: {
@@ -334,6 +335,10 @@ export default class ClientsPage extends PureComponent {
     const isMobile = (isAndroid || isIOS ? true : false);
     return (
       <div>
+        <Helmet>
+          <title>Clientes - Cismo Solutions</title>
+          <meta name="description" content="¡Nuestros Clientes nos recomiendan! Porque somos la solución digital que necesitas. Marketing, desarrollo de software, Apps ¡Todo en un solo lugar!" />
+        </Helmet>
         <div style={isMobile ? stylesMobile.headerSeparator : styles.headerSeparator} />
         <HeaderBanner classes={isMobile ? stylesMobile.headerBanner : styles.headerBanner}>
           <FontAwesomeIcon

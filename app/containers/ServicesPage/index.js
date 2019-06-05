@@ -4,6 +4,7 @@ import { HeaderBanner } from '../../components/Commons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { isAndroid, isIOS } from 'react-device-detect';
+import { Helmet } from "react-helmet";
 
 const styles = {
   headerSeparator: {
@@ -540,6 +541,10 @@ export default class ServicesPage extends PureComponent {
     const isMobile = (isAndroid || isIOS ? true : false);
     return (
       <div>
+        <Helmet>
+          <title>Servicios - Cismo Solutions</title>
+          <meta name="description" content="¿Te gustaría que tu marca sea líder en el mercado? Somos lo que necesitas, Marketing digital, desarrollo de apps, eCommerce y diseño web." />
+        </Helmet>
         <div style={isMobile ? stylesMobile.headerSeparator : styles.headerSeparator} />
         <HeaderBanner classes={isMobile ? stylesMobile.headerBanner : styles.headerBanner}>
           <FontAwesomeIcon
