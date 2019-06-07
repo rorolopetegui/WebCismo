@@ -27,7 +27,7 @@ class ContactCard extends Component {
                             <br />Además, ayudamos a clientes con páginas web y ecommerce a desarrollar sus marcas a través del marketing digital.
                     Muchos de nuestros clientes a largo plazo deciden solicitar la creación de una página web y crecen a través de un proceso continuo de posicionamiento utilizando SEO & Google Ads/PCP
                 </h3>
-                <h2 style={classes.contact}>Contactenos - (+598) 9846 9728 o vía mail: info@cismosolutions.com</h2>
+                <h2 style={classes.contact}>Contactenos - (+598) 9230 8380 o vía mail: info@cismosolutions.com</h2>
             </div>
         );
     }
