@@ -513,6 +513,14 @@ const content = [
     text: 'Nos consideramos amantes del sistema que implementa Salesforce®️, es por eso que orientamos a las organizaciones a planear, diseñar y utilizar soluciones completas realizadas por nuestros desarrolladores en Salesforce®️. Nos encargamos de transformar la manera en la cual los negocios interactúan con sus productos, clientes e incluso empleados.. Nos comprometemos a liberar todo el potencial de tu empresa.',
     sizeItem: 'containerSize2x',
   },
+  {
+    isImgLeft: false,
+    img: 'https://i.imgur.com/2eLxo3p.jpg',
+    imgMobile: 'https://i.imgur.com/pqiEs9g.jpg',
+    title: 'Outsourcing',
+    text: 'Contamos con un amplio catalogo de recursos de diferentes tipos para tu empresa, nuestros filtros son brillantes, lo cual hace que al momento de brindarte un candidato este se adapte de la mejor forma al empleo.',
+    sizeItem: 'containerSize2x',
+  },
 ];
 const content2 = [
   {

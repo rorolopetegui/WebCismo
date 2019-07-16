@@ -35,9 +35,9 @@ export default [
         link: '#',
     },
     {
-        title: 'Nuestro Soporte',
+        title: 'Outsourcing',
         description:
-            'Siempre estaremos aquí para ti.',
+            'Nos dedicamos a buscar los mejores talentos para tu empresa, contamos con una amplia base de datos, de donde seleccionamos y recomendamos al mejor.',
         backgroundImage: 'https://i.imgur.com/IP4vXoM.png',
         link: '#',
     },

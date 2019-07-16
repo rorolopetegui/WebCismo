@@ -18,7 +18,7 @@ class ContactData extends Component {
                                 target="_blank"
                             >
                                 <LocationOn style={classes.containerIcon} />
-                                Tiburcio Gómez 1331 of. 109, Montevideo, Uruguay
+                                Tiburcio Gómez 1329 of. 109, Montevideo, Uruguay
                         </MediaButton>
                         </div>
                     </div>

@@ -1,13 +1,6 @@
 
 export default [
     {
-        name: 'Jorge M.',
-        profession: 'Gerente comercial, Avesur SRL',
-        quote:
-            'Cuando nos vimos necesitando una página web, Cismo Solutions se encargó rápidamente en encontrar la mejor página web que refleje lo que nuestra empresa desea comunicar. Me encuentro muy satisfecho con ellos.',
-        avatar: 'https://i.imgur.com/6VeG3D5.png',
-    },
-    {
         name: 'Ernesto Guzman',
         profession: 'Asesor comercial, Expreso Tupiza, Bolivia',
         quote:
@@ -20,5 +13,12 @@ export default [
         quote:
             'Urban Taxi se encuentra totalmente complacida con el trabajo realizado y anhela continuar así por mucho tiempo más, tanto por su seriedad como la eficacia con la que la empresa ha prestado sus servicios. Brindamos nuestros servicios a 2000 taxis en Ciudad de Guatemala!',
         avatar: 'https://i.imgur.com/qQFfMHH.png',
+    },
+    {
+        name: 'Jorge M.',
+        profession: 'Gerente comercial, Avesur SRL',
+        quote:
+            'Cuando nos vimos necesitando de un sistema que lograra administrar todos los puntos de nuestra empresa, Cismo Solutions se encargó rápidamente en encontrar la mejor solución que se adaptara a la realidad de nuestra empresa. Me encuentro muy satisfecho con ellos.',
+        avatar: 'https://i.imgur.com/IrMD2hf.png',
     },
 ];
