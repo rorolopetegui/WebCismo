@@ -10,6 +10,10 @@ import ClientsContent from '../../content/ClientsContent';
 import ClientsTestimonials from '../../content/ClientsTestimonials';
 import ServicesContent from '../../content/Services';
 
+//Content
+import CardContentEnglish from '../../content/English/CardContentEnglish';
+import CardContent from '../../content/CardContent';
+
 
 
 /* eslint-disable global-require */
@@ -17,7 +21,7 @@ const HomeComponent = props => {
     const { classes } = props;
     return (
         <div>
-            <ContactCard classes={classes.contactCard} />
+            <ContactCard content={""} classes={classes.contactCard} />
             <ServicesGallery classes={classes.servicesGallery} content={ServicesContent} />
             <Separator classes={classes.separator} text="Más Servicios" link="/Services" />
             <ClientsGallery classes={classes.clientsGallery} contentClients={ClientsContent} contentTestimonials={ClientsTestimonials} />
