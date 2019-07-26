@@ -1,4 +1,7 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { initialState } from '../../reducers/pageState'
 import Contact from '../../components/Forms/Contact';
 import { HeaderBanner } from '../../components/Commons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -260,16 +263,17 @@ const stylesMobile = {
   },
 };
 /* eslint-disable react/prefer-stateless-function */
-export default class ContactPage extends PureComponent {
+class ContactPage extends PureComponent {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
   render() {
     const isMobile = (isAndroid || isIOS ? true : false);
+    const { englishLang } = this.props;
     return (
       <div>
         <Helmet>
-          <title>Contacto - Cismo Solutions</title>
+          <title>{englishLang ? "Contact" : "Contacto"} - Cismo Solutions</title>
           <meta name="description" content="Solicita tu presupuesto sin costo!" />
         </Helmet>
         <div style={isMobile ? stylesMobile.headerSeparator : styles.headerSeparator} />
@@ -278,11 +282,28 @@ export default class ContactPage extends PureComponent {
             icon={faMailBulk}
             size="1x"
           /><br />
-          {isMobile && <span>Contacto</span>}
-          {!isMobile && <span>Haz tu primer contacto!</span>}
+          {isMobile && <span>{englishLang ? "Contact" : "Contacto"}</span>}
+          {!isMobile && <span>{englishLang ? "Make the first contact!" : "Haz tu primer contacto!"}</span>}
         </HeaderBanner>
-        <Contact classes={isMobile ? stylesMobile.contact : styles.contact} />
+        <Contact engLang={englishLang} classes={isMobile ? stylesMobile.contact : styles.contact} />
       </div>
     );
   }
 }
+ContactPage.propTypes = {
+  englishLang: PropTypes.bool.isRequired,
+}
+
+const mapStateToProps = (state) => {
+  const p = state.get('pageState', initialState)
+  return {
+    englishLang: p.englishLang,
+  }
+}
+
+
+
+export default connect(
+  mapStateToProps,
+  null,
+)(ContactPage)

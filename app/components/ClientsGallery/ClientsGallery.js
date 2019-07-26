@@ -7,11 +7,11 @@ import CarouselTestimonials from '../Carousel/CarouselTestimonials';
 /* eslint-disable global-require */
 class ClientsGallery extends Component {
     render() {
-        const { classes, contentClients, contentTestimonials } = this.props;
+        const { classes, contentClients, contentTestimonials, engLang } = this.props;
         return (
             <div style={classes.container}>
                 <div style={classes.titleContainer}>
-                    <span style={classes.titleSection}>Clientes</span>
+                    <span style={classes.titleSection}>{engLang ? "Clients" : "Clientes"}</span>
                 </div>
                 <div style={classes.clientsLogo}>
                     {contentClients.map((item, index) =>
@@ -39,6 +39,7 @@ ClientsGallery.propTypes = {
     classes: PropTypes.object.isRequired,
     contentClients: PropTypes.array.isRequired,
     contentTestimonials: PropTypes.array.isRequired,
+    engLang: PropTypes.bool.isRequired
 };
 
 export default ClientsGallery;

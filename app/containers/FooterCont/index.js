@@ -1,4 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { initialState } from '../../reducers/pageState'
 import { Footer } from '../../components';
 import BackgroundFooter from '../../images/Footer.png';
 
@@ -106,8 +109,26 @@ const styles = {
 };
 
 /* eslint-disable react/prefer-stateless-function */
-export default class FooterCont extends React.PureComponent {
+class FooterCont extends React.PureComponent {
   render() {
-    return <Footer classes={styles} />;
+    return <Footer engLang={this.props.englishLang} classes={styles} />;
   }
 }
+
+FooterCont.propTypes = {
+  englishLang: PropTypes.bool.isRequired,
+}
+
+const mapStateToProps = (state) => {
+  const p = state.get('pageState', initialState)
+  return {
+    englishLang: p.englishLang,
+  }
+}
+
+
+
+export default connect(
+  mapStateToProps,
+  null,
+)(FooterCont)

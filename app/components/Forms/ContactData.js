@@ -6,7 +6,7 @@ import MediaButton from '../MenuComps/MediaButton';
 /* eslint-disable global-require */
 class ContactData extends Component {
     render() {
-        const { classes } = this.props;
+        const { classes, engLang } = this.props;
         return (
             <div style={classes.container}>
                 <div >
@@ -29,7 +29,7 @@ class ContactData extends Component {
                                 link="tel:+59892308380"
                             >
                                 <Phone style={classes.containerIcon} />
-                                Teléfono: (+598) 9230 8380
+                                {engLang ? "Phone" : "Teléfono"}: (+598) 9230 8380
                         </MediaButton>
                         </div>
                     </div>
@@ -40,7 +40,7 @@ class ContactData extends Component {
                                 link="mailto:info@cismosolutions.com"
                             >
                                 <Email style={classes.containerIcon} />
-                                Email: info@cismosolutions.com
+                                Mail: info@cismosolutions.com
                         </MediaButton>
                         </div>
                     </div>
@@ -53,6 +53,7 @@ class ContactData extends Component {
 /* eslint-enable global-require */
 ContactData.propTypes = {
     classes: PropTypes.object.isRequired,
+    engLang: PropTypes.bool,
 };
 
 export default ContactData;

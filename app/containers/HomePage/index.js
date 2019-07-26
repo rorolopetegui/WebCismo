@@ -1,9 +1,12 @@
-import React from 'react';
-import { HomeComponent } from '../../components';
-import { isAndroid, isIOS } from 'react-device-detect';
-import { Helmet } from "react-helmet";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { initialState } from '../../reducers/pageState'
+import { HomeComponent } from '../../components'
+import { isAndroid, isIOS } from 'react-device-detect'
+import { Helmet } from "react-helmet"
 
-const imgBackgroundFollowUs = 'https://i.imgur.com/criGPWa.png';
+const imgBackgroundFollowUs = 'https://i.imgur.com/criGPWa.png'
 const styles = {
   contactCard: {
     overlayVideo: {
@@ -379,7 +382,7 @@ const styles = {
 
     },
   },
-};
+}
 const stylesMobile = {
   contactCard: {
     containerVideo: {
@@ -766,22 +769,42 @@ const stylesMobile = {
 
     },
   },
-};
+}
 /* eslint-disable react/prefer-stateless-function */
-export default class HomePage extends React.PureComponent {
+class HomePage extends React.PureComponent {
   componentDidMount() {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0)
   }
   render() {
-    const isMobile = (isAndroid || isIOS ? true : false);
+    const isMobile = (isAndroid || isIOS ? true : false)
+    //const { englishLang } = this.props
+
     return (
       <div>
         <Helmet>
           <title>Cismo Solutions</title>
           <meta name="description" content="Cismo Solutions ¡Creamos soluciones simples a problemas complejos! Sofware, Apps, Marketing digital. Lo que buscas, lo tenemos. Páginas web y eCommerce." />
         </Helmet>
-        <HomeComponent classes={!isMobile ? styles : stylesMobile} />
+        <HomeComponent engLang={this.props.englishLang} classes={!isMobile ? styles : stylesMobile} />
       </div>
     );
   }
 }
+
+HomePage.propTypes = {
+  englishLang: PropTypes.bool.isRequired,
+}
+
+const mapStateToProps = (state) => {
+  const p = state.get('pageState', initialState)
+  return {
+    englishLang: p.englishLang,
+  }
+}
+
+
+
+export default connect(
+  mapStateToProps,
+  null,
+)(HomePage)

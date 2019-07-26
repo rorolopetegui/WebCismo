@@ -11,7 +11,7 @@ import ContactData from '../Forms/ContactData';
 
 /* eslint-disable global-require */
 const Footer = props => {
-  const { classes } = props;
+  const { classes, engLang } = props;
   return (
     <div style={classes.body}>
       <div style={classes.footerHeader}>
@@ -48,7 +48,7 @@ const Footer = props => {
           </MediaButton>
         </div>
 
-        <ContactData classes={classes.footerHeader.contactData} />
+        <ContactData engLang={engLang} classes={classes.footerHeader.contactData} />
       </div>
       <div style={classes.footerBody.container}>
         <div style={classes.footerBody.backgroundImg}></div>
@@ -64,6 +64,7 @@ const Footer = props => {
 Footer.propTypes = {
   classes: PropTypes.object.isRequired,
   children: PropTypes.node,
+  engLang: PropTypes.bool.isRequired,
 };
 
 export default Footer;

@@ -8,26 +8,22 @@ import FirstContact from '../FirstContact/FirstContact';
 import ContactCard from '../ContactCard/ContactCard';
 import ClientsContent from '../../content/ClientsContent';
 import ClientsTestimonials from '../../content/ClientsTestimonials';
+import ClientsTestimonialsEnglish from '../../content/English/ClientsTestimonials';
 import ServicesContent from '../../content/Services';
-
-//Content
-import CardContentEnglish from '../../content/English/CardContentEnglish';
-import CardContent from '../../content/CardContent';
-
-
+import ServicesContentEnglish from '../../content/English/Services';
 
 /* eslint-disable global-require */
 const HomeComponent = props => {
-    const { classes } = props;
+    const { classes, engLang } = props;
     return (
         <div>
-            <ContactCard content={""} classes={classes.contactCard} />
-            <ServicesGallery classes={classes.servicesGallery} content={ServicesContent} />
-            <Separator classes={classes.separator} text="Más Servicios" link="/Services" />
-            <ClientsGallery classes={classes.clientsGallery} contentClients={ClientsContent} contentTestimonials={ClientsTestimonials} />
-            <Separator classes={classes.separator} text="Ver más trabajos" link="/Clients" />
-            <FollowUs classes={classes.followUs} />
-            <FirstContact classes={classes.firstContact} />
+            <ContactCard engLang={engLang} classes={classes.contactCard} />
+            <ServicesGallery engLang={engLang}  classes={classes.servicesGallery} content={engLang ? ServicesContentEnglish : ServicesContent} />
+            <Separator classes={classes.separator} text={engLang ? "More Services" : "Más Servicios"} link="/Services" />
+            <ClientsGallery engLang={engLang} classes={classes.clientsGallery} contentClients={ClientsContent} contentTestimonials={engLang ? ClientsTestimonialsEnglish : ClientsTestimonials} />
+            <Separator classes={classes.separator} text={engLang ? "More works" : "Ver más trabajos"} link="/Clients" />
+            <FollowUs engLang={engLang} classes={classes.followUs} />
+            <FirstContact engLang={engLang} classes={classes.firstContact} />
         </div>
     );
 };
@@ -35,6 +31,7 @@ const HomeComponent = props => {
 HomeComponent.propTypes = {
     children: PropTypes.node,
     classes: PropTypes.object.isRequired,
+    engLang: PropTypes.bool.isRequired
 };
 
 export default HomeComponent;

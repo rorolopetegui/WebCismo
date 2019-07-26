@@ -1,10 +1,14 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { initialState } from '../../reducers/pageState'
 import { HeaderBanner } from '../../components/Commons';
 import ClientsGallery from '../../components/ClientsGallery/ClientsGallery';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import ClientsContent from '../../content/ClientsContent';
 import ClientsTestimonials from '../../content/ClientsTestimonials';
+import ClientsTestimonialsEnglish from '../../content/English/ClientsTestimonials';
 import { isAndroid, isIOS } from 'react-device-detect';
 import { Helmet } from "react-helmet";
 
@@ -327,16 +331,17 @@ const stylesMobile = {
 
 
 /* eslint-disable react/prefer-stateless-function */
-export default class ClientsPage extends PureComponent {
+class ClientsPage extends PureComponent {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
   render() {
     const isMobile = (isAndroid || isIOS ? true : false);
+    const { englishLang } = this.props;
     return (
       <div>
         <Helmet>
-          <title>Clientes - Cismo Solutions</title>
+          <title>{englishLang ? "Clients" : "Clientes"} - Cismo Solutions</title>
           <meta name="description" content="¡Nuestros Clientes nos recomiendan! Porque somos la solución digital que necesitas. Marketing, desarrollo de software, Apps ¡Todo en un solo lugar!" />
         </Helmet>
         <div style={isMobile ? stylesMobile.headerSeparator : styles.headerSeparator} />
@@ -345,10 +350,27 @@ export default class ClientsPage extends PureComponent {
             icon={faUsers}
             size="1x"
           /><br />
-          Nuestros clientes
+          {englishLang ? "Our clients" : "Nuestros clientes"}
         </HeaderBanner>
-        <ClientsGallery classes={isMobile ? stylesMobile.clientsGallery : styles.clientsGallery} contentClients={ClientsContent} contentTestimonials={ClientsTestimonials} />
+        <ClientsGallery engLang={englishLang} classes={isMobile ? stylesMobile.clientsGallery : styles.clientsGallery} contentClients={ClientsContent} contentTestimonials={englishLang ? ClientsTestimonialsEnglish : ClientsTestimonials} />
       </div>
     );
   }
 }
+ClientsPage.propTypes = {
+  englishLang: PropTypes.bool.isRequired,
+}
+
+const mapStateToProps = (state) => {
+  const p = state.get('pageState', initialState)
+  return {
+    englishLang: p.englishLang,
+  }
+}
+
+
+
+export default connect(
+  mapStateToProps,
+  null,
+)(ClientsPage)

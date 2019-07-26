@@ -103,7 +103,7 @@ class Contact extends Component {
     }
     
     render() {
-        const { classes } = this.props;
+        const { classes, engLang } = this.props;
         const { mailSent, remarkName, remarkEmail, remarkMessage, error } = this.state;
         return (
             <div style={classes.container}>
@@ -112,33 +112,33 @@ class Contact extends Component {
                         style={!remarkName ? classes.input : classes.inputRemarked}
                         type="text"
                         value={this.state.fname}
-                        placeholder={"Mi nombre es"}
+                        placeholder={engLang ? "My name is" : "Mi nombre es"}
                         onChange={this.handleChangeName.bind(this)} />
                     <input
                         style={!remarkEmail ? classes.input : classes.inputRemarked}
                         type="text"
                         value={this.state.email}
-                        placeholder={"Me pueden enviar un mail a"}
+                        placeholder={engLang ? "You can mail-me at" : "Me pueden enviar un mail a"}
                         onChange={this.handleChangeEmail.bind(this)} />
                     <select
                         style={classes.input}
                         onChange={this.handleChangeReason.bind(this)}
                     >
-                        <option value="Hire">Contratar a Cismo</option>
-                        <option value="Work">Trabajar con nostros</option>
-                        <option value="Quote">Presupuesto</option>
-                        <option value="Question">Solo una pregunta</option>
+                        <option value="Hire">{engLang ? "Hire Cismo" : "Contratar a Cismo"}</option>
+                        <option value="Work">{engLang ? "Callme at (Optional)" : "Trabajar con nostros"}</option>
+                        <option value="Quote">{engLang ? "Budget" : "Presupuesto"}</option>
+                        <option value="Question">{engLang ? "Just a question" : "Solo una pregunta"}</option>
                     </select>
                     <input
                         style={classes.input}
                         type="text"
                         value={this.state.phone}
-                        placeholder={"Llámenme a (optional)"}
+                        placeholder={engLang ? "Callme at (Optional)" : "Llámenme a (optional)"}
                         onChange={this.handleChangePhone.bind(this)} />
                     <textarea
                         style={!remarkMessage ? classes.inputMessage : classes.inputMessageRemarked}
                         value={this.state.message}
-                        placeholder={"Tengo que agregar algo"}
+                        placeholder={engLang ? "Let me add something" : "Tengo que agregar algo"}
                         onChange={this.handleChangeMessage.bind(this)} />
                     <Recaptcha
                         sitekey="6LcVOJIUAAAAAMhET3rdbFoTm4oUwTFro9peeTWB"
@@ -147,7 +147,7 @@ class Contact extends Component {
                         style={classes.captcha}
                     />
                     <SendButton classes={classes.button} action={this.submit.bind(this)} enabled={mailSent ? false : true}>
-                        Enviar
+                        {engLang ? "Send" : "Enviar"}
                     </SendButton>
                     <span style={(remarkName || remarkEmail || remarkMessage || error !== null) ? classes.spanMessage : classes.spanMessageHidden}>{error}</span>
                 </div>
@@ -159,6 +159,7 @@ class Contact extends Component {
 /* eslint-enable global-require */
 Contact.propTypes = {
     classes: PropTypes.object.isRequired,
+    engLang: PropTypes.bool
 };
 
 export default Contact;

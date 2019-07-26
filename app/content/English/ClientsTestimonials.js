@@ -18,7 +18,7 @@ export default [
         name: 'Jorge M.',
         profession: 'Commercial Manager, Avesur SRL',
         quote:
-            'Cuando nos vimos necesitando de un sistema que lograra administrar todos los puntos de nuestra empresa, Cismo Solutions se encargó rápidamente en encontrar la mejor solución que se adaptara a la realidad de nuestra empresa. Me encuentro muy satisfecho con ellos.',
+            'When we found ourselves in need of a system that managed to manage all the points of our company, Cismo Solutions quickly took charge of finding the best solution that adapted to the reality of our company. I am very satisfied with them.',
         avatar: 'https://i.imgur.com/IrMD2hf.png',
     },
 ];

@@ -1,43 +1,43 @@
 export default [
     {
-        title: 'Software Personalizado',
+        title: 'Custom Software',
         description:
-            'Soluciones creativas (Movil, web, Juegos, machine learning AI, AR/VR, Chatbots, Full stack, block chain).',
+            'Creative solutions (Mobile, web, Games, machine learning AI, AR / VR, Chatbots, Full stack, block chain).',
         backgroundImage: 'https://i.imgur.com/faTkAiQ.png',
         link: '#',
     },
     {
-        title: 'Estrategia Digital',
+        title: 'Digital Strategy',
         description:
-            'Colaboración Estratégica (Creación de una landing page estratégica, Generación calificada de leads, Estrategia de conversión).',
+            'Strategic Collaboration (Creation of a strategic landing page, Qualified Lead Generation, Conversion Strategy).',
         backgroundImage: 'https://i.imgur.com/AcYJFtr.png',
         link: '#',
     },
     {
-        title: 'Diseño y Desarrollo Web',
+        title: 'Design and web development',
         description:
-            'Creación y Optimización ( Ui / UX, Ilustraciones, animaciones, frontend, backend).',
+            'Creation and Optimization (Ui / UX, Illustrations, animations, frontend, backend).',
         backgroundImage: 'https://i.imgur.com/rv8KeEU.png',
         link: '#',
     },
     {
         title: 'eCommerce',
         description:
-            'Creamos tu Tienda virtual.',
+            'We create your virtual store.',
         backgroundImage: 'https://i.imgur.com/jIGimk7.png',
         link: '#',
     },
     {
         title: 'Marketing Digital',
         description:
-            'Se visible a tu público (Marketing de contenido, SEO / SEM, Marketing de redes sociales, E-mail Marketing).',
+            'Be visible to your audience (Content Marketing, SEO / SEM, Social Network Marketing, E-mail Marketing).',
         backgroundImage: 'https://i.imgur.com/ka4B4Op.png',
         link: '#',
     },
     {
         title: 'Outsourcing',
         description:
-            'Nos dedicamos a buscar los mejores talentos para tu empresa, contamos con una amplia base de datos, de donde seleccionamos y recomendamos al mejor.',
+            'We are dedicated to finding the best talents for your company, we have a large database, from which we select and recommend the best.',
         backgroundImage: 'https://i.imgur.com/IP4vXoM.png',
         link: '#',
     },

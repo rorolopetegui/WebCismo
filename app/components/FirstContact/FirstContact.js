@@ -4,13 +4,13 @@ import ContactButton from './ContactButton';
 /* eslint-disable global-require */
 class FirstContact extends Component {
     render() {
-        const { classes } = this.props;
+        const { classes, engLang } = this.props;
 
         return (
             <div style={classes.container}>
-                <span style={classes.title}>Preguntas?</span>
-                <span style={classes.subtitle}>Haz el primer contacto</span>
-                <ContactButton classes={classes.contactButton} link="https://wa.me/59892308380">Llamanos!</ContactButton>
+                <span style={classes.title}>{engLang ? "Questions?" : "Preguntas?"}</span>
+                <span style={classes.subtitle}>{engLang ? "Make the first touch" : "Haz el primer contacto"}</span>
+                <ContactButton classes={classes.contactButton} link="https://wa.me/59892308380">{engLang ? "Call us!" : "Llamanos!"}</ContactButton>
             </div>
         );
     }
@@ -18,6 +18,7 @@ class FirstContact extends Component {
 /* eslint-enable global-require */
 FirstContact.propTypes = {
     classes: PropTypes.object.isRequired,
+    engLang: PropTypes.bool.isRequired
 };
 
 export default FirstContact;

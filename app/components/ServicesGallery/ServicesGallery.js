@@ -5,11 +5,11 @@ import ServiceMedia from './ServiceMedia';
 /* eslint-disable global-require */
 class ServicesGallery extends Component {
     render() {
-        const { classes, content } = this.props;
+        const { classes, content, engLang } = this.props;
         return (
             <div style={classes.container}>
                 <div style={classes.titleContainer}>
-                    <span style={classes.titleSection}>Servicios</span>
+                    <span style={classes.titleSection}>{engLang ? "Services" : "Servicios"}</span>
                 </div>
                 {content.map((item, index) =>
                     <div key={index}>
@@ -32,6 +32,7 @@ class ServicesGallery extends Component {
 ServicesGallery.propTypes = {
     classes: PropTypes.object.isRequired,
     content: PropTypes.array.isRequired,
+    engLang: PropTypes.bool.isRequired
 };
 
 export default ServicesGallery;

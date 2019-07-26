@@ -1,5 +1,9 @@
-import React from 'react';
-import { TopMenu } from '../../components';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { initialState, changeLanguage } from '../../reducers/pageState'
+import { TopMenu } from '../../components'
 
 const styles = {
   iconMobile: {
@@ -123,11 +127,40 @@ const styles = {
     marginLeft: '1%',
     //marginTop: '0.5%',
   },
-};
+}
 
 /* eslint-disable react/prefer-stateless-function */
-export default class TopMenuCont extends React.PureComponent {
+class TopMenuCont extends React.PureComponent {
+  onChangeLang = (selectedLang) => {
+    this.props.changeLanguage(selectedLang === "eng")
+  }
   render() {
-    return <TopMenu classes={styles} />;
+    return <TopMenu engLang={this.props.englishLang} onHandleLang={this.onChangeLang} classes={styles} />
   }
 }
+
+TopMenuCont.propTypes = {
+  englishLang: PropTypes.bool.isRequired,
+}
+
+const mapStateToProps = (state) => {
+  const p = state.get('pageState', initialState)
+  return {
+    englishLang: p.englishLang,
+  }
+}
+
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      changeLanguage
+    },
+    dispatch,
+  )
+
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(TopMenuCont)

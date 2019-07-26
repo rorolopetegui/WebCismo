@@ -6,11 +6,16 @@ import { faFacebookF, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-s
 /* eslint-disable global-require */
 class FollowUs extends Component {
     render() {
-        const { classes } = this.props;
+        const { classes, engLang } = this.props;
         return (
             <div style={classes.container}>
-                <span style={classes.title}>Síguenos!</span>
-                <span style={classes.subtitle}>En todas nuestras <span style={classes.subtitleAlt}>redes sociales</span></span>
+                <span style={classes.title}>{engLang ? "Follow us!" : "Síguenos!"}</span>
+                {!engLang &&
+                    <span style={classes.subtitle}>En todas nuestras <span style={classes.subtitleAlt}>redes sociales</span></span>
+                }
+                {engLang &&
+                    <span style={classes.subtitle}>In all of our <span style={classes.subtitleAlt}>social media networks</span></span>
+                }
                 <div style={classes.sectionButtons}>
                     <div style={classes.containerButtons}>
                         <div style={classes.containerButton}>
@@ -31,6 +36,7 @@ class FollowUs extends Component {
 /* eslint-enable global-require */
 FollowUs.propTypes = {
     classes: PropTypes.object.isRequired,
+    engLang: PropTypes.bool.isRequired
 };
 
 export default FollowUs;
