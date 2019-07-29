@@ -1,4 +1,7 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { initialState } from '../../reducers/pageState'
 import { OfferTemplate } from '../../components';
 import { HeaderBanner } from '../../components/Commons';
 import { isAndroid, isIOS } from 'react-device-detect';
@@ -417,32 +420,127 @@ const offers = [
       ]
   },
 ];
+
+const offersEnglish = [
+  {
+      id: 0,
+      title: 'One Page - Basic',
+      name: 'Landing Page',
+      price: 'U$S 195',
+      services: [
+          {
+              name: 'Content Manager Panel',
+              desc: 'Wordpress',
+          },
+          {
+              name: 'Sections 2',
+              desc: 'Home | Contact',
+          },
+          {
+              name: 'Animated banner',
+              desc: 'Includes banner up to 3 images',
+          },
+          {
+              name: 'Responsive',
+              desc: 'Our websites adapt to any device',
+          },
+          {
+              name: 'Contact Form',
+              desc: 'Web queries to your email',
+          },
+          {
+              name: 'Link to social media',
+              desc: 'Yes',
+          }
+      ]
+  },
+  {
+      id: 1,
+      title: 'Social Media - Basic',
+      name: 'Social Media',
+      price: 'U$S 195',
+      services: [
+          {
+              name: 'Management and Implementation of Social Networks',
+              desc: 'Objectives and goals are defined with the client.',
+          },
+          {
+              name: 'Design of Publications and Stories.',
+              desc: '4 publications per week, 16 monthly publications.',
+          },
+          {
+              name: '2 Publications Pay per Month. *',
+              desc: 'Armed of Schedule of Publications.',
+          },
+          {
+              name: 'Content creation.',
+              desc: 'Writing and creativity.',
+          },
+          {
+              name: 'Monthly/Weekly Meetings with you.',
+              desc: 'Monthly/Weekly Performance Statistics.',
+          }
+      ]
+  },
+  {
+      id: 2,
+      title: 'Custom',
+      name: 'Custom',
+      price: 'To agree',
+      services: [
+          {
+              name: 'We make any kind of software',
+              desc: 'Web pages, custom software, maintenance.',
+          },
+      ]
+  },
+];
+
 /* eslint-disable react/prefer-stateless-function */
-export default class Offers extends PureComponent {
+class Offers extends PureComponent {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
   render() {
     const isMobile = (isAndroid || isIOS ? true : false);
+    const { englishLang } = this.props;
     return (
       <div>
         <div style={!isMobile ? styles.headerSeparator : stylesMobile.headerSeparator} />
         <HeaderBanner classes={!isMobile ? styles.headerBanner : stylesMobile.headerBanner}>
-          Nuestras ofertas
+          {englishLang ? "Our Offers" : "Nuestras ofertas"}
           <hr />
         </HeaderBanner>
         <br />
         <OfferTemplate 
         classes={!isMobile ? styles.OfferTemplate : stylesMobile.OfferTemplate} 
-          title={"Mira nuestras increibles ofertas"}
-          subtitle={"Nos enfocamos en que puedas cumplir tus sueños"}
-          excluded={"*Los precios no incluyen dominio ni hosting."}
-          contractBtn={"Contratar"}
-          callMeTitle={"Cumplimos con tus ideas"}
-          callMeBtn={"Llamanos!"}
-          offers={offers}
+          title={englishLang ? "See our incredible offers" : "Mira nuestras increibles ofertas"}
+          subtitle={englishLang ? "We focus on, that you can fulfill your dreams" : "Nos enfocamos en que puedas cumplir tus sueños"}
+          excluded={englishLang ? "*Prices do not include domain or hosting" : "*Los precios no incluyen dominio ni hosting."}
+          contractBtn={englishLang ? "Hire" : "Contratar"}
+          callMeTitle={englishLang ? "We make your ideas" : "Cumplimos con tus ideas"}
+          callMeBtn={englishLang ? "Call us!" : "Llamanos!"}
+          offers={englishLang ? offersEnglish : offers}
         />
       </div>
     );
   }
 }
+
+Offers.propTypes = {
+  englishLang: PropTypes.bool.isRequired,
+}
+
+const mapStateToProps = (state) => {
+  const p = state.get('pageState', initialState)
+  return {
+    englishLang: p.englishLang,
+  }
+}
+
+
+
+export default connect(
+  mapStateToProps,
+  null,
+)(Offers)

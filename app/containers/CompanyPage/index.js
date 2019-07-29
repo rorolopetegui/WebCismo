@@ -1,4 +1,7 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { initialState } from '../../reducers/pageState'
 import { FirstTemplate } from '../../components';
 import { HeaderBanner } from '../../components/Commons';
 import ImgButton from '../../components/Commons/ImgButton';
@@ -365,6 +368,7 @@ const stylesMobile = {
     },
   },
 };
+
 const content = [
   {
     isImgLeft: true,
@@ -407,6 +411,50 @@ const content = [
     sizeItem: 'containerSize1x',
   },
 ];
+
+const contentEnglish = [
+  {
+    isImgLeft: true,
+    img: 'https://i.imgur.com/rv8KeEU.png',
+    imgMobile: 'https://i.imgur.com/pRqOyHF.png',
+    title: 'Teamwork',
+    text: 'Do you want to know the secret? Team work. Although we have a great team that works both remotely and in the office daily, the team work that we value the most is what we do together with you to achieve the proposed objectives.',
+    sizeItem: 'containerSize1x',
+  },
+  {
+    isImgLeft: false,
+    img: 'https://i.imgur.com/WeX8IKP.jpg',
+    imgMobile: 'https://i.imgur.com/EmVJzQf.png',
+    title: 'Strategy',
+    text: 'We connect our clients\' ideas with meaningful information, thus offering the best recommendations and tactics to meet the business objectives.',
+    sizeItem: 'containerSize1x',
+  },
+  {
+    isImgLeft: true,
+    img: 'https://i.imgur.com/DEe9B4j.jpg',
+    imgMobile: 'https://i.imgur.com/WsQ6AZY.png',
+    title: 'Constant Contact',
+    text: 'Whether through the creation of a web page with ecommerce enabled and then report positioning results or as a computer program that you need to facilitate tasks, at Cismo Solutions we always maintain constant contact with our customers and we care to meet their needs.',
+    sizeItem: 'containerSize2x',
+  },
+  {
+    isImgLeft: false,
+    img: 'https://i.imgur.com/Jyvc8EN.jpg',
+    imgMobile: 'https://i.imgur.com/cMDI625.png',
+    title: 'Continuous support',
+    text: 'Once the beautiful website or the fully functional software was created, we were not admiring it. Rather, we take care of different tests so that all your staff feels able to use it and modify it successfully. We will always be here if you have any questions. And we will return with any other idea that seems useful to you.',
+    sizeItem: 'containerSize2x',
+  },
+  {
+    isImgLeft: true,
+    img: 'https://i.imgur.com/uvS9XgP.jpg',
+    imgMobile: 'https://i.imgur.com/E7Prb0d.png',
+    title: 'Portfolio',
+    text: 'From a small mobile application to a complete business solution with social media management included. Our work stands out in commitment and effectiveness.',
+    sizeItem: 'containerSize1x',
+  },
+];
+
 const teamRoster = [
   {
     name: 'Danilo Carella',
@@ -444,17 +492,19 @@ const teamRoster = [
     linkedin: '/in/rodrigo-lopetegui-bb7808107/',
   },
 ];
+
 /* eslint-disable react/prefer-stateless-function */
-export default class CompanyPage extends PureComponent {
+class CompanyPage extends PureComponent {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
   render() {
     const isMobile = (isAndroid || isIOS ? true : false);
+    const { englishLang } = this.props;
     return (
       <div>
         <Helmet>
-          <title>Nosotros - Cismo Solutions</title>
+          <title>{englishLang ? "About us" : "Nosotros" } - Cismo Solutions</title>
           <meta name="description" content="¡Tenemos las Soluciones Informáticas que necesitas! Desarrollo de software, Apps y Páginas Web. Adaptados a las Necesidades de tu Empresa." />
         </Helmet>
         <div style={!isMobile ? styles.headerSeparator : stylesMobile.headerSeparator} />
@@ -463,11 +513,11 @@ export default class CompanyPage extends PureComponent {
             icon={faUserTie}
             size="1x"
           /><br />
-          Empresa
+          {englishLang ? "Company" : "Empresa"}
         </HeaderBanner>
-        <FirstTemplate classes={!isMobile ? styles : stylesMobile} content={content} headerTitle={"Vision"}>
+        <FirstTemplate classes={!isMobile ? styles : stylesMobile} content={englishLang ? contentEnglish : content} headerTitle={"Vision"}>
           <div style={!isMobile ? styles.teamContainer : stylesMobile.teamContainer}>
-            <span style={!isMobile ? styles.titleTeam : stylesMobile.titleTeam}>Conoce a nuestro equipo</span>
+            <span style={!isMobile ? styles.titleTeam : stylesMobile.titleTeam}>{englishLang ? "Meet the team" : "Conoce a nuestro equipo"}</span>
             {teamRoster.map((item, index) =>
               <div key={index}>
                 <ImgButton
@@ -498,3 +548,21 @@ export default class CompanyPage extends PureComponent {
     );
   }
 }
+
+CompanyPage.propTypes = {
+  englishLang: PropTypes.bool.isRequired,
+}
+
+const mapStateToProps = (state) => {
+  const p = state.get('pageState', initialState)
+  return {
+    englishLang: p.englishLang,
+  }
+}
+
+
+
+export default connect(
+  mapStateToProps,
+  null,
+)(CompanyPage)

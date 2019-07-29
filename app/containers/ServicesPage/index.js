@@ -1,4 +1,7 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { initialState } from '../../reducers/pageState'
 import { FirstTemplate } from '../../components';
 import { HeaderBanner } from '../../components/Commons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -460,6 +463,7 @@ const stylesMobile = {
     },
   },
 };
+
 const content = [
   {
     isImgLeft: true,
@@ -522,6 +526,7 @@ const content = [
     sizeItem: 'containerSize2x',
   },
 ];
+
 const content2 = [
   {
     isImgLeft: false,
@@ -540,17 +545,101 @@ const content2 = [
     sizeItem: 'containerSize1x',
   },
 ];
+
+const contentEnglish = [
+  {
+    isImgLeft: true,
+    img: 'https://i.imgur.com/l1S5oxw.jpg',
+    imgMobile: 'https://i.imgur.com/pqiEs9g.png',
+    title: 'Digital Strategy',
+    text: 'Before the project emerges, solid foundations are focused with a range of specialized digital services that include:'
+      + 'Consulting and strategic workshops;'
+      + 'Analysis of the strengths, weaknesses, opportunities and threats of the business and its direct competitors (SWOT);'
+      + 'Content Strategy;'
+      + 'Analysis and monitoring;',
+    sizeItem: 'containerSize1x',
+  },
+  {
+    isImgLeft: false,
+    img: 'https://i.imgur.com/0Tl2RtS.jpg',
+    imgMobile: 'https://i.imgur.com/Biz8Kqw.png',
+    title: 'Responsive website development',
+    text: 'Whatever the device or browser, our experts ensure that your website (or campaign) always works perfectly.'
+      + ';Optimization for mobile and tablet'
+      + ';Progressive improvement and constant reports'
+      + ';Performance testing',
+    sizeItem: 'containerSize1x',
+  },
+  {
+    isImgLeft: true,
+    img: 'https://i.imgur.com/9BhTIjd.jpg',
+    imgMobile: 'https://i.imgur.com/TuZchk2.png',
+    title: 'Content Management System (CMS) and eCommerce',
+    text: 'Simple and complex eCommerce solutions'
+      + ';Optimization of websites suitable for eCommerce'
+      + ';Integration of third party payment system',
+    sizeItem: 'containerSize1x',
+  },
+  {
+    isImgLeft: false,
+    img: 'https://i.imgur.com/Pyxivrx.jpg',
+    imgMobile: 'https://i.imgur.com/vCrbDDj.png',
+    title: 'Mobile Apps',
+    text: 'More and more people use mobile devices when surfing the web, even more than computers. That\'s why we give to the Apps, the attention they deserve.'
+      + ';Native Apps, and hibrids'
+      + ';User, and use cases testing'
+      + ';IOS y Android',
+    sizeItem: 'containerSize2x',
+  },
+  {
+    isImgLeft: true,
+    img: 'https://i.imgur.com/FkN1R4E.jpg',
+    imgMobile: 'https://i.imgur.com/JhDHLfX.jpg',
+    title: 'Salesforce®️',
+    text: 'We consider ourselves lovers of the system implemented by Salesforce®️, that is why we guide organizations to plan, design and use complete solutions made by our developers in Salesforce®️. We take care of transforming the way in which businesses interact with their products, customers and even employees. We are committed to unlocking the full potential of your company.',
+    sizeItem: 'containerSize2x',
+  },
+  {
+    isImgLeft: false,
+    img: 'https://i.imgur.com/2eLxo3p.jpg',
+    imgMobile: 'https://i.imgur.com/pqiEs9g.jpg',
+    title: 'Outsourcing',
+    text: 'We have a wide catalog of resources of different types for your company, our filters are brilliant, which makes that when you offer a candidate this adapts in the best way to employment.',
+    sizeItem: 'containerSize2x',
+  },
+];
+
+const contentEnglish2 = [
+  {
+    isImgLeft: false,
+    img: 'https://i.imgur.com/GCBDKuT.jpg',
+    imgMobile: 'https://i.imgur.com/edRGxIU.jpg',
+    title: 'Top Technologies',
+    text: 'We like challenges, which is why we choose every day to use the latest technology offered by the market. We try to develop innovative projects that new generations like.',
+    sizeItem: 'containerSize1x',
+  },
+  {
+    isImgLeft: true,
+    img: 'https://i.imgur.com/jTkheAj.jpg',
+    imgMobile: 'https://i.imgur.com/wpyVyC8.jpg',
+    title: 'Classics',
+    text: 'In addition to working with the latest technologies, we like to use more conventional ones, our business model allows us to adapt to the project that the client wishes to carry out. As our motto says, \"Creating simple solutions to complex problems.\"',
+    sizeItem: 'containerSize1x',
+  },
+];
+
 /* eslint-disable react/prefer-stateless-function */
-export default class ServicesPage extends PureComponent {
+class ServicesPage extends PureComponent {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
   render() {
     const isMobile = (isAndroid || isIOS ? true : false);
+    const { englishLang } = this.props;
     return (
       <div>
         <Helmet>
-          <title>Servicios - Cismo Solutions</title>
+          <title>{englishLang ? "Services" : "Servicios"} - Cismo Solutions</title>
           <meta name="description" content="¿Te gustaría que tu marca sea líder en el mercado? Somos lo que necesitas, Marketing digital, desarrollo de apps, eCommerce y diseño web." />
         </Helmet>
         <div style={isMobile ? stylesMobile.headerSeparator : styles.headerSeparator} />
@@ -561,12 +650,30 @@ export default class ServicesPage extends PureComponent {
           /><br />
           Servicios
         </HeaderBanner>
-        <FirstTemplate classes={isMobile ? stylesMobile : styles} headerTitle="Servicios" content={content} />
+        <FirstTemplate classes={isMobile ? stylesMobile : styles} headerTitle={englishLang ? "Services" : "Servicios"} content={englishLang ? contentEnglish : content} />
         <HeaderBanner classes={isMobile ? stylesMobile.headerDevelopmentPlataforms : styles.headerDevelopmentPlataforms}>
           Our Key deveolpment Plataforms
         </HeaderBanner>
-        <FirstTemplate classes={isMobile ? stylesMobile.secondPart : styles.secondPart} headerTitle="" content={content2} />
+        <FirstTemplate classes={isMobile ? stylesMobile.secondPart : styles.secondPart} headerTitle="" content={englishLang ? contentEnglish2 : content2} />
       </div>
     );
   }
 }
+
+ServicesPage.propTypes = {
+  englishLang: PropTypes.bool.isRequired,
+}
+
+const mapStateToProps = (state) => {
+  const p = state.get('pageState', initialState)
+  return {
+    englishLang: p.englishLang,
+  }
+}
+
+
+
+export default connect(
+  mapStateToProps,
+  null,
+)(ServicesPage)
