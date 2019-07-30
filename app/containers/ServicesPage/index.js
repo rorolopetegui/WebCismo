@@ -648,7 +648,7 @@ class ServicesPage extends PureComponent {
             icon={faCog}
             size="1x"
           /><br />
-          Servicios
+          {englishLang ? "Services" : "Servicios"}
         </HeaderBanner>
         <FirstTemplate classes={isMobile ? stylesMobile : styles} headerTitle={englishLang ? "Services" : "Servicios"} content={englishLang ? contentEnglish : content} />
         <HeaderBanner classes={isMobile ? stylesMobile.headerDevelopmentPlataforms : styles.headerDevelopmentPlataforms}>
